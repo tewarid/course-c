@@ -1,0 +1,179 @@
+{\rtf1\ansi\ansicpg1252
+{\fonttbl
+{\f1\fnil\fcharset0\fprq0 Times New Roman;}
+{\f2\fnil\fcharset0\fprq0 Arial;}
+{\f3\fnil\fcharset0\fprq0 Courier New;}
+}
+{\colortbl;
+\red0\green0\blue0;
+\red0\green0\blue255;
+}
+{\stylesheet
+{\s1\li540\fi-540\kerning24\fs64\lang1033\level1 heading 1;}
+{\s2\li1170\fi-450\kerning24\fs56\lang1033\level2 heading 2;}
+{\s3\li1800\fi-360\kerning24\fs48\lang1033\level3 heading 3;}
+{\s4\li2520\fi-360\kerning24\fs40\lang1033\level4 heading 4;}
+{\s5\li3240\fi-360\kerning24\fs40\lang1033\level5 heading 5;}
+{\s6\li3960\fi-360\kerning24\lang1033\level6 heading 6;}
+{\s7\li4680\fi-360\kerning24\lang1033\level7 heading 7;}
+{\s8\li5400\fi-360\kerning24\lang1033\level8 heading 8;}
+{\s9\li6120\fi-360\kerning24\lang1033\level9 heading 9;}
+}
+\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Pointers and Arrays\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li0\fi0\qc {\loch\f1\fs64\cf1 \'a9 2005 Devendra Tewari}{\loch\f1\fs64\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Introduction\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Pointers are variables that store memory addresses\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 They store the address of a memory region that stores a particular type of data\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 The size of a pointer is determined by the address size of the CPU\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int * p;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int i = 10;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 p = &i;\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Pointer declaration\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 A pointer variable is declared using the }{\loch\f3\cf1 *}{\loch\f1\cf1  operator\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int * p}{\loch\f1\cf1 ;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1  }{\loch\f3\cf1 *}{\loch\f1\cf1  is called the dereferencing operator because }{\loch\f3\cf1 *p}{\loch\f1\cf1  gives the value of the variable }{\loch\f3\cf1 p}{\loch\f1\cf1  points to\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The }{\loch\f3\cf1 &}{\loch\f1\cf1  operator is used to recover the address of a variable in memory, it cannot be applied to expressions, constants or register variables\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 p = &i;\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Pointer assignment and usage\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Pointer can be assigned to one another\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int i = 10;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int * ip = &i;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int * iq = ip; /* iq now points to i */\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Operator precedence in usage scenarios of }{\loch\f3\cf1 *}{\loch\f1\cf1  operator\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 *ip += 1;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 ++*ip;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 (*ip)++;\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f1\fs48\cf1 increment value pointed to by }{\loch\f3\fs48\cf1 ip}{\loch\f3\fs36\cf1 \par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f3\fs36\cf1 *ip++;}{\loch\f1\fs48\cf1  would be incorrect in last example\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Function arguments\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Arguments are passed to a function by value, even pointer arguments\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Pointers provide a mechanism for functions to alter the value of referenced variables\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Write a function that swaps the value of it's arguments\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Arrays\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Arrays provide contiguous storage to several elements of the same type\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int a [10];\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f1\fs36\cf1 declares an array of 10 integers\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Elements for external, static and automatic variables are initialized to zero\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 The array index is zero based\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Array initialization\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Arrays can be initialized during declaration\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int days[] = \'7b5, 10, 15, 25, 30\'7d;\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f1\fs48\cf1 compiler fills in the size and fills the array\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 char name[] = "name";\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f1\fs48\cf1 right-hand side is a string constant}{\loch\f3\cf1 \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 char name[] = \'7b'n', 'a', 'm', 'e'\'7d;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Arrays can be initialized using assignment statements or using loops\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int days[5];\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 days[0] = 5;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs72\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Pointers and Arrays\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Arrays and pointers are related\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int a[5] = \'7b0 , 1, 2, 3, 4\'7d;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int * p = &a[0];\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int * q = a;\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f3\fs36\cf1 a}{\loch\f1\fs36\cf1  always points to the start of the array and cannot be changed\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs48\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Pointer operations\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Pointers can be incremented in integer steps\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1  }{\loch\f3\fs48\cf1 p++}{\loch\f1\fs48\cf1  points to the next element\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs40\cf1 what does }{\loch\f3\fs40\cf1 *p++ = 10}{\loch\f1\fs40\cf1  do? (hint \'96 see operator precedence table)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1  }{\loch\f3\fs48\cf1 p--}{\loch\f1\fs48\cf1  points to the previous element\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs40\cf1 what does }{\loch\f3\fs40\cf1 *--p = 10}{\loch\f1\fs40\cf1  do? (hint \'96 see operator precedence table)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1  }{\loch\f3\fs48\cf1 p+=i}{\loch\f1\fs48\cf1  points to i elements beyond the current position\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1  }{\loch\f3\fs48\cf1 p-=i}{\loch\f1\fs48\cf1  points to i elements before the current position\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1  }{\loch\f3\fs48\cf1 p = 0}{\loch\f1\fs48\cf1  or }{\loch\f3\fs48\cf1 p = NULL}{\loch\f1\fs48\cf1  makes }{\loch\f3\fs48\cf1 p}{\loch\f1\fs48\cf1  a null pointer i.e. a pointer that does not point to anything in particular, a valid pointer value\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Strings\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Strings constants are arrays of }{\loch\f3\fs48\cf1 char\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 char name [] = "name";}{\loch\f1\fs40\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Since an array of }{\loch\f3\fs48\cf1 char}{\loch\f1\fs48\cf1  can be assigned to a pointer to }{\loch\f3\fs48\cf1 char}{\loch\f1\fs48\cf1 , a pointer to }{\loch\f3\fs48\cf1 char}{\loch\f1\fs48\cf1  can refer to a string constant\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 char * name = "name";}{\loch\f1\fs40\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1  }{\loch\f3\fs48\cf1 strlen}{\loch\f1\fs48\cf1  can be used to calculate length of a string\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 strlen(name)}{\loch\f1\fs40\cf1  returns }{\loch\f3\fs40\cf1 4\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 A string is internally padded with }{\loch\f3\fs48\cf1 NULL}{\loch\f1\fs48\cf1  character or }{\loch\f3\fs48\cf1 '\'5c0'}{\loch\f1\fs48\cf1 , }{\loch\f3\fs48\cf1 name}{\loch\f1\fs48\cf1  is thus internally }{\loch\f3\fs48\cf1 5}{\loch\f1\fs48\cf1  characters long\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Write a function to replace }{\loch\f3\fs48\cf1 strcpy\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Multi-dimensional Arrays\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Declaration\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int a[10][20];\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f1\fs48\cf1 10 rows and 20 columns, }{\i\loch\f1\fs48\cf1 contiguous}{\loch\f1\fs48\cf1  storage for 200 integers\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Initialization\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int a[][2] = \'7b\'7b1,2\'7d, \'7b3\'7d\'7d;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int (a[])[2] = \'7b\'7b1,2\'7d, \'7b3\'7d\'7d;\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f1\fs48\cf1 The number of columns (length of each row) needs to be known beforehand, try printing }{\loch\f3\fs48\cf1 a[1][1]}{\loch\f1\fs48\cf1 , what do you get?\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Array of Pointers\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 This is how you would construct an array of string constants\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 char a[][7] = \'7b"hello", "world!"\'7d;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 printf("%s %s\'5cn", a[0], a[1]);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 The multi-dimensional array above is similar to an array of pointers to char\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 char * a[] = \'7b"hello", "world!"\'7d;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 printf("%s %s\'5cn", a[0], a[1]);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs48\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs80\cf1 Pointers v. multi-dimensional arrays\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 int a[2][2] = \'7b\'7b1,2\'7d,\'7b3,4\'7d\'7d;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 int *b[2], **c, *d;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 b[0] = a[0]; b[1] = a[1];\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 c = b; d = (int *)a;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 printf("%d\'5cn", a[1][1]);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 printf("%d\'5cn", *(*(a + 1) + 1));\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 printf("%d\'5cn", b[1][1]);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 printf("%d\'5cn", *(*(b + 1) + 1));\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 printf("%d\'5cn", c[1][1]);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 printf("%d\'5cn", *(*(c + 1) + 1));\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 printf("%d\'5cn", d[3]);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1\lang1046 printf("%d\'5cn", *(d + 3));}{\loch\f3\fs36\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Command line arguments\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 main (int argc, char * argv[])\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f3\cf1 argc}{\loch\f1\fs48\cf1  is the number of arguments in the command-line that invoked the program, always at least 1 because the program name is itself an argument\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f3\cf1 argv}{\loch\f1\fs48\cf1  is an array of pointers to char, each element points to a string\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Pointers to Functions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Pointers can point to functions, although functions are very different from variables, they do have an address where they begin\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Declare a pointer to a function\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int (*p)(int * a, int * b)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Assign a function\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 p = add;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Call the function\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int a = b = 2;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 (*p)(&a, &b);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 void pointer\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Any pointer type can be assigned to, or passed to a function as, a void pointer\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int * ip;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 void * vp = ip;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 void pointer can be cast to any pointer type\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 char * cp = (char *) vp;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Useful for making generic functions that apply to various types\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Be careful with casting }{\loch\f3\cf1 void *}{\loch\f1\cf1  to another type, know what you are doing\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Dynamic memory allocation\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Pointers not yet initialized are dangerous if they are not NULL pointers\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Pointers can be initialized to point to storage dynamically allocated using }{\loch\f3\fs64\cf1 malloc}{\loch\f1\fs64\cf1  and }{\loch\f3\fs64\cf1 calloc\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1  }{\loch\f3\fs64\cf1 free}{\loch\f1\fs64\cf1  must be used to release the memory allocated using the above functions\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 malloc\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 void * malloc(size_t n)\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Allocates }{\loch\f3\fs56\cf1 n}{\loch\f1\fs56\cf1  bytes of storage and returns a void pointer to it\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs56\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 int * ip = (int *)malloc(10 * sizeof(int));\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 free(ip);\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f3\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf3\pnfs56{\pntxtb \'96}}{\loch\f3\fs56\cf1 sizeof}{\loch\f1\fs56\cf1  is an operator that returns the size of the object or type specified\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 calloc\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 void * calloc(size_t n, size_t size)\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Allocates memory for }{\loch\f3\fs56\cf1 n}{\loch\f1\fs56\cf1  objects of size }{\loch\f3\fs56\cf1 size}{\loch\f1\fs56\cf1  and returns a void pointer to it\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 The memory assigned is initialized to zeros\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs56\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 int * ip = (int *)calloc(10, sizeof(int));\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 free(ip);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Memory problems\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Using an unallocated pointer\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Writing to memory outside the allocated region (buffer overflow)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Freeing memory not allocated using malloc or calloc\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Not freeing memory allocated using malloc and calloc (memory leak)\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Detecting using memwatch\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 memwatch [1] is distributed as a single source file }{\loch\f3\cf1 memwatch.c}{\loch\f1\cf1  and it's accompanying header file }{\loch\f3\cf1 memwatch.h\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Source files you want to watch for memory problems must include }{\loch\f3\cf1 memwatch.h}{\loch\f1\cf1  and be recompiled using the following compiler options: \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 -DMEMWATCH -DMW_STDIO\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 memwatch prints an error message in the standard output and produces a detailed log file listing the memory problems it encounters\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Exercise\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Write a program that sorts an array of strings. Use your favorite sorting algorithm (bubble sort, insertion sort, etc). Write your own replacement for }{\loch\f3\fs64\cf1 strcmp }{\loch\f1\fs64\cf1 to compare the strings. Write a generic sort function that can work with arrays of other types\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Tools and References\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li960\fi-960 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 memwatch \'96  }{\ul\loch\f1\fs48\cf1 http://www.linkdata.se/sourcecode.html}{\loch\f1\fs48\cf1 \line \par 
+}
+}

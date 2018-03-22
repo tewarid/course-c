@@ -1,0 +1,204 @@
+{\rtf1\ansi\ansicpg1252
+{\fonttbl
+{\f1\fnil\fcharset0\fprq0 Arial;}
+{\f2\fnil\fcharset0\fprq0 Courier New;}
+}
+{\colortbl;
+\red0\green0\blue0;
+\red0\green0\blue255;
+}
+{\stylesheet
+{\s1\li540\fi-540\kerning24\fs64\lang1033\level1 heading 1;}
+{\s2\li1170\fi-450\kerning24\fs56\lang1033\level2 heading 2;}
+{\s3\li1800\fi-360\kerning24\fs48\lang1033\level3 heading 3;}
+{\s4\li2520\fi-360\kerning24\fs40\lang1033\level4 heading 4;}
+{\s5\li3240\fi-360\kerning24\fs40\lang1033\level5 heading 5;}
+{\s6\li3960\fi-360\kerning24\lang1033\level6 heading 6;}
+{\s7\li4680\fi-360\kerning24\lang1033\level7 heading 7;}
+{\s8\li5400\fi-360\kerning24\lang1033\level8 heading 8;}
+{\s9\li6120\fi-360\kerning24\lang1033\level9 heading 9;}
+}
+\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Types, Operators and Expressions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li0\fi0\qc {\f1\fs64\cf1 \'a9 2005 Devendra Tewari}{\f1\fs64\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Introduction\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 The basic C data objects are\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1\lang1046 Variables\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1\lang1046 Constants\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Operators act on data objects\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Expressions are composed of data objects and operators\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Variable Names\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Names are composed of letters and digits\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1\lang1046 Underscore is treated as a letter\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Must start with a letter\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Are case sensitive\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Have a size limit of 31 characters\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 As a convention lower case is used for variable names\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Keywords\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Symbols reserved by C\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Cannot be used as variable names\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\f1\fs64\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Basic Data Types\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1 Integer\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 int\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 short int\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 long int\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 char\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 signed and unsigned types\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1 Floating point\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 float\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 double\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 long double\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1\lang1046 Size is implementation dependent}{\f1\fs48\cf1 \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 <limits.h> and <float.h> contain constants for sizes\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Integer types\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1 int is normally the natural size for a machine\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1 unsigned types store negative values in two's complement form\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1 char meant for holding single byte character code\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 insufficient for Unicode and other codes [1]\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Floating point types\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Maximum and minimum values implementation dependent\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Decimal precision is limited\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Constants\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Following types\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1\lang1046 Numeric\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1\lang1046 Character\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1\lang1046 String\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1\lang1046 Enumeration\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Numeric constants\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Integer constants\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 A sequence of numbers (4567) is an int\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 Signed long integers specified by suffixing l or L (4567L) and unsigned long integers by suffixing ul or UL (4567UL)\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 Octal values indicated with a leading 0\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 Hexadecimal values indicated with leading 0x\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Floating-point constants\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 A sequence of numbers with a  decimal point (1.23) or an exponent (123E-2) or both (12.3E-1) is a double\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 Long doubles are indicated by suffixing l or L\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Character constants\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 A character between single quotes ('0') is a char\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 A character constant represents the integer value of the character ('0' = 48 in ASCII character set)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 A character constant is more portable\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 String constants\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 A sequence of characters delimited by double quotes ("hello world\'5cn")\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Strings constants separated by white-spaces are concatenated at compile time ("hello " "world\'5cn" = "hello world\'5cn")\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Internally a string constant is terminated by a '\'5c0' (null) character\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Function strlen(s) in <string.h> returns the size of a string\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 A string is actually an array of char (char [])\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Escape sequences\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Some characters are hard to represent in character constants and string constants\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Escape sequences are used to represent such characters\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Constant expression\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li960\fi-960 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Expressions involving only constants\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li960\fi-960 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 May be evaluated at compile time\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li960\fi-960 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Can be used in the place of a constant\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1560\fi-840 {\f2\fs56\cf1\lang1046 #define MAX 100\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1560\fi-840 {\f2\fs56\cf1\lang1046 int i = MAX;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li960\fi-960 {\f1\fs64\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Enumeration constants\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 A list of constant integers\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Values can be specified or generated\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\f1\cf1 \tab }{\f2\cf1 enum colors \'7b RED = 'r', BLUE = 'b', GREEN = 'g'\'7d;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\f1\cf1 \tab }{\f2\cf1 enum dow \'7b SUN = 1, MON, TUE, WED, THU, FRI, SAT\'7d;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Variables of enum types can de declared\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\f1\cf1 \tab }{\f2\cf1 enum colors c = RED;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 DDD shows values of enum variables as symbols\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Variable Declarations\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 All variables must be declared before use\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 A declaration only specifies the nature of a variable (i.e. type)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 A declaration contains a type followed by a list of one or more comma separated names: char c, name [50];\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 A variable may be initialized in its declaration\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 int i = MAX + 1, j = i;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 By prefixing const to a declaration a variable can be declared as unchangeable: const double pi = 3.14;\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Arithmetic Operators\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Binary operators\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 + - * / %\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Unary operators\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 ++ -- + -\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Postfix prefix example\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 int i = 0, j;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 j = i++; /* j = 0, i = 1 */\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 j = ++i; /* j = 2, i = 2 */\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Relational operators\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Equal and not equal\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 == !=\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Less than and less than or equal to\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 < <=\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Greater than and greater than or equal to\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 > >=\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 No boolean type, a value of 0 represents FALSE, any other value is TRUE\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Logic operators\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Logical negation\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 !\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Logical AND\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 &&\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 Logical OR\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1\lang1046 ||\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Bitwise operators\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1\lang1046 Bitwise complement\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1\lang1046 ~\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1\lang1046 Bitwise left and right shift\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1\lang1046 << >>\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1\lang1046 Bitwise AND\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1\lang1046 &\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1\lang1046 Bitwise inclusive OR\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1\lang1046 |\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1\lang1046 Bitwise exclusive OR\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1\lang1046 ^\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Assignment operators\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 Assignment\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1 =\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 Arithmetic\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1 += -= *= /= %=\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 Bitwise\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\fs56\cf1 &= ^= |= <<= >>=\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Expressions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 Most expressions are assignments or functions calls\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 If an expression is missing the statement is called a null statement\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1 Can be used to supply an empty body for an iteration or loop\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 All side effects from the expressions are completed before the next statement\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Side effects\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Side effects are unpredictable assignment to variables resulting from undefined order of evaluation of an expression\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 In function calls\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\f2\cf1 printf("%d, %d", i + 1, i = j + 2 );\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\f2\cf1 printf("%d, %d, %d", i++, i++, i++);\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 Nested assignments\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\f2\cf1 c = getchar() != EOF\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\f1\cf1 Increment and Decrement operators\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\f2\cf1 a[i] = i++;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 Avoid side effects, don't depend on the results from your compiler\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Operator Precedence\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Conditional expressions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f2\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf2\pnfs56{\pntxtb \'95}}{\i\f2\cf1 lvalue}{\f2\cf1  = expr}{\f2\sub\cf1 1}{\f2\cf1  ? expr}{\f2\sub\cf1 2}{\f2\cf1  : expr}{\f2\sub\cf1 3}{\f2\cf1 \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 lvalue}{\f1\cf1  is the value of the expression\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 expr1}{\f1\cf1  is evaluated first\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 expr2}{\f1\cf1  is evaluated if expr1 is not 0 (i.e. true)\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 expr3}{\f1\cf1  is evaluated if expr1 is 0 (i.e. false)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\f1\cf1 This is equivalent to\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 if (expr}{\f2\sub\cf1 1}{\f2\cf1 )\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 \tab lvalue = expr}{\f2\sub\cf1 2}{\f2\cf1 ;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 else\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f2\cf1 \tab lvalue = expr}{\f2\sub\cf1 3}{\f2\cf1 ;\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Automatic type conversion\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1 Wider conversions are automatic, e.g. }{\f2\fs48\cf1 char}{\f1\fs48\cf1  to }{\f2\fs48\cf1 int\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1 Beware mixing signed and unsigned values, }{\f2\fs48\cf1 -1L > 1UL\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1 Automatic type conversion rules\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\f1\fs48\cf1 For an operator that takes two operands\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 If one is }{\f2\fs40\cf1 long double}{\f1\fs40\cf1 , convert other to }{\f2\fs40\cf1 long double\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 Else if one is }{\f2\fs40\cf1 double}{\f1\fs40\cf1 , convert other to }{\f2\fs40\cf1 double\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 Else if one is }{\f2\fs40\cf1 float}{\f1\fs40\cf1 , convert other to }{\f2\fs40\cf1 float\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 Else if one is }{\f2\fs40\cf1 unsigned long int}{\f1\fs40\cf1 , convert other to }{\f2\fs40\cf1 unsigned long int}{\f1\fs40\cf1 \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 Else if one is }{\f2\fs40\cf1 long int}{\f1\fs40\cf1  and other is }{\f2\fs40\cf1 unsigned int}{\f1\fs40\cf1  and if a }{\f2\fs40\cf1 long int}{\f1\fs40\cf1  can represent all values of an }{\f2\fs40\cf1 unsigned int}{\f1\fs40\cf1  then convert both to }{\f2\fs40\cf1 long int}{\f1\fs40\cf1 , otherwise convert both to }{\f2\fs40\cf1 unsigned long int\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 Else if one is }{\f2\fs40\cf1 long int}{\f1\fs40\cf1 , convert other to }{\f2\fs40\cf1 long int\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 Else if one is }{\f2\fs40\cf1 unsigned int}{\f1\fs40\cf1 , convert other to }{\f2\fs40\cf1 unsigned int\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs40 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'96}}{\f1\fs40\cf1 Else convert both to }{\f2\fs40\cf1 int\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 Type casting\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 Forced type conversions (coercion)\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\f1\fs56\cf1 (}{\i\f2\fs56\cf1 type-name}{\f1\fs56\cf1 ) }{\i\f2\fs56\cf1 expression\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 Required for }{\i\f1\fs64\cf1 narrow}{\f1\fs64\cf1  conversions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1 Can result in loss of data\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1 Wide integers to narrow integers\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\f1\fs56\cf1 Float or double to integers\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\f1\fs88\cf1\lang1046 References\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li960\fi-960 {\pntext\pard\plain\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\f1\fs64\cf1\lang1046 glibc Character Handling - }{\ul\f1\fs64\cf1\lang1046 http://www.gnu.org/software/libc/manual/html_node/Character-Handling.html}{\f1\fs64\cf1\lang1046  \par 
+}
+}

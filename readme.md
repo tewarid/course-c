@@ -1,6 +1,6 @@
 # A Course in C Programming
 
-I suggest reading the content in the following order
+I suggest using the slides in the following order
 
 1. Programming in C
 2. Types, Operators and Expressions

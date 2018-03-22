@@ -1,0 +1,99 @@
+{\rtf1\ansi\ansicpg1252
+{\fonttbl
+{\f1\fnil\fcharset0\fprq0 Times New Roman;}
+{\f2\fnil\fcharset0\fprq0 Arial;}
+{\f3\fnil\fcharset0\fprq0 Courier New;}
+}
+{\colortbl;
+\red0\green0\blue0;
+\red0\green0\blue255;
+}
+{\stylesheet
+{\s1\li540\fi-540\kerning24\fs64\lang1033\level1 heading 1;}
+{\s2\li1170\fi-450\kerning24\fs56\lang1033\level2 heading 2;}
+{\s3\li1800\fi-360\kerning24\fs48\lang1033\level3 heading 3;}
+{\s4\li2520\fi-360\kerning24\fs40\lang1033\level4 heading 4;}
+{\s5\li3240\fi-360\kerning24\fs40\lang1033\level5 heading 5;}
+{\s6\li3960\fi-360\kerning24\lang1033\level6 heading 6;}
+{\s7\li4680\fi-360\kerning24\lang1033\level7 heading 7;}
+{\s8\li5400\fi-360\kerning24\lang1033\level8 heading 8;}
+{\s9\li6120\fi-360\kerning24\lang1033\level9 heading 9;}
+}
+\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 Control Flow\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li0\fi0\qc {\loch\f1\fs64\cf1 \'a9 2005 Devendra Tewari}{\loch\f1\fs64\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 if-else\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 if-else expresses decisions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 else part is optional\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 if (}{\i\loch\f1\cf1 expression}{\loch\f1\cf1 )\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 \tab }{\i\loch\f1\cf1 statement}{\loch\f1\sub\cf1 1\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 else\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 \tab }{\i\loch\f1\cf1 statement}{\loch\f1\sub\cf1 2\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\i\loch\f1\cf1 expression}{\loch\f1\cf1  returns a numerical value, 0 is considered FALSE, any other value is TRUE\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 if-else ambiguities\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 if (i >= 0)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab if (i < 5)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab \tab a = b;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab else\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab \tab a = c;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1\lang1046 By default the else is associated with the inner if\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 if (i >= 0) \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab if (i < 5)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab \tab a = b;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \'7d else\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab a = c;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1\lang1046 Use braces to remove ambiguity\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 else-if\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Useful for expressing multi-way decisions\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 if (}{\i\loch\f1\cf1 expressions}{\loch\f1\cf1 )\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 \tab }{\i\loch\f1\cf1 statement\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 else if (}{\i\loch\f1\cf1 expression}{\loch\f1\cf1 )\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 \tab }{\i\loch\f1\cf1 statement\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 else if (}{\i\loch\f1\cf1 expression}{\loch\f1\cf1 )\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 \tab }{\i\loch\f1\cf1 statement\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 else\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 \tab }{\i\loch\f1\cf1 statement\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 switch\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Used to express multi-way decision\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Matches the result of an expression to one of several integer constants\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs40\cf1 switch (}{\i\loch\f1\fs40\cf1 expression}{\loch\f1\fs40\cf1 ) \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs40\cf1 \tab case }{\i\loch\f1\fs40\cf1 const-expr}{\loch\f1\fs40\cf1 : }{\i\loch\f1\fs40\cf1 statements\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs40\cf1 \tab case }{\i\loch\f1\fs40\cf1 const-expr}{\loch\f1\fs40\cf1 : }{\i\loch\f1\fs40\cf1 statements\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs40\cf1 \tab default: }{\i\loch\f1\fs40\cf1 statements\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs40\cf1 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 a break statement causes exit from the switch, without a break all statements after the matching case are executed till the end of the switch block\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 while\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1\lang1046 while (}{\i\loch\f1\fs64\cf1\lang1046 expression}{\loch\f1\fs64\cf1\lang1046 ) \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1\lang1046 \tab }{\i\loch\f1\fs64\cf1\lang1046 statements\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1\lang1046 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1\lang1046 The while loop executes as long as }{\i\loch\f1\fs64\cf1\lang1046 expression}{\loch\f1\fs64\cf1\lang1046  is TRUE (not 0)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 for\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 for (}{\i\loch\f1\cf1 expr}{\loch\f1\sub\cf1 1}{\loch\f1\cf1 ; }{\i\loch\f1\cf1 expr}{\loch\f1\sub\cf1 2}{\loch\f1\cf1 ; }{\i\loch\f1\cf1 expr}{\loch\f1\sub\cf1 3}{\loch\f1\cf1 ) \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \tab }{\i\loch\f1\cf1 statements\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The loop has three parts, }{\i\loch\f1\cf1 expr}{\loch\f1\sub\cf1 1}{\loch\f1\cf1  is an initialization expression, }{\i\loch\f1\cf1 expr}{\loch\f1\sub\cf1 2}{\loch\f1\cf1  is a relational expression and }{\i\loch\f1\cf1 expr}{\loch\f1\sub\cf1 3}{\loch\f1\cf1  is the increment expression\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The loop executes as long as }{\i\loch\f1\cf1 expr}{\loch\f1\sub\cf1 2}{\loch\f1\cf1  is TRUE\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 All three expressions can be empty which leads to an infinite for loop\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 do-while\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1 do \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1 \tab }{\i\loch\f1\fs64\cf1 statements\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1 \'7d while (}{\i\loch\f1\fs64\cf1 expression}{\loch\f1\fs64\cf1 );\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 The do loop executes at least once before }{\i\loch\f1\fs64\cf1 expression}{\loch\f1\fs64\cf1  is evaluated\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 The loop executes as long as }{\i\loch\f1\fs64\cf1 expression}{\loch\f1\fs64\cf1  is TRUE\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 break\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Using the break statement causes immediate exit from a loop (for, while or do-while) or switch block\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 continue\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 The continue statement causes a loop to begin the next iteration, the statements following continue are not executed\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 goto\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1 goto }{\i\loch\f1\fs64\cf1 label}{\loch\f1\fs64\cf1 ;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\i\loch\f1\fs64\cf1 statements\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\i\loch\f1\fs64\cf1 label}{\loch\f1\fs64\cf1 :\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\i\loch\f1\fs64\cf1 statements\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 the goto statement causes execution to jump to the statements after the }{\i\loch\f1\fs64\cf1 label\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 goto is not recommended as it results in spaghetti code\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Exercise\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Write a program that converts 1 to 50 mile(s) into kilometers.\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 NOTE: 1 mile = 1.609344 kilometers\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Print the result in tabular form as shown below\par 
+}
+}

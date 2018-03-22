@@ -1,0 +1,216 @@
+{\rtf1\ansi\ansicpg1252
+{\fonttbl
+{\f1\fnil\fcharset0\fprq0 Times New Roman;}
+{\f2\fnil\fcharset0\fprq0 Arial;}
+{\f3\fnil\fcharset0\fprq0 Courier New;}
+{\f4\fnil\fcharset2\fprq0 Wingdings;}
+}
+{\colortbl;
+\red0\green0\blue0;
+\red0\green0\blue255;
+}
+{\stylesheet
+{\s1\li540\fi-540\kerning24\fs64\lang1033\level1 heading 1;}
+{\s2\li1170\fi-450\kerning24\fs56\lang1033\level2 heading 2;}
+{\s3\li1800\fi-360\kerning24\fs48\lang1033\level3 heading 3;}
+{\s4\li2520\fi-360\kerning24\fs40\lang1033\level4 heading 4;}
+{\s5\li3240\fi-360\kerning24\fs40\lang1033\level5 heading 5;}
+{\s6\li3960\fi-360\kerning24\lang1033\level6 heading 6;}
+{\s7\li4680\fi-360\kerning24\lang1033\level7 heading 7;}
+{\s8\li5400\fi-360\kerning24\lang1033\level8 heading 8;}
+{\s9\li6120\fi-360\kerning24\lang1033\level9 heading 9;}
+}
+\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Functions and Advanced Program Structure}{\loch\f1\fs88\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li0\fi0\qc {\loch\f1\fs64\cf1 \'a9 2005 Devendra Tewari}{\loch\f1\fs64\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Introduction to Functions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Useful for program structuring\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Make program more modular\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Should be as generally applicable as possible\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Should encapsulate implementation as best as possible\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Cannot be nested (unlike in Pascal)\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Function Declaration\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Functions need to be declared before use\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The compiler matches the declaration with the syntax of usage and definition to see if they match\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\loch\f1\cf1 the return type should be the same\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\loch\f1\cf1 the parameters should be the same type (not name)\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 return-type function-name (argument declarations);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Function Definition\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1 return-type function-name (argument declarations) \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1 \tab declarations and statements\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1 \tab return statement returns a value of type return-type\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs36\cf1 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The }{\loch\f3\cf1 return-type}{\loch\f1\cf1  can be void or any other type, if not specified it defaults to }{\loch\f3\cf1 int\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 A }{\loch\f3\cf1 return}{\loch\f1\cf1  statement is optional and can be used to return a value to the caller, the caller may ignore this value\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 return expression;\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Variable Declaration\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Anywhere in a C source file\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Inside a function\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 int main() \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 \tab int a, b;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Inside any code block\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 \tab int a, b;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\cf1 \'7d\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Variable Declaration \'96 Example\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 int a;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 int main() \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \tab int a = 10; // "a" is local to main\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \tab print(); // prints "a: 0"\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 int print() \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \tab printf("a: %d\'5cn", a);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \'7d\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 External variables\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Variable defined outside functions or in other source files are external\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs48 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'96}}{\loch\f1\cf1 The term Definition indicates the place where a variable is created or assigned storage\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 A variable defined before the function definition in a source file is visible to the function, as seen in previous example\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Remember multiple source files example in the Introduction?\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 extern keyword\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li600\fi-600 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The extern keyword is used to declare variables defined outside the current function or source file\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 int a;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 int main() \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 \tab int a = 10; // "a" is local to main\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 \tab print(); // prints "a: 0"\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 \'7d\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 int print() \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 \tab extern int a;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 \tab printf("a: %d\'5cn", a);\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1260\fi-540 {\loch\f3\cf1 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li600\fi-600 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 auto keyword\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Variables within functions or code blocks that are not declared as extern are auto (for automatic)\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int a;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int main() \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \tab auto int a = 10; // "a" is local to main\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \tab print(); // prints "a: 0"\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \'7d\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int print() \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \tab extern int a;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \tab printf("a: %d\'5cn", a);\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \'7d\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 static variables\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 A variable declared with the keyword static within a function or code block retains it's value till the program ends\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int main() \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \tab print(); // prints "a: 0"\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \tab print(); // prints "a: 1"\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \'7d\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 int print() \'7b\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \tab static int a;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \tab printf("a: %d\'5cn", a++);\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 A static variable anywhere else in the source file is considered local to that file\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 register variables\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Useful for advising a compiler to retain a heavily used variable in a CPU register\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Examples\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs56\cf1 register int i;\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs56\cf1 register char c;\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Variable initialization\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 External and static variables\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Are guaranteed to be initialized to zero\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Any values assigned must be constant expressions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Automatic and register variables\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Contain garbage unless initialized\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Can be initialized by specifying expressions containing constants and variables already defined\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Recursion\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 A function can call itself\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 The local automatic variables are stored in the stack\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Function parameters are passed using the stack\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Prone to stack overflow\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 There is always a danger of creating an infinite loop if the exit criteria is not clear\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Recursion \'96 Example\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 int main() \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab print(1);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 int print(int i) \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab printf("i:%d\'5cn", i++);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab if (i > 5) return; \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \tab \tab else print(i);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 \'7d\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Header files\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Used to include external variable and function definitions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Allow applications to be compiled in parts \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 The remaining parts are resolved during linking from statically or dynamically linked libraries \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Remember the example from Introduction?\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Macro definition and substitution\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 A macro definition takes the form\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 #define name replacement-text\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Token }{\loch\f3\fs48\cf1 name}{\loch\f1\fs48\cf1  has the same syntax as a variable name\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Everywhere in the source file where the token }{\loch\f3\fs48\cf1 name}{\loch\f1\fs48\cf1  occurs it is substituted by }{\loch\f3\fs48\cf1 replacement-text\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f3\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf3\pnfs48{\pntxtb \'95}}{\loch\f3\fs48\cf1 replacement-text}{\loch\f1\fs48\cf1  is any arbitrary text and it can span several lines by ending each line with a }{\loch\f3\fs48\cf1 \'5c}{\loch\f1\fs48\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 A macro can also be defined or redefined by using the }{\loch\f3\fs48\cf1 -D}{\loch\f1\fs48\cf1  compiler option\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1 gcc \'96Dname=value\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Un-define macros\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 To un-define a macro called }{\loch\f3\fs64\cf1 name\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs56\cf1 #undef name\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 A macro defined in a program can also be undefined by using the -U compiler option\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs56\cf1 gcc -Uname\par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\loch\f1\fs48\cf1 where }{\loch\f3\fs48\cf1 name}{\loch\f1\fs48\cf1  is the name of the macro you want to undefine\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Macro with arguments\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Look like functions but result in inline code\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Macro with arguments are applicable to arbitrary types\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 #define MAX(A,B) ((A) > (B) ? (A) : (B))\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 MAX(1.5,2.9) }{\loch\af3\fs36\cf1 {\field{\*\fldinst SYMBOL 224 \\f "Wingdings" \\s 18}{\fldrslt\f4\fs36}}}{\loch\f3\fs36\cf1  ((1.5) > (2.9) ? (1.5) : (2.9))}{\loch\f3\fs36\cf1 \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 MAX(a+b, c+d) }{\loch\af3\fs36\cf1 {\field{\*\fldinst SYMBOL 224 \\f "Wingdings" \\s 18}{\fldrslt\f4\fs36}}}{\loch\f3\fs36\cf1  ((a+b) > (c+d) ? (a+b) : (c+d))}{\loch\f3\fs36\cf1 \par 
+}\pard\plain\ltrpar\s4\li2520\fi-360\kerning24\fs40\lang1033\li1800 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 The parentheses are required to maintain proper expression semantics after substitution\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs80\cf1 Macro with arguments \'96 additional syntax\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 #define debug_print(expression) printf(\'5c\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \tab #expression " = %g\'5cn", expression)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 debug_print(x) }{\loch\af3\fs36\cf1 {\field{\*\fldinst SYMBOL 224 \\f "Wingdings" \\s 18}{\fldrslt\f4\fs36}}}{\loch\f3\fs36\cf1  printf("x" " = %g\'5cn", x)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 #define concat(prefix, suffix) prefix ## suffix\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs36\cf1 concat(name, 1) \uc1\u-3872? name1\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Conditional inclusion\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Preprocessing provides for means to insert code conditionally\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 This can useful to\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Enable or disable tracing statements\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Include OS specific code\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\pntext\pard\plain\loch\f1\fs56 \'96\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'96}}{\loch\f1\fs56\cf1 Include a header file just once\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Enable and disable tracing\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 #define TRACE_NONE 0\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 #define TRACE_DEBUG 1\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 #define TRACE_ALL 2\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 #define TRACE_LEVEL TRACE_DEBUG\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 int main() \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 #if TRACE_LEVEL == TRACE_ALL || TRACE_LEVEL == \'5c\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \tab \tab TRACE_DEBUG\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \tab printf("within main\'5cn");\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 #endif\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \tab return 0;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Only integer constants and the following operators can be used in the expression following }{\loch\f3\fs48\cf1 #if}{\loch\f1\fs48\cf1 : }{\loch\f3\fs48\cf1 &&}{\loch\f1\fs48\cf1 , }{\loch\f3\fs48\cf1 ||}{\loch\f1\fs48\cf1 , }{\loch\f3\fs48\cf1 <}{\loch\f1\fs48\cf1 , }{\loch\f3\fs48\cf1 >}{\loch\f1\fs48\cf1 , }{\loch\f3\fs48\cf1 <=}{\loch\f1\fs48\cf1 , }{\loch\f3\fs48\cf1 >=}{\loch\f1\fs48\cf1 , }{\loch\f3\fs48\cf1 !}{\loch\f1\fs48\cf1  and }{\loch\f3\fs48\cf1 ==\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 OS specific code \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 int main() \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 #if !defined(OSNAME) \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 \tab #error OSNAME not specified\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 #endif\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 #if OSNAME == LINUX\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 \tab printf("Linux\'5cn");\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 #else\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 \tab printf("Windows\'5cn");\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 #endif\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 \'7d\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1\lang1046 Compile program\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs40\cf1\lang1046 gcc -DOSNAME -DLINUX macro.c\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Include header file just once\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs64\cf1 #ifndef _HDR_H_\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs64\cf1 #define _HDR_H_\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs64\cf1 \tab }{\i\loch\f3\fs64\cf1 declarations\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs64\cf1 #endif\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs64\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Exercise\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 A factorial of a number n, denoted as }{\loch\f3\fs64\cf1 n!}{\loch\f1\fs64\cf1 , is calculated as:\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f3\fs56\cf1 n * (n-1) * (n-2) ... 3 * 2 * 1\par 
+}\pard\plain\ltrpar\s3\li1800\fi-360\kerning24\fs48\lang1033\li1170\fi-450 {\loch\f1\fs56\cf1 Thus, }{\loch\f3\fs56\cf1 5!=120}{\loch\f1\fs56\cf1  and }{\loch\f3\fs56\cf1 10!=3628800\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Write a recursive function to calculate factorial for any number }{\loch\f3\fs64\cf1 n\par 
+}
+}

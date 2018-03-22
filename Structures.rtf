@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252
+{\fonttbl
+{\f1\fnil\fcharset0\fprq0 Times New Roman;}
+{\f2\fnil\fcharset0\fprq0 Arial;}
+{\f3\fnil\fcharset0\fprq0 Courier New;}
+}
+{\colortbl;
+\red0\green0\blue0;
+\red0\green0\blue255;
+}
+{\stylesheet
+{\s1\li540\fi-540\kerning24\fs64\lang1033\level1 heading 1;}
+{\s2\li1170\fi-450\kerning24\fs56\lang1033\level2 heading 2;}
+{\s3\li1800\fi-360\kerning24\fs48\lang1033\level3 heading 3;}
+{\s4\li2520\fi-360\kerning24\fs40\lang1033\level4 heading 4;}
+{\s5\li3240\fi-360\kerning24\fs40\lang1033\level5 heading 5;}
+{\s6\li3960\fi-360\kerning24\lang1033\level6 heading 6;}
+{\s7\li4680\fi-360\kerning24\lang1033\level7 heading 7;}
+{\s8\li5400\fi-360\kerning24\lang1033\level8 heading 8;}
+{\s9\li6120\fi-360\kerning24\lang1033\level9 heading 9;}
+}
+\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 Structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li0\fi0\qc {\loch\f1\fs64\cf1 \'a9 2005 Devendra Tewari}{\loch\f1\fs64\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 A  C structure is a collection of one or more variables of the same or different types\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Structures permit convenient handling of complicated data as a single unit\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Similar to records in Pascal\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Copying, assigning to, recovering address using }{\loch\f3\fs64\cf1 &}{\loch\f1\fs64\cf1  and accessing members are all legal operations on structures\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Creating a structure\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The }{\loch\f3\cf1 struct}{\loch\f1\cf1  keyword is used to create structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 struct address \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 \tab char * street;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 \tab char * city;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 \tab int zip;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 \'7d a, b;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The tag }{\loch\f3\cf1 address}{\loch\f1\cf1  is optional but useful for identifying the struct so new variables can be created\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 struct address a, b;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Initializing structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Structures can be initialized just like arrays\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 struct address a = \'7b"street", "recife", 123456\'7d, b;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 An automatic structure can also be initialized by assignment or by calling a function that returns the structure of the right type\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 a.zip = 123456;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 a.street = "street";\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 a.city = "recife";\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs48\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs80\cf1 Copying and assigning to structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 struct address a, b;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 a.zip = 123456;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 a.street = "street";\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 a.city = "recife";\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 b = a;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 b.zip = 654321;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 printf("%d, %s, %s\'5cn", a.zip, a.street, a.city);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 prints\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 123456, street, recife\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Structures and functions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Structures can be passed as parameters to a function\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Structures are passed by value i.e. copying their content\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Large structures should be passed by reference by passing their pointers as parameters to functions\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Pointers to structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 struct address * b;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 b = (struct address *) malloc(sizeof(struct address));\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 b->street = "street";\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1\lang1046 b->city = "recife";\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 (*b).zip = 654321;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 printf("%d, %s, %s\'5cn", (*b).zip, \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 b->street, b->city);\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs40\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs40 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'95}}{\loch\f1\fs40\cf1 The }{\loch\f3\fs40\cf1 .}{\loch\f1\fs40\cf1  operator has higher precedence than the }{\loch\f3\fs40\cf1 *}{\loch\f1\fs40\cf1  operator\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs40 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'95}}{\loch\f1\fs40\cf1 C provides the operator }{\loch\f3\fs40\cf1 ->}{\loch\f1\fs40\cf1  to facilitate the syntax for accessing members of structures through their pointers\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs40 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs40{\pntxtb \'95}}{\loch\f1\fs40\cf1 A structure can point to itself (e.g. in a tree structure)\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1\lang1046 Arrays of structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1\lang1046 Declaration\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 struct address a[10];\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1\lang1046 Initializers\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 struct address a[] = \'7b"street1", "recife", 4123456, "street2", "salvador", 654321\'7d;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1\lang1046 struct address a[] = \'7b\'7b"street1", "recife"\'7d, \'7b"street2", "salvador", 654321\'7d\'7d;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\cf1\lang1046 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Typedef\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Used for creating new data types\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 typedef unsigned short UCHAR;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs40\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 New types using structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 typedef struct address \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \tab char * street;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \tab char * city;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \tab int zip;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 \'7d Address;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 b = (Address *) malloc(sizeof(Address));\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 b->street = "street";\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 b->city = "recife";\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs40\cf1 b->zip = 654321;\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Unions\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Looks like a structure but stores only one type at any given time\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 The compiler assigns a union a size large enough to store the widest type\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 union number \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 \tab int ival;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 \tab float fval;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\cf1 \'7d n;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Unions can be nested within structures\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs56 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs56{\pntxtb \'95}}{\loch\f1\cf1 Unions support the same operations as structures\par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Bit fields\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Useful for conveniently handling several option flags as a single entity\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1 Each flag field can only be be an }{\loch\f3\fs48\cf1 int\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs48 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs48{\pntxtb \'95}}{\loch\f1\fs48\cf1  The fields cannot be arrays nor be pointed to (or thus have the }{\loch\f3\fs48\cf1 &}{\loch\f1\fs48\cf1  operator applied to them)\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs48\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 struct bit_fields \'7b\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \tab unsigned int is_keyword : 1;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \tab unsigned int is_extern : 1;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \tab unsigned int is_static : 1;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f3\fs48\cf1 \'7d f;\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs48\cf1 \par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\loch\f1\fs48\cf1 \par 
+}\pard\plain\ltrpar\s1\li540\fi-540\kerning24\fs64\lang1033\li0\fi0\qc {\loch\f1\fs88\cf1 Exercise\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Write a program to count the occurrence of each word in a given string. Use a binary search tree to store the words along with their counts.\par 
+}\pard\plain\ltrpar\s2\li1170\fi-450\kerning24\fs56\lang1033\li540\fi-540 {\pntext\pard\plain\loch\f1\fs64 \'95\tab}{\*\pn\pnlvlblt\pnf1\pnfs64{\pntxtb \'95}}{\loch\f1\fs64\cf1 Print the words with their count to standard output in an ascending order by traversing the binary search tree in-order.\par 
+}
+}
