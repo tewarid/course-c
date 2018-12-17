@@ -1,0 +1,248 @@
+# Introduction
+
+## History
+
+- [Originally designed and implemented by Dennis Ritchie on a DEC PDP-11](http://cm.bell-labs.co/who/dmr/chist.html)
+
+- Influenced by [B](http://cm.bell-labs.co/who/dmr/bintro.html) written by Ken Thompson in 1970
+
+- First C standard in 1988 by ANSI (C89)
+
+- Adopted by ISO in 1990 (C90)
+
+- [Most recent standard](http://www.open-std.org/jtc1/sc22/wg14/) C99 by ISO
+
+- Compiled language
+
+- Source code portable
+
+## C program – hello.c
+
+```c
+#include <stdio.h>
+
+ /* function main - print hello world */ 
+int
+main()
+{
+    printf("hello world!\n");
+    return 0;
+}
+```
+
+## C program structure
+
+- Multi-line comments begin with `/*` and end with `*/`, these are called delimiters
+
+- `#` is used to begin pre-processor directives
+
+- Execution of a C program begins at function main
+  - main can return an int value to the operating system otherwise it should return void
+
+- Code blocks and function bodies begin with { and end with }
+
+- C statements end with a semicolon ;
+
+## Executing hello.c
+
+- Use [GCC](http://gcc.gnu.org/)
+
+  ```bash
+  gcc hello.c -o hello -Wall
+  ```
+
+- Without -o option the output is named a.out
+
+- Execute
+
+  ```bash
+  ./hello
+  ```
+
+- Output
+
+  ```text
+  hello world!
+  ```
+
+## Compilation process
+
+- Compiler produces the executable by performing the following steps
+
+  - Pre-processing
+
+  - Compilation and assembly
+
+  - Linking
+
+## Pre-processing
+
+- Conceptual first step in compilation
+
+- Two tasks commonly performed
+
+- File inclusion with `#include` directive
+
+  ```c
+  #include <stdio.h>
+  ```
+
+- Macro substitution with `#define` directive
+
+  ```c
+  #define pf printf
+  pf("hello world!")
+  ```
+
+## Compilation and assembly
+
+- Lexical and semantic analysis to generate intermediate code
+
+- Transform the intermediate code to assembly or machine code
+
+- Creating an object file using GCC
+
+  ```bash
+  gcc hello.c -c
+  ```
+
+  - The -c option tells GCC not to perform linking
+
+  - A file called `hello.o` is produced
+
+## Linking
+
+- Linking combines all the object files and required library code to produce a single executable
+
+  ```bash
+  gcc hello.o -o hello
+  ```
+
+## Multiple source files – hello.c
+
+```c
+#include "print.h"
+/* Function main - Print hello world */
+int
+main()
+{
+  print_hello("hello world!\n");
+}
+```
+
+## Multiple source files – print.c
+
+```c
+#include <stdio.h>
+#include "print.h"
+void print_hello()
+{
+  printf("printing: hello world!");
+}
+```
+
+## Multiple source files – print.h
+
+```c
+#ifndef _PRINT_H_
+#define _PRINT_H_
+
+extern void print_hello();
+
+#endif //_PRINT_H_
+```
+
+- `#ifndef` / `#endif` sequence above serves to guarantee that the pre-processor does not include the same header file twice in a source file
+
+## Simple compilation
+
+- Executing gcc
+
+  ```bash
+  gcc hello.c print.c -o hello
+  ```
+
+- Executing hello
+
+  ```bash
+  ./hello
+  ```
+
+- Output
+
+  ```text
+  printing: hello world!
+  ```
+
+## Complex Compilation- An Error
+
+```bash
+gcc hello.c -c
+```
+
+- produces `hello.o`
+
+```bash
+gcc print.c -c
+```
+
+- produces `print.o`
+
+```bash
+gcc hello.o -o hello
+```
+
+```text
+hello.o(.text+0x27):hello.c: undefined reference to `_print_hello'
+collect2: ld returned 1 exit status
+```
+
+- Error?
+
+## Complex Compilation – Correcting the Error
+
+- Using gcc
+
+  ```bash
+  gcc hello.o print.o -o hello
+  ```
+
+- Using [ld](https://www.gnu.org/software/binutils/) (gcc with -v switch shows how)
+
+  ```bash
+  ld -o hello /lib/crt0.o -L/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3 hello.o print.o -lgcc -lc -lpsxdll -v
+  ```
+
+- `/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3` is the path to `libgcc.a` in my Windows SFU installation
+
+## Debug Using DDD
+
+![DDD](media/ddd.png)
+
+- DDD is a graphical debugger for X Windows and it uses gdb, the command line debugger
+
+- Re-compile source code with extra debug information for gdb
+
+  ```bash
+  gcc hello.c print.c -o hello –g
+  ```
+
+- Execute ddd
+
+  ```bash
+  ddd hello
+  ```
+
+- Try stepping through code and adding watch expressions
+
+## Other Topics
+
+- Creating static and shared libraries
+
+- Dynamic linking
+
+- GCC compile, link and optimize options
+
+- Building applications with make
+
+- Using Eclipse and [CDT](http://www.eclipse.org/cdt/) for C/C++ development
