@@ -21,7 +21,7 @@
 ```c
 #include <stdio.h>
 
- /* function main - print hello world */ 
+ /* function main - print hello world */
 int
 main()
 {
@@ -152,17 +152,17 @@ extern void print_hello();
 #endif //_PRINT_H_
 ```
 
-- `#ifndef` / `#endif` sequence above serves to guarantee that the pre-processor does not include the same header file twice in a source file
+- `#ifndef` / `#endif` prevents pre-processor from including same file twice
 
 ## Simple compilation
 
-- Executing gcc
+- Compile and link using gcc
 
   ```bash
   gcc hello.c print.c -o hello
   ```
 
-- Executing hello
+- Execute
 
   ```bash
   ./hello
@@ -174,46 +174,49 @@ extern void print_hello();
   printing: hello world!
   ```
 
-## Complex Compilation- An Error
+## Complex Compilation - With Error
 
-```bash
-gcc hello.c -c
-```
+- Compile `hello.c` using gcc; produces `hello.c`
 
-- produces `hello.o`
+  ```bash
+  gcc hello.c -c
+  ```
 
-```bash
-gcc print.c -c
-```
+- Compile `print.c`; produces `print.o`
 
-- produces `print.o`
+  ```bash
+  gcc print.c -c
+  ```
 
-```bash
-gcc hello.o -o hello
-```
+- Link using gcc
 
-```text
-hello.o(.text+0x27):hello.c: undefined reference to `_print_hello'
-collect2: ld returned 1 exit status
-```
+  ```bash
+  gcc hello.o -o hello
+  ```
 
-- Error?
+  ```text
+  hello.o(.text+0x27):hello.c: undefined reference to `_print_hello'
+  collect2: ld returned 1 exit status
+  ```
 
 ## Complex Compilation – Correcting the Error
 
-- Using gcc
+- Link using gcc
 
   ```bash
   gcc hello.o print.o -o hello
   ```
 
-- Using [ld](https://www.gnu.org/software/binutils/) (gcc with -v switch shows how)
+- Using [ld](https://www.gnu.org/software/binutils/)
 
   ```bash
-  ld -o hello /lib/crt0.o -L/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3 hello.o print.o -lgcc -lc -lpsxdll -v
+  ld -o hello \
+  /lib/crt0.o -L/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3 \
+  hello.o print.o -lgcc -lc -lpsxdll -v
   ```
 
-- `/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3` is the path to `libgcc.a` in my Windows SFU installation
+  - Calling gcc with `-v` switch shows how
+  - Note path to `libgcc.a` in my Windows SFU installation
 
 ## Debug Using DDD
 

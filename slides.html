@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Devendra Tewari">
+  <meta name="dcterms.date" content="2005-12-05">
+  <title>Programming in C</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Programming in C</h1>
+  <p class="author">Devendra Tewari</p>
+  <p class="date">December 05, 2005</p>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="history" class="slide level2">
+<h2>History</h2>
+<ul>
+<li><p><a href="http://cm.bell-labs.co/who/dmr/chist.html">Originally designed and implemented by Dennis Ritchie on a DEC PDP-11</a></p></li>
+<li><p>Influenced by <a href="http://cm.bell-labs.co/who/dmr/bintro.html">B</a> written by Ken Thompson in 1970</p></li>
+<li><p>First C standard in 1988 by ANSI (C89)</p></li>
+<li><p>Adopted by ISO in 1990 (C90)</p></li>
+<li><p><a href="http://www.open-std.org/jtc1/sc22/wg14/">Most recent standard</a> C99 by ISO</p></li>
+<li><p>Compiled language</p></li>
+<li><p>Source code portable</p></li>
+</ul>
+</section><section id="c-program-hello.c" class="slide level2">
+<h2>C program – hello.c</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" title="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"> <span class="co">/* function main - print hello world */</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="dt">int</span></a>
+<a class="sourceLine" id="cb1-5" title="5">main()</a>
+<a class="sourceLine" id="cb1-6" title="6">{</a>
+<a class="sourceLine" id="cb1-7" title="7">    printf(<span class="st">&quot;hello world!</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb1-8" title="8">    <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-9" title="9">}</a></code></pre></div>
+</section><section id="c-program-structure" class="slide level2">
+<h2>C program structure</h2>
+<ul>
+<li><p>Multi-line comments begin with <code>/*</code> and end with <code>*/</code>, these are called delimiters</p></li>
+<li><p><code>#</code> is used to begin pre-processor directives</p></li>
+<li>Execution of a C program begins at function main
+<ul>
+<li>main can return an int value to the operating system otherwise it should return void</li>
+</ul></li>
+<li><p>Code blocks and function bodies begin with { and end with }</p></li>
+<li><p>C statements end with a semicolon ;</p></li>
+</ul>
+</section><section id="executing-hello.c" class="slide level2">
+<h2>Executing hello.c</h2>
+<ul>
+<li><p>Use <a href="http://gcc.gnu.org/">GCC</a></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">gcc</span> hello.c -o hello -Wall</a></code></pre></div></li>
+<li><p>Without -o option the output is named a.out</p></li>
+<li><p>Execute</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">./hello</span></a></code></pre></div></li>
+<li><p>Output</p>
+<pre class="text"><code>hello world!</code></pre></li>
+</ul>
+</section><section id="compilation-process" class="slide level2">
+<h2>Compilation process</h2>
+<ul>
+<li><p>Compiler produces the executable by performing the following steps</p>
+<ul>
+<li><p>Pre-processing</p></li>
+<li><p>Compilation and assembly</p></li>
+<li><p>Linking</p></li>
+</ul></li>
+</ul>
+</section><section id="pre-processing" class="slide level2">
+<h2>Pre-processing</h2>
+<ul>
+<li><p>Conceptual first step in compilation</p></li>
+<li><p>Two tasks commonly performed</p></li>
+<li><p>File inclusion with <code>#include</code> directive</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb5-1" title="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a></code></pre></div></li>
+<li><p>Macro substitution with <code>#define</code> directive</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb6-1" title="1"><span class="pp">#define pf printf</span></a>
+<a class="sourceLine" id="cb6-2" title="2">pf(<span class="st">&quot;hello world!&quot;</span>)</a></code></pre></div></li>
+</ul>
+</section><section id="compilation-and-assembly" class="slide level2">
+<h2>Compilation and assembly</h2>
+<ul>
+<li><p>Lexical and semantic analysis to generate intermediate code</p></li>
+<li><p>Transform the intermediate code to assembly or machine code</p></li>
+<li><p>Creating an object file using GCC</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">gcc</span> hello.c -c</a></code></pre></div>
+<ul>
+<li><p>The -c option tells GCC not to perform linking</p></li>
+<li><p>A file called <code>hello.o</code> is produced</p></li>
+</ul></li>
+</ul>
+</section><section id="linking" class="slide level2">
+<h2>Linking</h2>
+<ul>
+<li><p>Linking combines all the object files and required library code to produce a single executable</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">gcc</span> hello.o -o hello</a></code></pre></div></li>
+</ul>
+</section><section id="multiple-source-files-hello.c" class="slide level2">
+<h2>Multiple source files – hello.c</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb9-1" title="1"><span class="pp">#include </span><span class="im">&quot;print.h&quot;</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="co">/* Function main - Print hello world */</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="dt">int</span></a>
+<a class="sourceLine" id="cb9-4" title="4">main()</a>
+<a class="sourceLine" id="cb9-5" title="5">{</a>
+<a class="sourceLine" id="cb9-6" title="6">  print_hello(<span class="st">&quot;hello world!</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb9-7" title="7">}</a></code></pre></div>
+</section><section id="multiple-source-files-print.c" class="slide level2">
+<h2>Multiple source files – print.c</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb10-1" title="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="pp">#include </span><span class="im">&quot;print.h&quot;</span></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="dt">void</span> print_hello()</a>
+<a class="sourceLine" id="cb10-4" title="4">{</a>
+<a class="sourceLine" id="cb10-5" title="5">  printf(<span class="st">&quot;printing: hello world!&quot;</span>);</a>
+<a class="sourceLine" id="cb10-6" title="6">}</a></code></pre></div>
+</section><section id="multiple-source-files-print.h" class="slide level2">
+<h2>Multiple source files – print.h</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb11-1" title="1"><span class="pp">#ifndef _PRINT_H_</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="pp">#define _PRINT_H_</span></a>
+<a class="sourceLine" id="cb11-3" title="3"></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="kw">extern</span> <span class="dt">void</span> print_hello();</a>
+<a class="sourceLine" id="cb11-5" title="5"></a>
+<a class="sourceLine" id="cb11-6" title="6"><span class="pp">#endif </span><span class="co">//_PRINT_H_</span></a></code></pre></div>
+<ul>
+<li><code>#ifndef</code> / <code>#endif</code> prevents pre-processor from including same file twice</li>
+</ul>
+</section><section id="simple-compilation" class="slide level2">
+<h2>Simple compilation</h2>
+<ul>
+<li><p>Compile and link using gcc</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="fu">gcc</span> hello.c print.c -o hello</a></code></pre></div></li>
+<li><p>Execute</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1"><span class="ex">./hello</span></a></code></pre></div></li>
+<li><p>Output</p>
+<pre class="text"><code>printing: hello world!</code></pre></li>
+</ul>
+</section><section id="complex-compilation---with-error" class="slide level2">
+<h2>Complex Compilation - With Error</h2>
+<ul>
+<li><p>Compile <code>hello.c</code> using gcc; produces <code>hello.c</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="fu">gcc</span> hello.c -c</a></code></pre></div></li>
+<li><p>Compile <code>print.c</code>; produces <code>print.o</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" title="1"><span class="fu">gcc</span> print.c -c</a></code></pre></div></li>
+<li><p>Link using gcc</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" title="1"><span class="fu">gcc</span> hello.o -o hello</a></code></pre></div>
+<pre class="text"><code>hello.o(.text+0x27):hello.c: undefined reference to `_print_hello&#39;
+collect2: ld returned 1 exit status</code></pre></li>
+</ul>
+</section><section id="complex-compilation-correcting-the-error" class="slide level2">
+<h2>Complex Compilation – Correcting the Error</h2>
+<ul>
+<li><p>Link using gcc</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" title="1"><span class="fu">gcc</span> hello.o print.o -o hello</a></code></pre></div></li>
+<li><p>Using <a href="https://www.gnu.org/software/binutils/">ld</a></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb20-1" title="1"><span class="fu">ld</span> -o hello \</a>
+<a class="sourceLine" id="cb20-2" title="2">/lib/crt0.o -L/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3 \</a>
+<a class="sourceLine" id="cb20-3" title="3">hello.o print.o -lgcc -lc -lpsxdll -v</a></code></pre></div>
+<ul>
+<li>Calling gcc with <code>-v</code> switch shows how</li>
+<li>Note path to <code>libgcc.a</code> in my Windows SFU installation</li>
+</ul></li>
+</ul>
+</section><section id="debug-using-ddd" class="slide level2">
+<h2>Debug Using DDD</h2>
+<figure>
+<img data-src="media/ddd.png" alt="DDD" /><figcaption>DDD</figcaption>
+</figure>
+<ul>
+<li><p>DDD is a graphical debugger for X Windows and it uses gdb, the command line debugger</p></li>
+<li><p>Re-compile source code with extra debug information for gdb</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb21-1" title="1"><span class="fu">gcc</span> hello.c print.c -o hello –g</a></code></pre></div></li>
+<li><p>Execute ddd</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb22-1" title="1"><span class="ex">ddd</span> hello</a></code></pre></div></li>
+<li><p>Try stepping through code and adding watch expressions</p></li>
+</ul>
+</section><section id="other-topics" class="slide level2">
+<h2>Other Topics</h2>
+<ul>
+<li><p>Creating static and shared libraries</p></li>
+<li><p>Dynamic linking</p></li>
+<li><p>GCC compile, link and optimize options</p></li>
+<li><p>Building applications with make</p></li>
+<li><p>Using Eclipse and <a href="http://www.eclipse.org/cdt/">CDT</a> for C/C++ development</p></li>
+</ul>
+</section></section>
+<section><section id="types-operators-and-expressions" class="title-slide slide level1"><h1>Types, Operators and Expressions</h1></section><section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li><p>The basic C data objects are</p>
+<ul>
+<li><p>Variables</p></li>
+<li><p>Constants</p></li>
+</ul></li>
+<li><p>Operators act on data objects</p></li>
+<li><p>Expressions are composed of data objects and operators</p></li>
+</ul>
+</section><section id="variable-names" class="slide level2">
+<h2>Variable Names</h2>
+<ul>
+<li><p>Names are composed of letters and digits</p>
+<ul>
+<li>Underscore is treated as a letter</li>
+</ul></li>
+<li><p>Must start with a letter</p></li>
+<li><p>Are case sensitive</p></li>
+<li><p>Have a size limit of 31 characters</p></li>
+<li><p>As a convention lower case is used for variable names</p></li>
+</ul>
+</section><section id="keywords" class="slide level2">
+<h2>Keywords</h2>
+<ul>
+<li><p>Symbols reserved by C</p></li>
+<li><p>Cannot be used as variable names</p></li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td>auto</td>
+<td>default</td>
+<td>for</td>
+<td>return</td>
+<td>switch</td>
+<td>while</td>
+</tr>
+<tr class="even">
+<td>break</td>
+<td>double</td>
+<td>goto</td>
+<td>short</td>
+<td>typedef</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>case</td>
+<td>else</td>
+<td>if</td>
+<td>signed</td>
+<td>union</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>char</td>
+<td>enum</td>
+<td>int</td>
+<td>sizeof</td>
+<td>unsigned</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>const</td>
+<td>extern</td>
+<td>long</td>
+<td>static</td>
+<td>void</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>continue</td>
+<td>float</td>
+<td>register</td>
+<td>struct</td>
+<td>volatile</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section><section id="basic-data-types" class="slide level2">
+<h2>Basic Data Types</h2>
+<ul>
+<li><p>Integer</p>
+<ul>
+<li><p>int</p></li>
+<li><p>short int</p></li>
+<li><p>long int</p></li>
+<li><p>char</p></li>
+<li><p>signed and unsigned types</p></li>
+</ul></li>
+<li><p>Floating point</p>
+<ul>
+<li><p>float</p></li>
+<li><p>double</p></li>
+<li><p>long double</p></li>
+</ul></li>
+<li><p>Size is implementation dependent</p>
+<ul>
+<li><code>&lt;limits.h&gt;</code> and <code>&lt;float.h&gt;</code> contain constants for sizes</li>
+</ul></li>
+</ul>
+</section><section id="integer-types" class="slide level2">
+<h2>Integer types</h2>
+<ul>
+<li><p>int is normally the natural size for a machine</p></li>
+<li><p>unsigned types store negative values in two’s complement form</p></li>
+<li><p>char meant for holding single byte character code</p>
+<ul>
+<li>insufficient for <a href="https://www.gnu.org/software/libc/manual/html_node/Character-Handling.html">Unicode and other codes</a></li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>bits</th>
+<th>unsigned</th>
+<th>signed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>long</td>
+<td>32</td>
+<td><span class="math inline">0</span> to <span class="math inline">2<sup>32</sup> − 1</span></td>
+<td><span class="math inline"> − 2<sup>31</sup></span> to <span class="math inline">2<sup>31</sup> − 1</span></td>
+</tr>
+<tr class="even">
+<td>int</td>
+<td>32</td>
+<td><span class="math inline">0</span> to <span class="math inline">2<sup>32</sup> − 1</span></td>
+<td><span class="math inline"> − 2<sup>31</sup></span> to <span class="math inline">2<sup>31</sup> − 1</span></td>
+</tr>
+<tr class="odd">
+<td>short</td>
+<td>16</td>
+<td><span class="math inline">0</span> to <span class="math inline">2<sup>16</sup> − 1</span></td>
+<td><span class="math inline"> − 2<sup>15</sup></span> to <span class="math inline">2<sup>15</sup> − 1</span></td>
+</tr>
+<tr class="even">
+<td>char</td>
+<td>8</td>
+<td><span class="math inline">0</span> to <span class="math inline">2<sup>8</sup> − 1</span></td>
+<td><span class="math inline"> − 2<sup>7</sup></span> to <span class="math inline">2<sup>7</sup> − 1</span></td>
+</tr>
+</tbody>
+</table>
+</section><section id="floating-point-types" class="slide level2">
+<h2>Floating point types</h2>
+<ul>
+<li><p>Maximum and minimum values implementation dependent</p></li>
+<li><p>Decimal precision is limited</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Range</th>
+<th>Precision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>float</td>
+<td>1E-37 to 1E+37</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>double</td>
+<td>1E-308 to 1E+308</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>long double</td>
+<td>1E-308 to 1E+308</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+</section><section id="constants" class="slide level2">
+<h2>Constants</h2>
+<ul>
+<li><p>Following types</p>
+<ul>
+<li><p>Numeric</p></li>
+<li><p>Character</p></li>
+<li><p>String</p></li>
+<li><p>Enumeration</p></li>
+</ul></li>
+</ul>
+</section><section id="numeric-constants" class="slide level2">
+<h2>Numeric constants</h2>
+<ul>
+<li><p>Integer constants</p>
+<ul>
+<li><p>A sequence of numbers (4567) is an <code>int</code></p></li>
+<li><p>Signed long integers specified by suffixing <code>l</code> or <code>L</code> (<code>4567L</code>) and unsigned long integers by suffixing <code>ul</code> or <code>UL</code> (<code>4567UL</code>)</p></li>
+<li><p>Octal values indicated with a leading <code>0</code></p></li>
+<li><p>Hexadecimal values indicated with leading <code>0x</code></p></li>
+</ul></li>
+<li><p>Floating-point constants</p>
+<ul>
+<li><p>A sequence of numbers with a decimal point (1.23) or an exponent (123E-2) or both (12.3E-1) is a double</p></li>
+<li><p>Long doubles are indicated by suffixing <code>l</code> or <code>L</code></p></li>
+</ul></li>
+</ul>
+</section><section id="character-constants" class="slide level2">
+<h2>Character constants</h2>
+<ul>
+<li><p>A character between single quotes (<code>'0'</code>) is a <code>char</code></p></li>
+<li><p>A character constant represents the integer value of the character (<code>'0'</code> = 48 in ASCII character set)</p></li>
+<li><p>A character constant is more portable</p></li>
+</ul>
+</section><section id="string-constants" class="slide level2">
+<h2>String constants</h2>
+<ul>
+<li><p>A sequence of characters delimited by double quotes (<code>"hello world\n"</code>)</p></li>
+<li>Strings constants separated by white-spaces are concatenated at compile time
+<ul>
+<li><code>"hello " "world\n"</code> becomes <code>"hello world\n"</code></li>
+</ul></li>
+<li><p>Internally a string constant is terminated by a <code>'\0'</code> (null) character</p></li>
+<li><p>Function <code>strlen(s)</code> in <code>&lt;string.h&gt;</code> returns the size of a string</p></li>
+<li><p>A string is actually an array of char (<code>char []</code>)</p></li>
+</ul>
+</section><section id="escape-sequences" class="slide level2">
+<h2>Escape sequences</h2>
+<ul>
+<li><p>Some characters are hard to represent in character constants and string constants</p></li>
+<li><p>Escape sequences are used to represent such characters</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><code>\a</code></td>
+<td>alert (beep)</td>
+<td></td>
+<td><code>\\</code></td>
+<td>backslash</td>
+</tr>
+<tr class="even">
+<td><code>\b</code></td>
+<td>backspace</td>
+<td></td>
+<td><code>\?</code></td>
+<td>question mark</td>
+</tr>
+<tr class="odd">
+<td><code>\f</code></td>
+<td>formfeed</td>
+<td></td>
+<td><code>\'</code></td>
+<td>single quote</td>
+</tr>
+<tr class="even">
+<td><code>\n</code></td>
+<td>newline</td>
+<td></td>
+<td><code>\"</code></td>
+<td>double quote</td>
+</tr>
+<tr class="odd">
+<td><code>\r</code></td>
+<td>carriage return</td>
+<td></td>
+<td><code>\nnn</code></td>
+<td>octal number</td>
+</tr>
+<tr class="even">
+<td><code>\t</code></td>
+<td>horizontal tab</td>
+<td></td>
+<td><code>\xhh</code></td>
+<td>hexadecimal number</td>
+</tr>
+<tr class="odd">
+<td><code>\v</code></td>
+<td>vertical tab</td>
+<td></td>
+<td><code>\0</code></td>
+<td>null character</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</section><section id="constant-expression" class="slide level2">
+<h2>Constant expression</h2>
+<ul>
+<li><p>Expressions involving only constants</p></li>
+<li><p>May be evaluated at compile time</p></li>
+<li><p>Can be used in the place of a constant</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb23-1" title="1"><span class="pp">#define MAX 100</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="dt">int</span> i = MAX;</a></code></pre></div></li>
+</ul>
+</section><section id="enumeration-constants" class="slide level2">
+<h2>Enumeration constants</h2>
+<ul>
+<li><p>A list of constant integers</p></li>
+<li><p>Values can be specified or generated</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">enum</span> colors { RED = <span class="ch">&#39;r&#39;</span>, BLUE = <span class="ch">&#39;b&#39;</span>, GREEN = <span class="ch">&#39;g&#39;</span>};</a>
+<a class="sourceLine" id="cb24-2" title="2"></a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="kw">enum</span> dow { SUN = <span class="dv">1</span>, MON, TUE, WED, THU, FRI, SAT};</a></code></pre></div></li>
+<li><p>Variables of enum types can be declared</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">enum</span> colors c = RED;</a></code></pre></div></li>
+<li><p>DDD shows values of enum variables as symbols</p></li>
+</ul>
+</section><section id="variable-declarations" class="slide level2">
+<h2>Variable Declarations</h2>
+<ul>
+<li><p>All variables must be declared before use</p></li>
+<li><p>A declaration only specifies the nature of a variable (i.e. type)</p></li>
+<li><p>A declaration contains a type followed by a list of one or more comma separated names</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb26-1" title="1"><span class="dt">char</span> c, name [<span class="dv">50</span>];</a></code></pre></div></li>
+<li><p>A variable may be initialized in its declaration</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb27-1" title="1"><span class="dt">int</span> i = MAX + <span class="dv">1</span>, j = i;</a></code></pre></div></li>
+<li><p>By prefixing <code>const</code> to a declaration, a variable can be declared as unchangeable</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb28-1" title="1"><span class="dt">const</span> <span class="dt">double</span> pi = <span class="fl">3.14</span>;</a></code></pre></div></li>
+</ul>
+</section><section id="arithmetic-operators" class="slide level2">
+<h2>Arithmetic Operators</h2>
+<ul>
+<li><p>Binary operators</p>
+<pre class="text"><code>+ - * / %</code></pre></li>
+<li><p>Unary operators</p>
+<pre class="text"><code>++ -- + -</code></pre></li>
+<li><p>Postfix / prefix unary operator usage</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb31-1" title="1"><span class="dt">int</span> i = <span class="dv">0</span>, j;</a>
+<a class="sourceLine" id="cb31-2" title="2">j = i++; <span class="co">/* j = 0, i = 1 */</span></a>
+<a class="sourceLine" id="cb31-3" title="3">j = ++i; <span class="co">/* j = 2, i = 2 */</span></a></code></pre></div></li>
+</ul>
+</section><section id="relational-operators" class="slide level2">
+<h2>Relational operators</h2>
+<ul>
+<li><p>Equal and not equal</p>
+<pre class="text"><code>== !=</code></pre></li>
+<li><p>Less than and less than or equal to</p>
+<pre class="text"><code>&lt; &lt;=</code></pre></li>
+<li><p>Greater than and greater than or equal to</p>
+<pre class="text"><code>&gt; &gt;=</code></pre></li>
+<li><p>No boolean type, a value of 0 represents FALSE, any other value is TRUE</p></li>
+</ul>
+</section><section id="logic-operators" class="slide level2">
+<h2>Logic operators</h2>
+<ul>
+<li><p>Logical negation</p>
+<pre class="text"><code>!</code></pre></li>
+<li><p>Logical AND</p>
+<pre class="text"><code>&amp;&amp;</code></pre></li>
+<li><p>Logical OR</p>
+<pre class="text"><code>||</code></pre></li>
+</ul>
+</section><section id="bitwise-operators" class="slide level2">
+<h2>Bitwise operators</h2>
+<ul>
+<li><p>Bitwise complement</p>
+<pre class="text"><code>~</code></pre></li>
+<li><p>Bitwise left and right shift</p>
+<pre class="text"><code>&lt;&lt; &gt;&gt;</code></pre></li>
+<li><p>Bitwise AND, OR, and exclusive OR (XOR)</p>
+<pre class="text"><code>&amp; | ^</code></pre></li>
+</ul>
+</section><section id="assignment-operators" class="slide level2">
+<h2>Assignment operators</h2>
+<ul>
+<li><p>Normal assignment</p>
+<pre class="text"><code>=</code></pre></li>
+<li><p>Arithmetic</p>
+<pre class="text"><code>+= -= *= /= %=</code></pre></li>
+<li><p>Bitwise assignment operators</p>
+<pre class="text"><code>&amp;= ^= |= &lt;&lt;= &gt;&gt;=</code></pre></li>
+</ul>
+</section><section id="expressions" class="slide level2">
+<h2>Expressions</h2>
+<ul>
+<li><p>Most expressions are assignments or functions calls</p></li>
+<li><p>If an expression is missing the statement is called a null statement</p>
+<ul>
+<li>Can be used to supply an empty body for an iteration or loop</li>
+</ul></li>
+<li><p>All side effects from the expressions are completed before the next statement</p></li>
+</ul>
+</section><section id="side-effects" class="slide level2">
+<h2>Side effects</h2>
+<ul>
+<li><p>Side effects are unpredictable assignment to variables resulting from undefined order of evaluation of an expression</p>
+<ul>
+<li><p>In function calls</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb44-1" title="1">printf(<span class="st">&quot;%d, %d&quot;</span>, i + <span class="dv">1</span>, i = j + <span class="dv">2</span> );</a>
+<a class="sourceLine" id="cb44-2" title="2">printf(<span class="st">&quot;%d, %d, %d&quot;</span>, i++, i++, i++);</a></code></pre></div></li>
+<li><p>Nested assignments</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb45-1" title="1">c = getchar() != EOF</a></code></pre></div></li>
+<li><p>Increment and decrement operators</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb46-1" title="1">a[i] = i++;</a></code></pre></div></li>
+</ul></li>
+<li><p>Avoid side effects, don’t depend on the results from your compiler</p></li>
+</ul>
+</section><section id="operator-precedence" class="slide level2">
+<h2>Operator Precedence</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td><code>() [] -&gt; .</code></td>
+<td>left to right</td>
+</tr>
+<tr class="even">
+<td><code>! ~ ++ -- + - * &amp; (type) sizeof</code></td>
+<td>right to left</td>
+</tr>
+<tr class="odd">
+<td><code>* / %</code></td>
+<td>left to right</td>
+</tr>
+<tr class="even">
+<td><code>+ -</code></td>
+<td>left to right</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;&lt; &gt;&gt;</code></td>
+<td>left to right</td>
+</tr>
+<tr class="even">
+<td><code>&lt; &lt;= &gt; &gt;=</code></td>
+<td>left to right</td>
+</tr>
+<tr class="odd">
+<td><code>== !=</code></td>
+<td>left to right</td>
+</tr>
+<tr class="even">
+<td><code>&amp;</code></td>
+<td>left to right</td>
+</tr>
+<tr class="odd">
+<td><code>^</code></td>
+<td>left to right</td>
+</tr>
+<tr class="even">
+<td><code>|</code></td>
+<td>left to right</td>
+</tr>
+<tr class="odd">
+<td><code>&amp;&amp;</code></td>
+<td>left to right</td>
+</tr>
+<tr class="even">
+<td><code>||</code></td>
+<td>left to right</td>
+</tr>
+<tr class="odd">
+<td><code>?:</code></td>
+<td>right to left</td>
+</tr>
+<tr class="even">
+<td><code>= += -= *= /= %= &amp;= ^= |= &lt;&lt;= &gt;&gt;=</code></td>
+<td>right to left</td>
+</tr>
+<tr class="odd">
+<td><code>,</code></td>
+<td>left to right</td>
+</tr>
+</tbody>
+</table>
+</section><section id="conditional-expressions" class="slide level2">
+<h2>Conditional expressions</h2>
+<ul>
+<li><p><code>lvalue = expr1 ? expr2 : expr3</code></p>
+<p><code>lvalue</code> is the value of the expression<br />
+<code>expr1</code> is evaluated first<br />
+<code>expr2</code> is evaluated if <code>expr1</code> is not 0 (i.e. true)<br />
+<code>expr3</code> is evaluated if <code>expr1</code> is 0 (i.e. false)</p></li>
+<li><p>This is equivalent to</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb47-1" title="1"><span class="cf">if</span> (expr1)  </a>
+<a class="sourceLine" id="cb47-2" title="2">  lvalue = expr2;  </a>
+<a class="sourceLine" id="cb47-3" title="3"><span class="cf">else</span>  </a>
+<a class="sourceLine" id="cb47-4" title="4">  lvalue = expr3;  </a></code></pre></div></li>
+</ul>
+</section><section id="automatic-type-conversion" class="slide level2">
+<h2>Automatic type conversion</h2>
+<ul>
+<li><p>Wider conversions are automatic, e.g. <code>char</code> to <code>int</code></p></li>
+<li><p>Beware mixing signed and unsigned values, <code>-1L &gt; 1UL</code></p>
+<p><code>1UL</code><br />
+<code>00000000000000000000000000000001</code></p>
+<p><code>1L</code> as two’s complement of <code>1L</code> (calculated as <code>~1+1</code> or <span class="math inline">2<sup>32</sup> − 1</span>)<br />
+<code>11111111111111111111111111111111</code></p></li>
+</ul>
+</section><section id="automatic-type-conversion-rules" class="slide level2">
+<h2>Automatic type conversion rules</h2>
+<p>For an operator that takes two operands</p>
+<ul>
+<li><p>If one is <code>long double</code>, convert other to <code>long double</code></p></li>
+<li><p>Else, if one is <code>double</code>, convert other to <code>double</code></p></li>
+<li><p>Else, if one is <code>float</code>, convert other to <code>float</code></p></li>
+<li><p>Else, if one is <code>unsigned long int</code>, convert other to <code>unsigned long int</code></p></li>
+<li>Else, if one is <code>long int</code> and other is <code>unsigned int</code>
+<ul>
+<li>If a <code>long int</code> can represent all values of an <code>unsigned int</code>, convert both to <code>long int</code></li>
+<li>Else convert both to <code>unsigned long int</code></li>
+</ul></li>
+<li><p>Else, if one is <code>long int</code>, convert other to <code>long int</code></p></li>
+<li><p>Else, if one is <code>unsigned int</code>, convert other to <code>unsigned int</code></p></li>
+<li><p>Else, convert both to <code>int</code></p></li>
+</ul>
+</section><section id="type-casting" class="slide level2">
+<h2>Type casting</h2>
+<ul>
+<li><p>Forced type conversions (coercion)</p>
+<p>(<em>type-name</em>) <em>expression</em></p></li>
+<li><p>Required for <em>narrow</em> conversions</p></li>
+<li><p>Can result in loss of data</p>
+<ul>
+<li><p>Wide integers to narrow integers</p></li>
+<li><p>Float or double to integers</p></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="control-flow" class="title-slide slide level1"><h1>Control Flow</h1></section><section id="if-else" class="slide level2">
+<h2>if-else</h2>
+<ul>
+<li><p><code>if</code>-<code>else</code> expresses decisions</p></li>
+<li><p><code>else</code> part is optional</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb48-1" title="1"><span class="cf">if</span> (expression)</a>
+<a class="sourceLine" id="cb48-2" title="2">statement1</a>
+<a class="sourceLine" id="cb48-3" title="3"><span class="cf">else</span></a>
+<a class="sourceLine" id="cb48-4" title="4">statement2</a></code></pre></div></li>
+<li><code>expression</code> returns a numerical value</li>
+<li><p><code>0</code> is considered FALSE, any other value is TRUE</p></li>
+</ul>
+</section><section id="if-else-ambiguities" class="slide level2">
+<h2>if-else ambiguities</h2>
+<ul>
+<li><p>By default, the <code>else</code> is associated with the inner <code>if</code></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb49-1" title="1"><span class="cf">if</span> (i \&gt;= <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb49-2" title="2">  <span class="cf">if</span> (i \&lt; <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb49-3" title="3">    a = b;</a>
+<a class="sourceLine" id="cb49-4" title="4">  <span class="cf">else</span></a>
+<a class="sourceLine" id="cb49-5" title="5">    a = c;</a></code></pre></div></li>
+<li><p>Use braces to remove ambiguity</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb50-1" title="1"><span class="cf">if</span> (i \&gt;= <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb50-2" title="2">  <span class="cf">if</span> (i \&lt; <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb50-3" title="3">    a = b;</a>
+<a class="sourceLine" id="cb50-4" title="4">} <span class="cf">else</span></a>
+<a class="sourceLine" id="cb50-5" title="5">  a = c;</a></code></pre></div></li>
+</ul>
+</section><section id="else-if" class="slide level2">
+<h2>else-if</h2>
+<ul>
+<li><p>Useful for expressing multi-way decisions</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb51-1" title="1"><span class="cf">if</span> (expression)</a>
+<a class="sourceLine" id="cb51-2" title="2">  statement</a>
+<a class="sourceLine" id="cb51-3" title="3"><span class="cf">else</span> <span class="cf">if</span> (expression)</a>
+<a class="sourceLine" id="cb51-4" title="4">  statement</a>
+<a class="sourceLine" id="cb51-5" title="5"><span class="cf">else</span> <span class="cf">if</span> (expression)</a>
+<a class="sourceLine" id="cb51-6" title="6">  statement</a>
+<a class="sourceLine" id="cb51-7" title="7"><span class="cf">else</span></a>
+<a class="sourceLine" id="cb51-8" title="8">  statement</a></code></pre></div></li>
+</ul>
+</section><section id="switch" class="slide level2">
+<h2>switch</h2>
+<ul>
+<li><p>Used to express multi-way decision</p></li>
+<li><p>Matches the result of an expression to one of several integer constants</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb52-1" title="1"><span class="cf">switch</span> (expression) {</a>
+<a class="sourceLine" id="cb52-2" title="2">  <span class="cf">case</span> <span class="dt">const</span>-expr:</a>
+<a class="sourceLine" id="cb52-3" title="3">    statements</a>
+<a class="sourceLine" id="cb52-4" title="4">  <span class="cf">case</span> <span class="dt">const</span>-expr:</a>
+<a class="sourceLine" id="cb52-5" title="5">    statements</a>
+<a class="sourceLine" id="cb52-6" title="6">  <span class="cf">default</span>:</a>
+<a class="sourceLine" id="cb52-7" title="7">    statements</a>
+<a class="sourceLine" id="cb52-8" title="8">}</a></code></pre></div></li>
+<li>a <code>break</code> statement causes exit from the <code>switch</code></li>
+<li><p>without a <code>break</code> all statements after the matching <code>case</code> are executed till the end of the <code>switch</code> block</p></li>
+</ul>
+</section><section id="while" class="slide level2">
+<h2>while</h2>
+<ul>
+<li><p>The while loop executes as long as <code>expression</code> is TRUE (not 0)</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb53-1" title="1"><span class="cf">while</span> (expression) {</a>
+<a class="sourceLine" id="cb53-2" title="2">  statements</a>
+<a class="sourceLine" id="cb53-3" title="3">}</a></code></pre></div></li>
+</ul>
+</section><section id="for" class="slide level2">
+<h2>for</h2>
+<ul>
+<li><p>The loop has three parts</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb54-1" title="1"><span class="cf">for</span> (expr1; expr2; expr3) {</a>
+<a class="sourceLine" id="cb54-2" title="2">  statements</a>
+<a class="sourceLine" id="cb54-3" title="3">}</a></code></pre></div>
+<ul>
+<li><code>expr1</code> is an initialization expression</li>
+<li><code>expr2</code> is a relational expression, and</li>
+<li><code>expr3</code> is the increment expression</li>
+</ul></li>
+<li><p>The loop executes as long as <code>expr2</code> is TRUE (not 0)</p></li>
+<li><p>All three expressions can be empty which leads to an infinite <code>for</code> loop</p></li>
+</ul>
+</section><section id="do-while" class="slide level2">
+<h2>do-while</h2>
+<ul>
+<li><p>The <code>do</code> loop executes at least once before <code>expression</code> is evaluated</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb55-1" title="1"><span class="cf">do</span> {</a>
+<a class="sourceLine" id="cb55-2" title="2">  statements</a>
+<a class="sourceLine" id="cb55-3" title="3">} <span class="cf">while</span> (expression);</a></code></pre></div></li>
+<li><p>The loop executes as long as <code>expression</code> is TRUE (not <code>0</code>)</p></li>
+</ul>
+</section><section id="break" class="slide level2">
+<h2>break</h2>
+<ul>
+<li>Using the break statement causes immediate exit from a loop (<code>for</code>, <code>while</code> or <code>do</code>-<code>while</code>) or <code>switch</code> block</li>
+</ul>
+</section><section id="continue" class="slide level2">
+<h2>continue</h2>
+<ul>
+<li>The <code>continue</code> statement causes a loop to begin the next iteration, the statements following <code>continue</code> are not executed</li>
+</ul>
+</section><section id="goto" class="slide level2">
+<h2>goto</h2>
+<ul>
+<li><p>the <code>goto</code> statement causes execution to jump to the statements after the <code>label</code></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb56-1" title="1"><span class="cf">goto</span> label;</a>
+<a class="sourceLine" id="cb56-2" title="2">statements</a>
+<a class="sourceLine" id="cb56-3" title="3">label:</a>
+<a class="sourceLine" id="cb56-4" title="4">statements</a></code></pre></div></li>
+<li><p><code>goto</code> is not recommended as it results in spaghetti code</p></li>
+</ul>
+</section><section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li><p>Write a program that converts 1 to 50 mile(s) into kilometers</p>
+<p><strong>NOTE</strong> 1 mile = 1.609344 kilometers</p></li>
+<li><p>Print the result in tabular form</p>
+<pre class="text"><code>01 mile(s) = 01.609344 km   02 mile(s) = 03.218688 km
+03 mile(s) = 04.828032 km   04 mile(s) = 06.437376 km</code></pre></li>
+</ul>
+</section></section>
+<section><section id="functions-and-advanced-program-structure" class="title-slide slide level1"><h1>Functions and Advanced Program Structure</h1></section><section id="introduction-to-functions" class="slide level2">
+<h2>Introduction to Functions</h2>
+<ul>
+<li><p>Useful for program structuring</p></li>
+<li><p>Make program more modular</p></li>
+<li><p>Should be as generally applicable as possible</p></li>
+<li><p>Should encapsulate implementation as best as possible</p></li>
+<li><p>Cannot be nested (unlike in Pascal)</p></li>
+</ul>
+</section><section id="function-declaration" class="slide level2">
+<h2>Function Declaration</h2>
+<ul>
+<li><p>Functions need to be declared before use</p></li>
+<li><p>The compiler matches the declaration with the syntax of usage and definition to see if they match</p>
+<ul>
+<li><p>the return type should be the same</p></li>
+<li><p>the parameters should be the same type (not name)</p></li>
+</ul>
+<pre class="text"><code>return-type function-name (argument declarations);</code></pre></li>
+</ul>
+</section><section id="function-definition" class="slide level2">
+<h2>Function Definition</h2>
+<pre class="text"><code>return-type function-name (argument declarations) {
+  declarations and statements
+  return statement returns a value of type return-type
+}</code></pre>
+<ul>
+<li><p>The return-type can be void or any other type; if not specified, it defaults to <code>int</code></p></li>
+<li><p>A <code>return</code> statement is optional and can be used to return a value to the caller, the caller may ignore this value</p></li>
+</ul>
+<div class="sourceCode" id="cb60"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb60-1" title="1"><span class="cf">return</span> expression;</a></code></pre></div>
+</section><section id="variable-declaration" class="slide level2">
+<h2>Variable Declaration</h2>
+<ul>
+<li><p>Anywhere in a C source file</p></li>
+<li><p>Inside a function</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb61-1" title="1"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb61-2" title="2">  <span class="dt">int</span> a, b;</a>
+<a class="sourceLine" id="cb61-3" title="3">}</a></code></pre></div></li>
+<li><p>Inside any code block</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb62-1" title="1">{</a>
+<a class="sourceLine" id="cb62-2" title="2">  <span class="dt">int</span> a, b;</a>
+<a class="sourceLine" id="cb62-3" title="3">}</a></code></pre></div></li>
+</ul>
+</section><section id="variable-declaration-example" class="slide level2">
+<h2>Variable Declaration Example</h2>
+<div class="sourceCode" id="cb63"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb63-1" title="1"><span class="dt">int</span> a;</a>
+<a class="sourceLine" id="cb63-2" title="2"></a>
+<a class="sourceLine" id="cb63-3" title="3"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb63-4" title="4">  <span class="dt">int</span> a = <span class="dv">10</span>; <span class="co">// &quot;a&quot; is local to main</span></a>
+<a class="sourceLine" id="cb63-5" title="5">  print(); <span class="co">// prints &quot;a: 0&quot;</span></a>
+<a class="sourceLine" id="cb63-6" title="6">}</a>
+<a class="sourceLine" id="cb63-7" title="7"></a>
+<a class="sourceLine" id="cb63-8" title="8"><span class="dt">int</span> print() {</a>
+<a class="sourceLine" id="cb63-9" title="9">  printf(<span class="st">&quot;a: %d</span><span class="sc">\n</span><span class="st">&quot;</span>, a);</a>
+<a class="sourceLine" id="cb63-10" title="10">}</a></code></pre></div>
+</section><section id="external-variables" class="slide level2">
+<h2>External variables</h2>
+<ul>
+<li><p>Variable defined outside functions or in other source files are external</p>
+<ul>
+<li><em>Definition</em> indicates the place where a variable is created or assigned storage</li>
+</ul></li>
+<li><p>A variable defined before the function definition in a source file is visible to the function, as seen in previous example</p></li>
+<li><p>Remember <a href="introduction.md#multiple-source-files-–-hello.c">multiple source files</a> example from Introduction?</p></li>
+</ul>
+</section><section id="extern-keyword" class="slide level2">
+<h2><code>extern</code> keyword</h2>
+<ul>
+<li><p>The <code>extern</code> keyword is used to declare variables defined outside the current function or source file</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb64-1" title="1"><span class="dt">int</span> a;</a>
+<a class="sourceLine" id="cb64-2" title="2"></a>
+<a class="sourceLine" id="cb64-3" title="3"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb64-4" title="4">  <span class="dt">int</span> a = <span class="dv">10</span>; <span class="co">// &quot;a&quot; is local to main</span></a>
+<a class="sourceLine" id="cb64-5" title="5">  print(); <span class="co">// prints &quot;a: 0&quot;</span></a>
+<a class="sourceLine" id="cb64-6" title="6">}</a>
+<a class="sourceLine" id="cb64-7" title="7"></a>
+<a class="sourceLine" id="cb64-8" title="8"><span class="dt">int</span> print() {</a>
+<a class="sourceLine" id="cb64-9" title="9">  <span class="kw">extern</span> <span class="dt">int</span> a;</a>
+<a class="sourceLine" id="cb64-10" title="10">  printf(<span class="st">&quot;a: %d</span><span class="sc">\n</span><span class="st">&quot;</span>, a);</a>
+<a class="sourceLine" id="cb64-11" title="11">}</a></code></pre></div></li>
+</ul>
+</section><section id="auto-keyword" class="slide level2">
+<h2><code>auto</code> keyword</h2>
+<ul>
+<li><p>Variables within functions or code blocks that are not declared as extern are <code>auto</code> (for automatic)</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb65-1" title="1"><span class="dt">int</span> a;</a>
+<a class="sourceLine" id="cb65-2" title="2"></a>
+<a class="sourceLine" id="cb65-3" title="3"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb65-4" title="4">  <span class="dt">auto</span> <span class="dt">int</span> a = <span class="dv">10</span>; <span class="co">// &quot;a&quot; is local to main</span></a>
+<a class="sourceLine" id="cb65-5" title="5">  print(); <span class="co">// prints &quot;a: 0&quot;</span></a>
+<a class="sourceLine" id="cb65-6" title="6">}</a>
+<a class="sourceLine" id="cb65-7" title="7"></a>
+<a class="sourceLine" id="cb65-8" title="8"><span class="dt">int</span> print() {</a>
+<a class="sourceLine" id="cb65-9" title="9">  <span class="kw">extern</span> <span class="dt">int</span> a;</a>
+<a class="sourceLine" id="cb65-10" title="10">  printf(<span class="st">&quot;a: %d</span><span class="sc">\n</span><span class="st">&quot;</span>, a);</a>
+<a class="sourceLine" id="cb65-11" title="11">}</a></code></pre></div></li>
+</ul>
+</section><section id="static-variables" class="slide level2">
+<h2>static variables</h2>
+<ul>
+<li><p>A variable declared with the keyword <code>static</code> within a function or code block retains its value till the program ends</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb66-1" title="1"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb66-2" title="2">  print(); <span class="co">// prints &quot;a: 0&quot;</span></a>
+<a class="sourceLine" id="cb66-3" title="3">  print(); <span class="co">// prints &quot;a: 1&quot;</span></a>
+<a class="sourceLine" id="cb66-4" title="4">}</a>
+<a class="sourceLine" id="cb66-5" title="5"></a>
+<a class="sourceLine" id="cb66-6" title="6"><span class="dt">int</span> print() {</a>
+<a class="sourceLine" id="cb66-7" title="7">  <span class="dt">static</span> <span class="dt">int</span> a;</a>
+<a class="sourceLine" id="cb66-8" title="8">  printf(<span class="st">&quot;a: %d</span><span class="sc">\n</span><span class="st">&quot;</span>, a++);</a>
+<a class="sourceLine" id="cb66-9" title="9">}</a></code></pre></div></li>
+<li><p>A static variable anywhere else in the source file is considered local to that file</p></li>
+</ul>
+</section><section id="register-variables" class="slide level2">
+<h2>register variables</h2>
+<ul>
+<li><p>Useful for advising a compiler to retain a heavily used variable in a CPU register</p></li>
+<li><p>Examples</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb67-1" title="1"><span class="dt">register</span> <span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb67-2" title="2"><span class="dt">register</span> <span class="dt">char</span> c;</a></code></pre></div></li>
+</ul>
+</section><section id="variable-initialization" class="slide level2">
+<h2>Variable initialization</h2>
+<ul>
+<li><p>External and static variables</p>
+<ul>
+<li><p>Are guaranteed to be initialized to zero</p></li>
+<li><p>Any values assigned must be constant expressions</p></li>
+</ul></li>
+<li><p>Automatic and register variables</p>
+<ul>
+<li><p>Contain garbage unless initialized</p></li>
+<li><p>Can be initialized by specifying expressions containing constants and variables defined earlier</p></li>
+</ul></li>
+</ul>
+</section><section id="recursion" class="slide level2">
+<h2>Recursion</h2>
+<ul>
+<li><p>A function can call itself</p></li>
+<li><p>The local automatic variables are stored in the stack</p></li>
+<li><p>Function parameters are passed using the stack</p></li>
+<li><p>Prone to stack overflow</p></li>
+<li><p>There is always a danger of creating an infinite loop if the exit criteria is not clear</p></li>
+</ul>
+</section><section id="recursion-example" class="slide level2">
+<h2>Recursion – Example</h2>
+<div class="sourceCode" id="cb68"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb68-1" title="1"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb68-2" title="2">  print(<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb68-3" title="3">}</a>
+<a class="sourceLine" id="cb68-4" title="4"></a>
+<a class="sourceLine" id="cb68-5" title="5"><span class="dt">int</span> print(<span class="dt">int</span> i) {</a>
+<a class="sourceLine" id="cb68-6" title="6">  printf(<span class="st">&quot;i:%d</span><span class="sc">\n</span><span class="st">&quot;</span>, i++);</a>
+<a class="sourceLine" id="cb68-7" title="7">  <span class="cf">if</span> (i &gt; <span class="dv">5</span>) <span class="cf">return</span>;</a>
+<a class="sourceLine" id="cb68-8" title="8">  <span class="cf">else</span> print(i);</a>
+<a class="sourceLine" id="cb68-9" title="9">}</a></code></pre></div>
+</section><section id="header-files" class="slide level2">
+<h2>Header files</h2>
+<ul>
+<li><p>Used to include external variable and function definitions</p></li>
+<li><p>Allow applications to be compiled in parts</p></li>
+<li><p>The remaining parts are resolved during linking from statically or dynamically linked libraries</p></li>
+<li><p>Remember the <a href="introduction.md#multiple-source-files-–-print.h">example</a> from Introduction?</p></li>
+</ul>
+</section><section id="macro-definition-and-substitution" class="slide level2">
+<h2>Macro definition and substitution</h2>
+<ul>
+<li><p>A macro definition takes the form</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb69-1" title="1"><span class="pp">#define name replacement-text</span></a></code></pre></div></li>
+<li><p>Token name has the same syntax as a variable name</p></li>
+<li><p>Everywhere in the source file, where the token name occurs, it is substituted by <code>replacement-text</code></p></li>
+<li><p><code>replacement-text</code> is any arbitrary text and it can span several lines by ending each line with a <code>\</code></p></li>
+<li><p>A macro can also be defined or redefined by using the <code>-D</code> compiler option</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb70-1" title="1"><span class="fu">gcc</span> –Dname=value</a></code></pre></div></li>
+</ul>
+</section><section id="un-define-macros" class="slide level2">
+<h2>Un-define macros</h2>
+<ul>
+<li><p>To un-define a macro called <code>name</code></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb71-1" title="1"><span class="pp">#undef name</span></a></code></pre></div></li>
+<li><p>A macro defined in a program can also be undefined by using the <code>-U</code> compiler option</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb72-1" title="1"><span class="fu">gcc</span> -Uname</a></code></pre></div></li>
+<li><p>where <code>name</code> is the name of the macro you want to undefine</p></li>
+</ul>
+</section><section id="macro-with-arguments" class="slide level2">
+<h2>Macro with arguments</h2>
+<ul>
+<li><p>Look like functions but result in inline code</p></li>
+<li><p>Macro with arguments are applicable to arbitrary types</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb73-1" title="1"><span class="pp">#define MAX(A,B) ((A) &gt; (B) ? (A) : (B))</span></a>
+<a class="sourceLine" id="cb73-2" title="2"></a>
+<a class="sourceLine" id="cb73-3" title="3">MAX(<span class="fl">1.5</span>,<span class="fl">2.9</span>) <span class="co">// ((1.5) &gt; (2.9) ? (1.5) : (2.9))</span></a>
+<a class="sourceLine" id="cb73-4" title="4"></a>
+<a class="sourceLine" id="cb73-5" title="5">MAX(a+b, c+d) <span class="co">// ((a+b) &gt; (c+d) ? (a+b) : (c+d))</span></a></code></pre></div></li>
+<li><p>The parentheses are required to maintain proper expression semantics after substitution</p></li>
+</ul>
+</section><section id="macro-with-arguments-additional-syntax" class="slide level2">
+<h2>Macro with arguments – additional syntax</h2>
+<div class="sourceCode" id="cb74"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb74-1" title="1"><span class="pp">#define debug_print(expression) printf(\</span></a>
+<a class="sourceLine" id="cb74-2" title="2"><span class="pp">  #expression &quot; = %g\n&quot;, expression)</span></a>
+<a class="sourceLine" id="cb74-3" title="3"></a>
+<a class="sourceLine" id="cb74-4" title="4">debug_print(x); <span class="co">//printf(&quot;x&quot; &quot; = %g\n&quot;, x);</span></a>
+<a class="sourceLine" id="cb74-5" title="5"></a>
+<a class="sourceLine" id="cb74-6" title="6"></a>
+<a class="sourceLine" id="cb74-7" title="7"><span class="pp">#define concat(prefix, suffix) prefix ## suffix</span></a>
+<a class="sourceLine" id="cb74-8" title="8"></a>
+<a class="sourceLine" id="cb74-9" title="9">concat(name, <span class="dv">1</span>); <span class="co">//name1;</span></a></code></pre></div>
+</section><section id="conditional-inclusion" class="slide level2">
+<h2>Conditional inclusion</h2>
+<ul>
+<li><p>Preprocessing provides for means to insert code conditionally</p></li>
+<li><p>This can useful to</p>
+<ul>
+<li><p>Enable or disable tracing statements</p></li>
+<li><p>Include OS specific code</p></li>
+<li><p>Include a header file just once</p></li>
+</ul></li>
+</ul>
+</section><section id="enable-and-disable-tracing" class="slide level2">
+<h2>Enable and disable tracing</h2>
+<ul>
+<li>Only integer constants and the following operators can be used in the expression following <code>#if</code>
+<ul>
+<li><code>&amp;&amp;</code>, <code>||</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>!</code>, and <code>==</code></li>
+</ul>
+<div class="sourceCode" id="cb75"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb75-1" title="1"><span class="pp">#define TRACE_NONE 0</span></a>
+<a class="sourceLine" id="cb75-2" title="2"><span class="pp">#define TRACE_DEBUG 1</span></a>
+<a class="sourceLine" id="cb75-3" title="3"><span class="pp">#define TRACE_ALL 2</span></a>
+<a class="sourceLine" id="cb75-4" title="4"></a>
+<a class="sourceLine" id="cb75-5" title="5"><span class="pp">#define TRACE_LEVEL TRACE_DEBUG</span></a>
+<a class="sourceLine" id="cb75-6" title="6"></a>
+<a class="sourceLine" id="cb75-7" title="7"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb75-8" title="8"><span class="pp">#if TRACE_LEVEL == TRACE_ALL || TRACE_LEVEL == \</span></a>
+<a class="sourceLine" id="cb75-9" title="9"><span class="pp">    TRACE_DEBUG</span></a>
+<a class="sourceLine" id="cb75-10" title="10">  printf(<span class="st">&quot;within main</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb75-11" title="11"><span class="pp">#endif</span></a>
+<a class="sourceLine" id="cb75-12" title="12">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb75-13" title="13">}</a></code></pre></div></li>
+</ul>
+</section><section id="os-specific-codes" class="slide level2">
+<h2>OS specific codes</h2>
+<div class="sourceCode" id="cb76"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb76-1" title="1"><span class="pp">#if !defined(OSNAME)</span></a>
+<a class="sourceLine" id="cb76-2" title="2">  <span class="pp">#error OSNAME not specified</span></a>
+<a class="sourceLine" id="cb76-3" title="3"><span class="pp">#endif</span></a>
+<a class="sourceLine" id="cb76-4" title="4"></a>
+<a class="sourceLine" id="cb76-5" title="5"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb76-6" title="6"><span class="pp">#if OSNAME == LINUX</span></a>
+<a class="sourceLine" id="cb76-7" title="7">  printf(<span class="st">&quot;Linux</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb76-8" title="8"><span class="pp">#else</span></a>
+<a class="sourceLine" id="cb76-9" title="9">  printf(<span class="st">&quot;Windows</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb76-10" title="10"><span class="pp">#endif</span></a>
+<a class="sourceLine" id="cb76-11" title="11">  <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb76-12" title="12">}</a></code></pre></div>
+<ul>
+<li><p>Compile program</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb77-1" title="1"><span class="fu">gcc</span> -DOSNAME -DLINUX macro.c</a></code></pre></div></li>
+</ul>
+</section><section id="include-header-file-just-once" class="slide level2">
+<h2>Include header file just once</h2>
+<div class="sourceCode" id="cb78"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb78-1" title="1"><span class="pp">#ifndef _HDR_H_</span></a>
+<a class="sourceLine" id="cb78-2" title="2"><span class="pp">#define _HDR_H_</span></a>
+<a class="sourceLine" id="cb78-3" title="3">  declarations</a>
+<a class="sourceLine" id="cb78-4" title="4"><span class="pp">#endif</span></a></code></pre></div>
+</section><section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li><p>A factorial of a number <code>n</code>, denoted as <code>n!</code>, is calculated as:</p>
+<p><code>n * (n-1) * (n-2)... 3 * 2 * 1</code></p>
+<p>Thus, <code>5!=120</code> and <code>10!=3628800</code></p></li>
+<li><p>Write a recursive function to calculate factorial for any number <code>n</code></p></li>
+</ul>
+</section></section>
+<section><section id="pointers-and-arrays" class="title-slide slide level1"><h1>Pointers and Arrays</h1></section><section id="introduction-2" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li><p>Pointers are variables that store memory addresses</p></li>
+<li><p>They store the address of a memory region that stores a particular type of data</p></li>
+<li><p>The size of a pointer is determined by the address size of the CPU</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb79-1" title="1"><span class="dt">int</span>* p;</a>
+<a class="sourceLine" id="cb79-2" title="2"><span class="dt">int</span> i = <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb79-3" title="3">p = &amp;i;</a></code></pre></div>
+<figure>
+<img data-src="media/pointer.svg" alt="A pointer to int" /><figcaption>A pointer to int</figcaption>
+</figure></li>
+</ul>
+</section><section id="pointer-declaration" class="slide level2">
+<h2>Pointer declaration</h2>
+<ul>
+<li><p>A pointer is declared using the <code>*</code> operator</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb80-1" title="1"><span class="dt">int</span>* p;</a></code></pre></div></li>
+<li><p><code>*</code> is called the dereferencing operator because <code>*p</code> returns the value of the value <code>p</code> points to</p></li>
+<li><p>The <code>&amp;</code> operator is used to recover the memory address of a variable; it cannot be applied to expressions, constants, or register variables</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb81-1" title="1">p = &amp;i;</a></code></pre></div></li>
+</ul>
+</section><section id="pointer-assignment-and-usage" class="slide level2">
+<h2>Pointer assignment and usage</h2>
+<ul>
+<li><p>Pointers of the same type can be assigned to one another</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb82-1" title="1"><span class="dt">int</span> i = <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb82-2" title="2"><span class="dt">int</span>* ip = &amp;i;</a>
+<a class="sourceLine" id="cb82-3" title="3"><span class="dt">int</span>* iq = ip; <span class="co">// iq now points to i</span></a></code></pre></div></li>
+<li><p>Operator precedence in usage of <code>*</code> operator</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb83-1" title="1">*ip += <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb83-2" title="2">++*ip;</a>
+<a class="sourceLine" id="cb83-3" title="3">(*ip)++;</a></code></pre></div>
+<ul>
+<li><p>increment value pointed to by <code>ip</code></p></li>
+<li><p><code>*ip++;</code> would be incorrect; why?</p></li>
+</ul></li>
+</ul>
+</section><section id="function-arguments" class="slide level2">
+<h2>Function arguments</h2>
+<ul>
+<li><p>Arguments are passed to a function by value, even pointer arguments</p></li>
+<li><p>Pointers provide a mechanism for functions to alter the value of referenced variables</p></li>
+<li><p>Exercise: write a function that swaps the value of its arguments</p></li>
+</ul>
+</section><section id="arrays" class="slide level2">
+<h2>Arrays</h2>
+<ul>
+<li><p>Arrays provide contiguous storage to multiple elements of the same type</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb84-1" title="1"><span class="dt">int</span> a[<span class="dv">10</span>]; <span class="co">// declares an array of 10 integers</span></a></code></pre></div></li>
+<li><p>Elements of arrays declared as <code>extern</code>, <code>static</code> and <code>auto</code> are initialized to zero</p></li>
+<li><p>The array index starts at zero</p>
+<figure>
+<img data-src="media/array.svg" alt="An array of int" /><figcaption>An array of int</figcaption>
+</figure></li>
+</ul>
+</section><section id="array-initialization" class="slide level2">
+<h2>Array initialization</h2>
+<ul>
+<li><p>Arrays can be initialized during declaration</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb85-1" title="1"><span class="dt">int</span> days[] = {<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">25</span>, <span class="dv">30</span>};</a></code></pre></div>
+<ul>
+<li>compiler fills in the size and fills the array</li>
+</ul>
+<div class="sourceCode" id="cb86"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb86-1" title="1"><span class="dt">char</span> name[] = <span class="st">&quot;name&quot;</span>;</a></code></pre></div>
+<ul>
+<li>right-hand side is a string constant</li>
+</ul>
+<div class="sourceCode" id="cb87"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb87-1" title="1"><span class="dt">char</span> name[] = {<span class="ch">&#39;n&#39;</span>, <span class="ch">&#39;a&#39;</span>, <span class="ch">&#39;m&#39;</span>, <span class="ch">&#39;e&#39;</span>};</a></code></pre></div></li>
+<li><p>Arrays can be initialized using assignment statements or using loops</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb88-1" title="1"><span class="dt">int</span> days[<span class="dv">5</span>];</a>
+<a class="sourceLine" id="cb88-2" title="2">days[<span class="dv">0</span>] = <span class="dv">5</span>;</a></code></pre></div></li>
+</ul>
+</section><section id="pointers-vs-arrays" class="slide level2">
+<h2>Pointers vs Arrays</h2>
+<ul>
+<li><p>Arrays and pointers are related</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb89-1" title="1"><span class="dt">int</span> a[<span class="dv">5</span>] = {<span class="dv">0</span> , <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>};</a>
+<a class="sourceLine" id="cb89-2" title="2"><span class="dt">int</span>* p = &amp;a[<span class="dv">0</span>];</a>
+<a class="sourceLine" id="cb89-3" title="3"><span class="dt">int</span>* q = a;</a></code></pre></div>
+<ul>
+<li><code>a</code> always points to the start of the array and cannot be changed</li>
+</ul>
+<figure>
+<img data-src="media/pointers-vs-array.svg" alt="Pointers vs Arrays" /><figcaption>Pointers vs Arrays</figcaption>
+</figure></li>
+</ul>
+</section><section id="pointer-operations" class="slide level2">
+<h2>Pointer operations</h2>
+<ul>
+<li><p>Pointers can be incremented in integer steps</p></li>
+<li><p><code>p++</code> points to the next element</p>
+<ul>
+<li>what does <code>*p++ = 10</code> do? (hint – see operator precedence table)</li>
+</ul></li>
+<li><p><code>p--</code> points to the previous element</p>
+<ul>
+<li>what does <code>*--p = 10</code> do? (hint – see operator precedence table)</li>
+</ul></li>
+<li><p><code>p+=i</code> points to <code>i</code> elements beyond the current position</p></li>
+<li><p>mi points to <code>i</code> elements before the current position</p></li>
+<li><p><code>p = 0</code> or <code>p = NULL</code> makes p a null pointer; a valid pointer that does not point to anything in particular</p></li>
+</ul>
+</section><section id="strings" class="slide level2">
+<h2>Strings</h2>
+<ul>
+<li><p>Strings constants are arrays of <code>char</code></p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb90-1" title="1"><span class="dt">char</span> name [] = <span class="st">&quot;name&quot;</span>;</a></code></pre></div></li>
+<li><p>Since an array of <code>char</code> can be assigned to a pointer to <code>char</code>, a pointer to <code>char</code> can refer to a string constant</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb91-1" title="1"><span class="dt">char</span>* name = <span class="st">&quot;name&quot;</span>;</a></code></pre></div></li>
+<li><p><code>strlen(s)</code> can be used to calculate length of a string</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb92-1" title="1">strlen(name) returns <span class="dv">4</span></a></code></pre></div></li>
+<li><p>A string is internally padded with NULL character or <code>'\0'</code>; <code>name</code> is thus internally 5 characters long</p></li>
+<li><p>Exercise: write a function to replace <code>strcpy</code></p></li>
+</ul>
+</section><section id="multi-dimensional-arrays" class="slide level2">
+<h2>Multi-dimensional Arrays</h2>
+<ul>
+<li><p>Declaration</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb93-1" title="1"><span class="dt">int</span> a[<span class="dv">10</span>][<span class="dv">20</span>];</a></code></pre></div>
+<ul>
+<li>10 rows and 20 columns, <em>contiguous</em> storage for 200 integers</li>
+</ul></li>
+<li><p>Initialization</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb94-1" title="1"><span class="dt">int</span> a[][<span class="dv">2</span>] = {{<span class="dv">1</span>,<span class="dv">2</span>}, {<span class="dv">3</span>}};</a>
+<a class="sourceLine" id="cb94-2" title="2"><span class="dt">int</span> (b[])[<span class="dv">2</span>] = {{<span class="dv">1</span>,<span class="dv">2</span>}, {<span class="dv">3</span>}};</a></code></pre></div>
+<ul>
+<li>The number of columns (length of each row) needs to be known beforehand; try printing <code>a[1][1]</code>, what do you get?</li>
+</ul></li>
+</ul>
+</section><section id="array-of-pointers" class="slide level2">
+<h2>Array of Pointers</h2>
+<ul>
+<li><p>This is how you would construct an array of string constants</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb95-1" title="1"><span class="dt">char</span> a[][<span class="dv">7</span>] = {<span class="st">&quot;hello&quot;</span>, <span class="st">&quot;world!&quot;</span>};</a>
+<a class="sourceLine" id="cb95-2" title="2">printf(<span class="st">&quot;%s %s</span><span class="sc">\n</span><span class="st">&quot;</span>, a[<span class="dv">0</span>], a[<span class="dv">1</span>]);</a></code></pre></div>
+<figure>
+<img data-src="media/marray.svg" alt="Multi-dimensional Array" height="200" /><figcaption>Multi-dimensional Array</figcaption>
+</figure></li>
+<li><p>The multi-dimensional array above may be substituted by an array of pointers to char</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb96-1" title="1"><span class="dt">char</span>* a[] = {<span class="st">&quot;hello&quot;</span>, <span class="st">&quot;world!&quot;</span>};</a>
+<a class="sourceLine" id="cb96-2" title="2">printf(<span class="st">&quot;%s %s</span><span class="sc">\n</span><span class="st">&quot;</span>, a[<span class="dv">0</span>], a[<span class="dv">1</span>]);</a></code></pre></div>
+<figure>
+<img data-src="media/arrayp.svg" alt="Array of Pointers" height="200" /><figcaption>Array of Pointers</figcaption>
+</figure></li>
+</ul>
+</section><section id="pointers-vs-multi-dimensional-arrays" class="slide level2">
+<h2>Pointers vs Multi-dimensional Arrays</h2>
+<ul>
+<li><p>Multi-dimensional arrays can be assigned to pointers</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb97-1" title="1"><span class="dt">int</span> a[<span class="dv">2</span>][<span class="dv">2</span>] = {{<span class="dv">1</span>,<span class="dv">2</span>},{<span class="dv">3</span>,<span class="dv">4</span>}};</a>
+<a class="sourceLine" id="cb97-2" title="2"><span class="dt">int</span> *b[<span class="dv">2</span>], **c, *d;</a>
+<a class="sourceLine" id="cb97-3" title="3">b[<span class="dv">0</span>] = a[<span class="dv">0</span>]; b[<span class="dv">1</span>] = a[<span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb97-4" title="4">c = b; d = (<span class="dt">int</span> *)a;</a>
+<a class="sourceLine" id="cb97-5" title="5">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, a[<span class="dv">1</span>][<span class="dv">1</span>]);</a>
+<a class="sourceLine" id="cb97-6" title="6">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, *(*(a + <span class="dv">1</span>) + <span class="dv">1</span>));</a>
+<a class="sourceLine" id="cb97-7" title="7">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, b[<span class="dv">1</span>][<span class="dv">1</span>]);</a>
+<a class="sourceLine" id="cb97-8" title="8">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, *(*(b + <span class="dv">1</span>) + <span class="dv">1</span>));</a>
+<a class="sourceLine" id="cb97-9" title="9">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, c[<span class="dv">1</span>][<span class="dv">1</span>]);</a>
+<a class="sourceLine" id="cb97-10" title="10">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, *(*(c + <span class="dv">1</span>) + <span class="dv">1</span>));</a>
+<a class="sourceLine" id="cb97-11" title="11">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, d[<span class="dv">3</span>]);</a>
+<a class="sourceLine" id="cb97-12" title="12">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, *(d + <span class="dv">3</span>));</a></code></pre></div></li>
+</ul>
+<figure>
+<img data-src="media/marray-vs-pointers.svg" alt="Pointers vs Multi-dimensional Arrays" height="400" /><figcaption>Pointers vs Multi-dimensional Arrays</figcaption>
+</figure>
+</section><section id="command-line-arguments" class="slide level2">
+<h2>Command line arguments</h2>
+<ul>
+<li><p><code>main</code> function syntax</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb98-1" title="1">main (<span class="dt">int</span> argc, <span class="dt">char</span> * argv[])</a></code></pre></div>
+<ul>
+<li><code>argc</code> is the number of arguments in the command-line that invoked the program
+<ul>
+<li>always at least <code>1</code> because the program name is itself an argument</li>
+</ul></li>
+<li><p><code>argv</code> is an array of pointers to <code>char</code>, each element points to a string</p></li>
+<li><p><code>argv[argc]</code> required to be a <code>NULL</code> pointer</p></li>
+</ul></li>
+</ul>
+<figure>
+<img data-src="media/argv.svg" alt="argv" height="300" /><figcaption>argv</figcaption>
+</figure>
+</section><section id="pointers-to-functions" class="slide level2">
+<h2>Pointers to Functions</h2>
+<ul>
+<li><p>Pointers can point to functions</p></li>
+<li><p>Functions are very different from variables, but have an address where they start</p></li>
+<li><p>Declare a pointer to a function</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb99-1" title="1"><span class="dt">int</span> (*p)(<span class="dt">int</span>* a, <span class="dt">int</span>* b)</a></code></pre></div></li>
+<li><p>Assign a function</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb100-1" title="1">p = add;</a></code></pre></div></li>
+<li><p>Call the function</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb101-1" title="1"><span class="dt">int</span> a = b = <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb101-2" title="2">(*p)(&amp;a, &amp;b);</a></code></pre></div></li>
+</ul>
+</section><section id="void-pointer" class="slide level2">
+<h2>void pointer</h2>
+<ul>
+<li><p>Any pointer type can be assigned to, or passed to a function as, a void pointer</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb102-1" title="1"><span class="dt">int</span>* ip;</a>
+<a class="sourceLine" id="cb102-2" title="2"><span class="dt">void</span>* vp = ip;</a></code></pre></div></li>
+<li><p>void pointer can be cast to any pointer type</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb103-1" title="1"><span class="dt">char</span>* cp = (<span class="dt">char</span>*) vp;</a></code></pre></div></li>
+<li><p>Useful for making generic functions that apply to various types</p></li>
+<li><p>Be careful when casting <code>void*</code> to another type; know what you are doing</p></li>
+</ul>
+</section><section id="dynamic-memory-allocation" class="slide level2">
+<h2>Dynamic memory allocation</h2>
+<ul>
+<li><p>Pointers not yet initialized are dangerous if they are not NULL pointers</p></li>
+<li><p>Pointers can be initialized to point to storage dynamically allocated using <code>malloc</code> or <code>calloc</code></p></li>
+<li><p><code>free</code> must be used to release the allocated memory</p></li>
+</ul>
+</section><section id="malloc" class="slide level2">
+<h2>malloc</h2>
+<ul>
+<li><p>Allocates <code>n</code> bytes of storage and returns a void pointer to it</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb104-1" title="1"><span class="dt">void</span>* malloc(<span class="dt">size_t</span> n)</a></code></pre></div></li>
+<li><p>Example</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb105-1" title="1"><span class="dt">int</span>* ip = (<span class="dt">int</span>*)malloc(<span class="dv">10</span> * <span class="kw">sizeof</span>(<span class="dt">int</span>));</a>
+<a class="sourceLine" id="cb105-2" title="2">free(ip);</a></code></pre></div>
+<ul>
+<li><code>sizeof</code> <em>operator</em> returns the size of the object or type specified</li>
+</ul></li>
+</ul>
+</section><section id="calloc" class="slide level2">
+<h2>calloc</h2>
+<ul>
+<li><p>Allocates memory for <code>n</code> objects of size <code>size</code> and returns a void pointer to it</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb106-1" title="1"><span class="dt">void</span>* calloc(<span class="dt">size_t</span> n, <span class="dt">size_t</span> size)</a></code></pre></div></li>
+<li><p>The memory assigned is initialized to zeros</p></li>
+<li><p>Example</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb107-1" title="1"><span class="dt">int</span>* ip = (<span class="dt">int</span>*)calloc(<span class="dv">10</span>, <span class="kw">sizeof</span>(<span class="dt">int</span>));</a>
+<a class="sourceLine" id="cb107-2" title="2">free(ip);</a></code></pre></div></li>
+</ul>
+</section><section id="memory-allocation-problems" class="slide level2">
+<h2>Memory allocation problems</h2>
+<ul>
+<li><p>Using an uninitialized pointer</p></li>
+<li><p>Writing to memory outside the allocated region (buffer overflow)</p></li>
+<li><p>Freeing memory not allocated using malloc or calloc</p></li>
+<li><p>Not freeing memory allocated using malloc and calloc (memory leak)</p></li>
+</ul>
+</section><section id="using-memwatch" class="slide level2">
+<h2>Using memwatch</h2>
+<ul>
+<li><p><a href="http://www.linkdata.se/sourcecode/memwatch/">memwatch</a> is distributed as a single source file <code>memwatch.c</code> and its accompanying header file <code>memwatch.h</code></p></li>
+<li><p>Source files you want to watch for memory problems must include <code>memwatch.h</code> and be recompiled using the following compiler options</p>
+<pre class="text"><code>-DMEMWATCH -DMW_STDIO</code></pre></li>
+<li><p>memwatch prints an error message in the standard output and produces a detailed log file listing the memory problems it encounters</p></li>
+</ul>
+</section><section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>Write a program that sorts an array of strings. Use your favorite sorting algorithm (bubble sort, insertion sort, etc). Write your own replacement for <code>strcmp</code> to compare the strings. Write a generic sort function that can work with arrays of other types</li>
+</ul>
+</section></section>
+<section><section id="structures" class="title-slide slide level1"><h1>Structures</h1></section><section id="introduction-3" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li><p>A C structure is a collection of one or more variables of the same or different types</p></li>
+<li><p>Structures permit convenient handling of complicated data as a single unit</p></li>
+<li><p>Similar to records in Pascal</p></li>
+<li><p>Copying, assigning to, recovering address using &amp; and accessing members are all legal operations on structures</p></li>
+</ul>
+</section><section id="creating-a-structure" class="slide level2">
+<h2>Creating a structure</h2>
+<ul>
+<li><p>The <code>struct</code> keyword is used to create structures</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb109-1" title="1"><span class="kw">struct</span> address {</a>
+<a class="sourceLine" id="cb109-2" title="2">  <span class="dt">char</span> * street;</a>
+<a class="sourceLine" id="cb109-3" title="3">  <span class="dt">char</span> * city;</a>
+<a class="sourceLine" id="cb109-4" title="4">  <span class="dt">int</span> zip;</a>
+<a class="sourceLine" id="cb109-5" title="5">} a, b;</a></code></pre></div></li>
+<li><p>The tag <code>address</code> is optional but useful for identifying the <code>struct</code> so new variables can be created</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb110-1" title="1"><span class="kw">struct</span> address a, b;</a></code></pre></div></li>
+</ul>
+</section><section id="initializing-structures" class="slide level2">
+<h2>Initializing structures</h2>
+<ul>
+<li><p>Structures can be initialized just like arrays</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb111-1" title="1"><span class="kw">struct</span> address a = {<span class="st">&quot;street&quot;</span>, <span class="st">&quot;recife&quot;</span>, <span class="dv">123456</span>}, b;</a></code></pre></div></li>
+<li><p>An automatic structure can also be initialized by assignment or by calling a function that returns the structure of the right type</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb112-1" title="1">a.zip = <span class="dv">123456</span>;</a>
+<a class="sourceLine" id="cb112-2" title="2">a.street = <span class="st">&quot;street&quot;</span>;</a>
+<a class="sourceLine" id="cb112-3" title="3">a.city = <span class="st">&quot;recife&quot;</span>;</a></code></pre></div></li>
+</ul>
+</section><section id="copying-and-assigning-to-structures" class="slide level2">
+<h2>Copying and assigning to structures</h2>
+<ul>
+<li><p>Example of an <code>address</code> structure being assigned to another</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb113-1" title="1"><span class="kw">struct</span> address a, b;</a>
+<a class="sourceLine" id="cb113-2" title="2">a.zip = <span class="dv">123456</span>;</a>
+<a class="sourceLine" id="cb113-3" title="3">a.street = <span class="st">&quot;street&quot;</span>;</a>
+<a class="sourceLine" id="cb113-4" title="4">a.city = <span class="st">&quot;recife&quot;</span>;</a>
+<a class="sourceLine" id="cb113-5" title="5">b = a;</a>
+<a class="sourceLine" id="cb113-6" title="6">b.zip = <span class="dv">654321</span>;</a>
+<a class="sourceLine" id="cb113-7" title="7">printf(<span class="st">&quot;%d, %s, %s</span><span class="sc">\n</span><span class="st">&quot;</span>, a.zip, a.street, a.city);</a></code></pre></div></li>
+<li><p>Output</p>
+<pre class="text"><code>123456, street, recife</code></pre>
+<ul>
+<li>Note that changing the copy has not affected the original structure</li>
+</ul></li>
+</ul>
+</section><section id="structures-and-functions" class="slide level2">
+<h2>Structures and functions</h2>
+<ul>
+<li><p>Structures can be passed as parameters to a function</p></li>
+<li><p>Structures are passed by value i.e. copying their content</p></li>
+<li><p>Large structures should be passed by reference, by passing their pointers as parameters to functions</p></li>
+</ul>
+</section><section id="pointers-to-structures" class="slide level2">
+<h2>Pointers to structures</h2>
+<ul>
+<li><p>Example of structure manipulation using its pointer</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb115-1" title="1"><span class="kw">struct</span> address* b;</a>
+<a class="sourceLine" id="cb115-2" title="2">b = (<span class="kw">struct</span> address*) malloc(<span class="kw">sizeof</span>(<span class="kw">struct</span> address));</a>
+<a class="sourceLine" id="cb115-3" title="3">b-&gt;street = <span class="st">&quot;street&quot;</span>;</a>
+<a class="sourceLine" id="cb115-4" title="4">b-&gt;city = <span class="st">&quot;recife&quot;</span>;</a>
+<a class="sourceLine" id="cb115-5" title="5">(*b).zip = <span class="dv">654321</span>;</a>
+<a class="sourceLine" id="cb115-6" title="6">printf(<span class="st">&quot;%d, %s, %s</span><span class="sc">\n</span><span class="st">&quot;</span>, (*b).zip, b-&gt;street, b-&gt;city);</a></code></pre></div></li>
+<li><p>The <code>.</code> operator has higher precedence than the <code>*</code> operator</p></li>
+<li><p>C provides the <code>-&gt;</code> operator to facilitate accessing members of structures through their pointers</p></li>
+<li><p>A structure can point to itself e.g. in a tree structure</p></li>
+</ul>
+</section><section id="arrays-of-structures" class="slide level2">
+<h2>Arrays of structures</h2>
+<ul>
+<li><p>Arrays can store structure types</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb116-1" title="1"><span class="kw">struct</span> address a[<span class="dv">10</span>];</a></code></pre></div></li>
+<li><p>Arrays can be initialized at time of declaration using literal values and variables</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">struct</span> address a[] = {<span class="st">&quot;street1&quot;</span>, <span class="st">&quot;recife&quot;</span>, <span class="dv">4123456</span>, <span class="st">&quot;street2&quot;</span>, <span class="st">&quot;salvador&quot;</span>, <span class="dv">654321</span>};</a>
+<a class="sourceLine" id="cb117-2" title="2"><span class="co">// or</span></a>
+<a class="sourceLine" id="cb117-3" title="3"><span class="kw">struct</span> address a[] = {{<span class="st">&quot;street1&quot;</span>, <span class="st">&quot;recife&quot;</span>}, {<span class="st">&quot;street2&quot;</span>, <span class="st">&quot;salvador&quot;</span>, <span class="dv">654321</span>}};</a></code></pre></div></li>
+</ul>
+</section><section id="typedef" class="slide level2">
+<h2>Typedef</h2>
+<ul>
+<li><p>New data types can be created using the <code>typedef</code> keyword</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb118-1" title="1"><span class="kw">typedef</span> <span class="dt">unsigned</span> <span class="dt">short</span> UCHAR;</a></code></pre></div></li>
+<li><p>New complex types can be created using structures</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb119-1" title="1"><span class="kw">typedef</span> <span class="kw">struct</span> address {</a>
+<a class="sourceLine" id="cb119-2" title="2">  <span class="dt">char</span> * street;</a>
+<a class="sourceLine" id="cb119-3" title="3">  <span class="dt">char</span> * city;</a>
+<a class="sourceLine" id="cb119-4" title="4">  <span class="dt">int</span> zip;</a>
+<a class="sourceLine" id="cb119-5" title="5">} Address;</a>
+<a class="sourceLine" id="cb119-6" title="6"></a>
+<a class="sourceLine" id="cb119-7" title="7">b = (Address*)malloc(<span class="kw">sizeof</span>(Address));</a>
+<a class="sourceLine" id="cb119-8" title="8">b-&gt;street = <span class="st">&quot;street&quot;</span>;</a>
+<a class="sourceLine" id="cb119-9" title="9">b-&gt;city = <span class="st">&quot;recife&quot;</span>;</a>
+<a class="sourceLine" id="cb119-10" title="10">b-&gt;zip = <span class="dv">654321</span>;</a></code></pre></div></li>
+</ul>
+</section><section id="unions" class="slide level2">
+<h2>Unions</h2>
+<ul>
+<li><p>Look like a structure but store only one type at any given time</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb120-1" title="1"><span class="kw">union</span> number {</a>
+<a class="sourceLine" id="cb120-2" title="2">  <span class="dt">int</span> ival;</a>
+<a class="sourceLine" id="cb120-3" title="3">  <span class="dt">float</span> fval;</a>
+<a class="sourceLine" id="cb120-4" title="4">} n;</a></code></pre></div></li>
+<li><p>The compiler assigns a union a size large enough to store the widest type</p></li>
+<li><p>Unions can be nested within structures</p></li>
+<li><p>Unions support the same operations as structures</p></li>
+</ul>
+</section><section id="bit-fields" class="slide level2">
+<h2>Bit fields</h2>
+<ul>
+<li><p>Useful for conveniently handling several option flags as a single entity</p></li>
+<li><p>Each flag field can only be an <code>int</code></p></li>
+<li><p>The fields cannot be arrays, nor be pointed to; thus the <code>&amp;</code> operator cannot be applied to them</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb121-1" title="1"><span class="kw">struct</span> bit_fields {</a>
+<a class="sourceLine" id="cb121-2" title="2">  <span class="dt">unsigned</span> <span class="dt">int</span> is_keyword : <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb121-3" title="3">  <span class="dt">unsigned</span> <span class="dt">int</span> is_extern : <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb121-4" title="4">  <span class="dt">unsigned</span> <span class="dt">int</span> is_static : <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb121-5" title="5">} f;</a></code></pre></div></li>
+</ul>
+</section><section id="exercise-3" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li><p>Write a program to count the occurrence of each word in a given string. Use a binary search tree to store the words along with their counts.</p></li>
+<li><p>Print the words with their count to standard output in an ascending order by traversing the binary search tree in-order.</p></li>
+</ul>
+</section></section>
+<section><section id="input-and-output" class="title-slide slide level1"><h1>Input and Output</h1></section><section id="introduction-4" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li><p>Input and Output in C is provided by several standard library functions and not by the core language itself</p></li>
+<li><p>The standard library functions operate on streams (source or destination of data)</p></li>
+<li><p>The state of a stream is stored in the FILE structure declared in <code>&lt;stdio.h&gt;</code></p></li>
+<li><p>A FILE structure variable should not be created by the programmer</p></li>
+</ul>
+</section><section id="standard-streams" class="slide level2">
+<h2>Standard streams</h2>
+<ul>
+<li><p>The C library provides three standard streams in <code>&lt;stdio.h&gt;</code></p>
+<ul>
+<li><p>Standard input – <code>stdin</code></p></li>
+<li><p>Standard output – <code>stdout</code></p></li>
+<li><p>Standard error – <code>stderr</code></p></li>
+</ul></li>
+</ul>
+</section><section id="standard-input" class="slide level2">
+<h2>Standard Input</h2>
+<ul>
+<li><p>Stream that represents the standard input; usually this is the keyboard</p></li>
+<li><p>The <code>stdin</code> object is the standard input stream; it can be redirected by using the <code>freopen</code> function</p></li>
+<li><p>It can also be redirected at the command line</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb122-1" title="1"><span class="ex">executable</span> <span class="op">&lt;</span> filename</a></code></pre></div>
+<ul>
+<li>content of filename available in <code>stdin</code> of program</li>
+</ul>
+<div class="sourceCode" id="cb123"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb123-1" title="1"><span class="ex">executable1</span> <span class="kw">|</span> <span class="ex">executable2</span></a></code></pre></div>
+<ul>
+<li>output of <code>executable1</code> available in <code>stdin</code> of <code>executable2</code></li>
+</ul></li>
+</ul>
+</section><section id="standard-output" class="slide level2">
+<h2>Standard Output</h2>
+<ul>
+<li><p>Stream that represents the standard output; usually this is the display</p></li>
+<li><p>The <code>stdout</code> object is the standard output stream; it can be redirected using the <code>freopen</code> function</p></li>
+<li><p>It can also be redirected at the command line</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb124-1" title="1"><span class="ex">executable</span> <span class="op">&gt;</span> filename</a></code></pre></div>
+<ul>
+<li>redirects <code>stdout</code> of program to file <code>filename</code></li>
+</ul>
+<div class="sourceCode" id="cb125"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb125-1" title="1"><span class="ex">executable1</span> <span class="kw">|</span> <span class="ex">executable2</span></a></code></pre></div>
+<ul>
+<li>redirects <code>stdout</code> of <code>executable1</code> to <code>stdin</code> of <code>executable2</code></li>
+</ul></li>
+</ul>
+</section><section id="standard-error" class="slide level2">
+<h2>Standard Error</h2>
+<ul>
+<li><p>Stream that represents the standard error; usually this is the display</p></li>
+<li><p>The <code>stdout</code> object is the standard output stream; it can be redirected using the <code>freopen</code> function</p></li>
+<li><p>Program errors should be sent to this stream; this way, when the standard output is redirected to some other file, the error messages will continue to appear to the user on the display</p></li>
+<li><p>It can also be redirected at the command line</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb126-1" title="1"><span class="ex">executable</span> <span class="op">2&gt;</span> filename</a></code></pre></div></li>
+</ul>
+</section><section id="file-access" class="slide level2">
+<h2>File Access</h2>
+<ul>
+<li><p>Open a file stream</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb127-1" title="1"><span class="dt">FILE</span>* fp;</a>
+<a class="sourceLine" id="cb127-2" title="2">fp = fopen(name, mode);</a></code></pre></div>
+<ul>
+<li><p><code>name</code> is a relative or absolute file name and path</p></li>
+<li><p>mode can be <code>"r"</code>, <code>"w"</code>, <code>"a"</code>, <code>"rt"</code>, <code>"wt"</code>, <code>"at"</code>, <code>"rb"</code>, <code>"wb"</code>, <code>"ab"</code>, <code>"r+t"</code>, <code>"w+t"</code>, <code>"a+t"</code>, <code>"r+b"</code>, <code>"w+b"</code>, or <code>"a+b"</code></p></li>
+</ul></li>
+<li><p>Use the functions in <code>&lt;stdio.h&gt;</code> to manipulate the content of the file stream</p></li>
+<li><p>Call <code>fclose</code> to close the file stream</p></li>
+</ul>
+</section><section id="formatted-output" class="slide level2">
+<h2>Formatted Output</h2>
+<ul>
+<li><p>Function <code>printf</code> prints text to stdout</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb128-1" title="1"><span class="dt">int</span> printf(<span class="dt">char</span>* format, ...)</a></code></pre></div></li>
+<li><p>Function <code>fprintf</code> prints to any open stream</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb129-1" title="1"><span class="dt">int</span> fprintf(<span class="dt">FILE</span>* fp, <span class="dt">char</span>* format, ...)</a></code></pre></div></li>
+<li><p><code>format</code> is the format string; it contains the text to be printed, interspersed with conversion specifications that are used to convert and print the arguments that follow</p></li>
+</ul>
+</section><section id="print-conversion-specification" class="slide level2">
+<h2>Print conversion specification</h2>
+<p><code>%[flags][width][.precision][modifiers]type</code></p>
+<ul>
+<li><p><code>flags</code> can be <code>-</code>, <code>+</code>, space, <code>0</code>, <code>#</code></p></li>
+<li><p><code>width</code> specifies the minimum field width</p></li>
+<li><p><code>precision</code> specifies different things depending on the <code>type</code></p></li>
+<li><p><code>modifiers</code> can be <code>h</code>, <code>l</code> or <code>L</code></p></li>
+<li><p><code>type</code> can be <code>d</code>, <code>i</code>, <code>o</code>, <code>x</code>, <code>X</code>, <code>u</code>, <code>c</code>, <code>s</code>, <code>f</code>, <code>e</code>, <code>E</code>, <code>g</code>, <code>G</code>, <code>p</code>, <code>n</code>, or <code>%</code></p></li>
+</ul>
+</section><section id="formatted-input" class="slide level2">
+<h2>Formatted Input</h2>
+<ul>
+<li><p>Function <code>scanf</code> reads formatted input from stdin</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb130-1" title="1"><span class="dt">int</span> scanf(<span class="dt">char</span> *format, ...)</a></code></pre></div></li>
+<li><p>Function <code>fscanf</code> reads formatted input from any stream</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb131-1" title="1"><span class="dt">int</span> fscanf(<span class="dt">FILE</span> *fp; <span class="dt">char</span> *format, ...)</a></code></pre></div></li>
+<li><p><code>format</code> is the format string; this contains the text to be matched against the input, interspersed with conversion specifications that are used to convert and read values into the following arguments</p></li>
+<li><p>Blanks and tabs in the format string are ignored</p></li>
+<li><p>White-space characters in the input stream act as field separators</p></li>
+</ul>
+</section><section id="input-conversion-specification" class="slide level2">
+<h2>Input conversion specification</h2>
+<p><code>%[*][width][modifiers]type</code></p>
+<ul>
+<li><p><code>*</code> specifies assignment suppression</p></li>
+<li><p><code>width</code> specifies the maximum width</p></li>
+<li><p><code>modifiers</code> can be <code>h</code> or <code>l</code></p></li>
+<li><p><code>type</code> can be <code>d</code>, <code>i</code>, <code>o</code>, <code>u</code>, <code>x</code>, <code>c</code>, <code>s</code>, <code>e</code>, <code>f</code>, <code>g</code>, <code>p</code>, <code>n</code>, <code>[...]</code>, <code>[^...]</code>, or <code>%</code></p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb132-1" title="1">scanf(<span class="st">&quot;%d/%d/%d&quot;</span>, &amp;day, &amp;month, &amp;year)</a></code></pre></div></li>
+</ul>
+</section><section id="variable-length-argument-lists" class="slide level2">
+<h2>Variable length argument lists</h2>
+<ul>
+<li><p>A function may contain a variable length argument list</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb133-1" title="1"><span class="dt">int</span> printf(<span class="dt">const</span> <span class="dt">char</span>*, ...)</a></code></pre></div></li>
+<li><p>Header <code>&lt;stdarg.h&gt;</code> contains macro definitions that define how to read the argument list</p>
+<ul>
+<li><p>Declare a variable <code>ap</code> of type <code>va_list</code></p></li>
+<li><p>Call <code>va_start(ap, lastarg)</code> to initialize <code>ap</code>; <code>lastarg</code> is the last argument before <code>...</code></p></li>
+<li><p>Call <code>va_arg(ap, type)</code> to read next argument</p></li>
+<li><p>Call <code>va_end(ap)</code> to clean up</p></li>
+</ul></li>
+</ul>
+</section><section id="character-input-and-output" class="slide level2">
+<h2>Character input and output</h2>
+<p><code>int getc (FILE* fp)</code></p>
+<ul>
+<li>returns next character from stream <code>fp</code>, or <code>EOF</code></li>
+</ul>
+<p><code>int putc(int c, FILE* fp)</code></p>
+<ul>
+<li>write character <code>c</code> to stream <code>fp</code></li>
+<li>returns character written, or <code>EOF</code> on error</li>
+</ul>
+<p><code>getchar()</code></p>
+<ul>
+<li>same as <code>getc(stdin)</code></li>
+</ul>
+<p><code>putchar(c)</code></p>
+<ul>
+<li>same as <code>putc(c, stdout)</code></li>
+</ul>
+</section><section id="line-input-and-output" class="slide level2">
+<h2>Line input and output</h2>
+<p><code>char* fgets(char* line, int maxline, FILE* fp)</code></p>
+<ul>
+<li>reads at most <code>(maxline - 1)</code> characters from file stream <code>fp</code></li>
+<li>returns line, <code>NULL</code> on error, or <code>EOF</code></li>
+</ul>
+<p><code>int fputs(char* line, FILE* fp)</code></p>
+<ul>
+<li>writes the string in <code>line</code> to the file stream <code>fp</code></li>
+<li>returns zero or <code>EOF</code> if an error occurs</li>
+</ul>
+</section><section id="file-positioning" class="slide level2">
+<h2>File positioning</h2>
+<p><code>fseek(FILE* stream, long offset, int origin)</code></p>
+<ul>
+<li>sets the file position for the stream; offset may be <code>SEEK_SET</code>, <code>SEEK_CUR</code> or <code>SEEK_END</code></li>
+</ul>
+<p><code>long ftell(FILE* stream)</code></p>
+<ul>
+<li>returns the current file position or <code>-1L</code> on error</li>
+</ul>
+<p><code>void rewind(FILE* stream)</code></p>
+<ul>
+<li>sets the file position to the beginning, this is same as calling <code>fseek(fp, 0L, SEEK_SET)</code></li>
+</ul>
+</section><section id="error-handling" class="slide level2">
+<h2>Error handling</h2>
+<p><code>void clearerr(FILE* stream)</code></p>
+<ul>
+<li>clears end of file and error indicators</li>
+</ul>
+<p><code>int feof(FILE* stream)</code></p>
+<ul>
+<li>returns non-zero if end of file indicator is set</li>
+</ul>
+<p><code>int ferror(FILE* stream)</code></p>
+<ul>
+<li>returns non-zero if error indicator is set</li>
+</ul>
+<p><code>void perror(const char*)</code></p>
+<ul>
+<li>prints error message</li>
+</ul>
+</section><section id="listing-directories" class="slide level2">
+<h2>Listing directories</h2>
+<ul>
+<li><p>For BSD / Linux compatible library functions in <code>&lt;dirent.h&gt;</code></p></li>
+<li><p>File information function stat from <code>&lt;sys/stat.h&gt;</code></p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb134-1" title="1">DIR* dir;</a>
+<a class="sourceLine" id="cb134-2" title="2"><span class="kw">struct</span> dirent* item;</a>
+<a class="sourceLine" id="cb134-3" title="3"><span class="kw">struct</span> stat statbuf;</a>
+<a class="sourceLine" id="cb134-4" title="4">dir = opendir(<span class="st">&quot;.&quot;</span>);</a>
+<a class="sourceLine" id="cb134-5" title="5">item = readdir(dir);</a>
+<a class="sourceLine" id="cb134-6" title="6"><span class="cf">while</span>(item != NULL) {</a>
+<a class="sourceLine" id="cb134-7" title="7">  stat(item-&gt;d_name, &amp;statbuf);</a>
+<a class="sourceLine" id="cb134-8" title="8">  <span class="cf">if</span>(S_ISDIR(statbuf.st_mode)) {</a>
+<a class="sourceLine" id="cb134-9" title="9">    <span class="co">//...</span></a>
+<a class="sourceLine" id="cb134-10" title="10">  }</a>
+<a class="sourceLine" id="cb134-11" title="11">  item = readdir(dir);</a>
+<a class="sourceLine" id="cb134-12" title="12">}</a></code></pre></div></li>
+</ul>
+</section><section id="exercise-4" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li><p>Write a program that functions like the Unix tar command. The program should pack all files in the current directory into a single file whose name is specified at the command line. If the program receives the <code>–u</code> flag followed by a file name, it should unpack the content of the file to the current directory</p>
+<p><code>pack [-u] filename</code></p></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: "100%",
+        height: "100%",
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 1.5,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

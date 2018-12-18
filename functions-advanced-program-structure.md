@@ -110,19 +110,19 @@ int print() {
 
 - Variables within functions or code blocks that are not declared as extern are `auto` (for automatic)
 
-```c
-int a;
+  ```c
+  int a;
 
-int main() {
-  auto int a = 10; // "a" is local to main
-  print(); // prints "a: 0"
-}
+  int main() {
+    auto int a = 10; // "a" is local to main
+    print(); // prints "a: 0"
+  }
 
-int print() {
-  extern int a;
-  printf("a: %d\n", a);
-}
-```
+  int print() {
+    extern int a;
+    printf("a: %d\n", a);
+  }
+  ```
 
 ## static variables
 
@@ -283,25 +283,24 @@ concat(name, 1); //name1;
 
 ## Enable and disable tracing
 
-```c
-#define TRACE_NONE 0
+- Only integer constants and the following operators can be used in the expression following `#if`
+  - `&&`, `||`, `<`, `>`, `<=`, `>=`, `!`, and `==`
 
-#define TRACE_DEBUG 1
+  ```c
+  #define TRACE_NONE 0
+  #define TRACE_DEBUG 1
+  #define TRACE_ALL 2
 
-#define TRACE_ALL 2
+  #define TRACE_LEVEL TRACE_DEBUG
 
-#define TRACE_LEVEL TRACE_DEBUG
-
-int main() {
-#if TRACE_LEVEL == TRACE_ALL || TRACE_LEVEL == \
-    TRACE_DEBUG
-  printf("within main\n");
-#endif
-  return 0;
-}
-```
-
-- Only integer constants and the following operators can be used in the expression following `#if`&mdash;`&&`, `||`, `<`, `>`, `<=`, `>=`, `!` and `==`
+  int main() {
+  #if TRACE_LEVEL == TRACE_ALL || TRACE_LEVEL == \
+      TRACE_DEBUG
+    printf("within main\n");
+  #endif
+    return 0;
+  }
+  ```
 
 ## OS specific codes
 

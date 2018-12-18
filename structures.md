@@ -46,7 +46,7 @@
 
 ## Copying and assigning to structures
 
-- Example
+- Example of an `address` structure being assigned to another
 
   ```c
   struct address a, b;
@@ -58,11 +58,13 @@
   printf("%d, %s, %s\n", a.zip, a.street, a.city);
   ```
 
-- Outputs
+- Output
 
   ```text
   123456, street, recife
   ```
+
+  - Note that changing the copy has not affected the original structure
 
 ## Structures and functions
 
@@ -74,14 +76,16 @@
 
 ## Pointers to structures
 
-```c
-struct address* b;
-b = (struct address*) malloc(sizeof(struct address));
-b->street = "street";
-b->city = "recife";
-(*b).zip = 654321;
-printf("%d, %s, %s\n", (*b).zip, b->street, b->city);
-```
+- Example of structure manipulation using its pointer
+
+  ```c
+  struct address* b;
+  b = (struct address*) malloc(sizeof(struct address));
+  b->street = "street";
+  b->city = "recife";
+  (*b).zip = 654321;
+  printf("%d, %s, %s\n", (*b).zip, b->street, b->city);
+  ```
 
 - The `.` operator has higher precedence than the `*` operator
 
@@ -91,29 +95,29 @@ printf("%d, %s, %s\n", (*b).zip, b->street, b->city);
 
 ## Arrays of structures
 
-- Declaration
+- Arrays can store structure types
 
   ```c
   struct address a[10];
   ```
 
-- Initializers
+- Arrays can be initialized at time of declaration using literal values and variables
 
   ```c
   struct address a[] = {"street1", "recife", 4123456, "street2", "salvador", 654321};
-
+  // or
   struct address a[] = {{"street1", "recife"}, {"street2", "salvador", 654321}};
-  ```
+    ```
 
 ## Typedef
 
-- Used for creating new data types
+- New data types can be created using the `typedef` keyword
 
   ```c
   typedef unsigned short UCHAR;
   ```
 
-- New types using structures
+- New complex types can be created using structures
 
   ```c
   typedef struct address {
@@ -132,14 +136,14 @@ printf("%d, %s, %s\n", (*b).zip, b->street, b->city);
 
 - Look like a structure but store only one type at any given time
 
-- The compiler assigns a union a size large enough to store the widest type
+  ```c
+  union number {
+    int ival;
+    float fval;
+  } n;
+  ```
 
-```c
-union number {
-  int ival;
-  float fval;
-} n;
-```
+- The compiler assigns a union a size large enough to store the widest type
 
 - Unions can be nested within structures
 

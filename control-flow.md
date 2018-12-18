@@ -6,51 +6,52 @@
 
 - `else` part is optional
 
-```c
-if (expression)
- statement1
-else
- statement2
-```
+  ```c
+  if (expression)
+  statement1
+  else
+  statement2
+  ```
 
-- `expression` returns a numerical value, `0` is considered FALSE, any other value is TRUE
+- `expression` returns a numerical value
+- `0` is considered FALSE, any other value is TRUE
 
 ## if-else ambiguities
 
-```c
-if (i \>= 0)
-  if (i \< 5)
-    a = b;
-  else
-    a = c;
-```
-
 - By default, the `else` is associated with the inner `if`
 
-```c
-if (i \>= 0) {
-  if (i \< 5)
-    a = b;
-} else
-  a = c;
-```
+  ```c
+  if (i \>= 0)
+    if (i \< 5)
+      a = b;
+    else
+      a = c;
+  ```
 
 - Use braces to remove ambiguity
+
+  ```c
+  if (i \>= 0) {
+    if (i \< 5)
+      a = b;
+  } else
+    a = c;
+  ```
 
 ## else-if
 
 - Useful for expressing multi-way decisions
 
-```c
-if (expression)
-  statement
-else if (expression)
-  statement
-else if (expression)
-  statement
-else
-  statement
-```
+  ```c
+  if (expression)
+    statement
+  else if (expression)
+    statement
+  else if (expression)
+    statement
+  else
+    statement
+  ```
 
 ## switch
 
@@ -69,43 +70,48 @@ else
   }
   ```
 
-- a `break` statement causes exit from the `switch`, without a `break` all statements after the matching `case` are executed till the end of the `switch` block
+- a `break` statement causes exit from the `switch`
+- without a `break` all statements after the matching `case` are executed till the end of the `switch` block
 
 ## while
 
-```c
-while (expression) {
-  statements
-}
-```
-
 - The while loop executes as long as `expression` is TRUE (not 0)
+
+  ```c
+  while (expression) {
+    statements
+  }
+  ```
 
 ## for
 
-```c
-for (expr1; expr2; expr3) {
-  statements
-}
-```
+- The loop has three parts
 
-- The loop has three parts, `expr1` is an initialization expression, `expr2` is a relational expression, and `expr3` is the increment expression
+  ```c
+  for (expr1; expr2; expr3) {
+    statements
+  }
+  ```
+
+  - `expr1` is an initialization expression
+  - `expr2` is a relational expression, and
+  - `expr3` is the increment expression
 
 - The loop executes as long as `expr2` is TRUE (not 0)
 
-- All three expressions can be empty which leads to an infinite for loop
+- All three expressions can be empty which leads to an infinite `for` loop
 
 ## do-while
 
-```c
-do {
-  statements
-} while (expression);
-```
+- The `do` loop executes at least once before `expression` is evaluated
 
-- The do loop executes at least once before `expression` is evaluated
+  ```c
+  do {
+    statements
+  } while (expression);
+  ```
 
-- The loop executes as long as `expression` is TRUE (not 0)
+- The loop executes as long as `expression` is TRUE (not `0`)
 
 ## break
 
@@ -117,26 +123,26 @@ do {
 
 ## goto
 
-```c
-goto label;
-statements
-label:
-statements
-```
-
 - the `goto` statement causes execution to jump to the statements after the `label`
+
+  ```c
+  goto label;
+  statements
+  label:
+  statements
+  ```
 
 - `goto` is not recommended as it results in spaghetti code
 
 ## Exercise
 
-- Write a program that converts 1 to 50 mile(s) into kilometers.
+- Write a program that converts 1 to 50 mile(s) into kilometers
 
   **NOTE** 1 mile = 1.609344 kilometers
 
-- Print the result in tabular form as shown below
+- Print the result in tabular form
 
-|                           |     |                           |
-| ------------------------- | --- | ------------------------- |
-| 01 mile(s) = 01.609344 km |     | 02 mile(s) = 03.218688 km |
-| 03 mile(s) = 04.828032 km |     | 04 mile(s) = 06.437376 km |
+  ```text
+  01 mile(s) = 01.609344 km   02 mile(s) = 03.218688 km
+  03 mile(s) = 04.828032 km   04 mile(s) = 06.437376 km
+  ```

@@ -79,10 +79,10 @@
 
 |       | bits |        unsigned         |             signed             |
 | ----- | ---- | ----------------------- | ------------------------------ |
-| long  | 32   | $$0$$ to $$2^{32} - 1$$ | $$-2^{31}$$ to $$2^{31} - 1$$  |
-| int   | 32   | $$0$$ to $$2^{32} - 1$$ | $$- 2^{31}$$ to $$2^{31} - 1$$ |
-| short | 16   | $$0$$ to $$2^{16} - 1$$ | $$- 2^{15}$$ to $$2^{15} - 1$$ |
-| char  | 8    | $$0$$ to $$2^8 - 1$$    | $$- 2^7$$ to $$2^7 - 1$$       |
+| long  | 32   | $0$ to $2^{32} - 1$ | $-2^{31}$ to $2^{31} - 1$  |
+| int   | 32   | $0$ to $2^{32} - 1$ | $- 2^{31}$ to $2^{31} - 1$ |
+| short | 16   | $0$ to $2^{16} - 1$ | $- 2^{15}$ to $2^{15} - 1$ |
+| char  | 8    | $0$ to $2^8 - 1$    | $- 2^7$ to $2^7 - 1$       |
 
 ## Floating point types
 
@@ -138,7 +138,8 @@
 
 - A sequence of characters delimited by double quotes (`"hello world\n"`)
 
-- Strings constants separated by white-spaces are concatenated at compile time (`"hello " "world\n"` becomes `"hello world\n"`)
+- Strings constants separated by white-spaces are concatenated at compile time
+  - `"hello " "world\n"` becomes `"hello world\n"`
 
 - Internally a string constant is terminated by a `'\0'` (null) character
 
@@ -152,15 +153,15 @@
 
 - Escape sequences are used to represent such characters
 
-|     |                 |     |      |                    |
-| --- | --------------- | --- | ---- | ------------------ |
-| \a  | alert (beep)    |     | \\   | backslash          |
-| \b  | backspace       |     | \?   | question mark      |
-| \f  | formfeed        |     | \'   | single quote       |
-| \n  | newline         |     | \"   | double quote       |
-| \r  | carriage return |     | \nnn | octal number       |
-| \t  | horizontal tab  |     | \xhh | hexadecimal number |
-| \v  | vertical tab    |     | \0   | null character     |
+  |      |                 |     |        |                    |
+  | ---- | --------------- | --- | ------ | ------------------ |
+  | `\a` | alert (beep)    |     | `\\`   | backslash          |
+  | `\b` | backspace       |     | `\?`   | question mark      |
+  | `\f` | formfeed        |     | `\'`   | single quote       |
+  | `\n` | newline         |     | `\"`   | double quote       |
+  | `\r` | carriage return |     | `\nnn` | octal number       |
+  | `\t` | horizontal tab  |     | `\xhh` | hexadecimal number |
+  | `\v` | vertical tab    |     | `\0`   | null character     |
 
 ## Constant expression
 
@@ -170,10 +171,10 @@
 
 - Can be used in the place of a constant
 
-```c
-#define MAX 100
-int i = MAX;
-```
+  ```c
+  #define MAX 100
+  int i = MAX;
+  ```
 
 ## Enumeration constants
 
@@ -181,17 +182,17 @@ int i = MAX;
 
 - Values can be specified or generated
 
-```c
-enum colors { RED = 'r', BLUE = 'b', GREEN = 'g'};
+  ```c
+  enum colors { RED = 'r', BLUE = 'b', GREEN = 'g'};
 
-enum dow { SUN = 1, MON, TUE, WED, THU, FRI, SAT};
-```
+  enum dow { SUN = 1, MON, TUE, WED, THU, FRI, SAT};
+  ```
 
 - Variables of enum types can be declared
 
-```c
-enum colors c = RED;
-```
+  ```c
+  enum colors c = RED;
+  ```
 
 - DDD shows values of enum variables as symbols
 
@@ -201,19 +202,23 @@ enum colors c = RED;
 
 - A declaration only specifies the nature of a variable (i.e. type)
 
-- A declaration contains a type followed by a list of one or more comma separated names: `char c, name [50];`
+- A declaration contains a type followed by a list of one or more comma separated names
+
+  ```c
+  char c, name [50];
+  ```
 
 - A variable may be initialized in its declaration
 
-```c
-int i = MAX + 1, j = i;
-```
+  ```c
+  int i = MAX + 1, j = i;
+  ```
 
 - By prefixing `const` to a declaration, a variable can be declared as unchangeable
 
-```c
-const double pi = 3.14;
-```
+  ```c
+  const double pi = 3.14;
+  ```
 
 ## Arithmetic Operators
 
@@ -229,7 +234,7 @@ const double pi = 3.14;
   ++ -- + -
   ```
 
-- Postfix prefix example
+- Postfix / prefix unary operator usage
 
   ```c
   int i = 0, j;
@@ -301,7 +306,7 @@ const double pi = 3.14;
 
 ## Assignment operators
 
-- Assignment
+- Normal assignment
 
   ```text
   =
@@ -313,7 +318,7 @@ const double pi = 3.14;
   += -= *= /= %=
   ```
 
-- Bitwise
+- Bitwise assignment operators
 
   ```text
   &= ^= |= <<= >>=
@@ -401,7 +406,7 @@ const double pi = 3.14;
   `1UL`  
   `00000000000000000000000000000001`  
 
-  `1L` as two's complement of `1L` (calculated as `~1+1` or $$2^{32} - 1$$)  
+  `1L` as two's complement of `1L` (calculated as `~1+1` or $2^{32} - 1$)  
   `11111111111111111111111111111111`
 
 ## Automatic type conversion rules
@@ -416,7 +421,9 @@ For an operator that takes two operands
 
 - Else, if one is `unsigned long int`, convert other to `unsigned long int`
 
-- Else, if one is `long int` and other is `unsigned int` and if a `long int` can represent all values of an `unsigned int` then convert both to `long int`, otherwise convert both to `unsigned long int`
+- Else, if one is `long int` and other is `unsigned int`
+  - If a `long int` can represent all values of an `unsigned int`, convert both to `long int`
+  - Else convert both to `unsigned long int`
 
 - Else, if one is `long int`, convert other to `long int`
 

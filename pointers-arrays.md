@@ -14,7 +14,7 @@
   p = &i;
   ```
 
-  ![pointer](media/pointer.svg)
+  ![A pointer to int](media/pointer.svg)
 
 ## Pointer declaration
 
@@ -74,7 +74,7 @@
 
 - The array index starts at zero
 
-  ![array](media/array.svg)
+  ![An array of int](media/array.svg)
 
 ## Array initialization
 
@@ -187,7 +187,7 @@
   printf("%s %s\n", a[0], a[1]);
   ```
 
-  ![Multi-dimensional Array](media/marray.svg)
+  ![Multi-dimensional Array](media/marray.svg){height=200px}
 
 - The multi-dimensional array above may be substituted by an array of pointers to char
 
@@ -196,44 +196,51 @@
   printf("%s %s\n", a[0], a[1]);
   ```
 
-  ![Array of Pointers](media/arrayp.svg)
+  ![Array of Pointers](media/arrayp.svg){height=200px}
 
 ## Pointers vs Multi-dimensional Arrays
 
-```c
-int a[2][2] = {{1,2},{3,4}};
-int *b[2], **c, *d;
-b[0] = a[0]; b[1] = a[1];
-c = b; d = (int *)a;
-printf("%d\n", a[1][1]);
-printf("%d\n", *(*(a + 1) + 1));
-printf("%d\n", b[1][1]);
-printf("%d\n", *(*(b + 1) + 1));
-printf("%d\n", c[1][1]);
-printf("%d\n", *(*(c + 1) + 1));
-printf("%d\n", d[3]);
-printf("%d\n", *(d + 3));
-```
+- Multi-dimensional arrays can be assigned to pointers
 
-![Pointers vs Multi-dimensional Arrays](media/marray-vs-pointers.svg)
+  ```c
+  int a[2][2] = {{1,2},{3,4}};
+  int *b[2], **c, *d;
+  b[0] = a[0]; b[1] = a[1];
+  c = b; d = (int *)a;
+  printf("%d\n", a[1][1]);
+  printf("%d\n", *(*(a + 1) + 1));
+  printf("%d\n", b[1][1]);
+  printf("%d\n", *(*(b + 1) + 1));
+  printf("%d\n", c[1][1]);
+  printf("%d\n", *(*(c + 1) + 1));
+  printf("%d\n", d[3]);
+  printf("%d\n", *(d + 3));
+  ```
+
+![Pointers vs Multi-dimensional Arrays](media/marray-vs-pointers.svg){height=400px}
 
 ## Command line arguments
 
-```c
-main (int argc, char * argv[])
-```
+- `main` function syntax
 
-  ![argv](media/argv.svg)
+  ```c
+  main (int argc, char * argv[])
+  ```
 
-- argc is the number of arguments in the command-line that invoked the program, always at least 1 because the program name is itself an argument
+  - `argc` is the number of arguments in the command-line that invoked the program
+    - always at least `1` because the program name is itself an argument
 
-- argv is an array of pointers to char, each element points to a string
+  - `argv` is an array of pointers to `char`, each element points to a string
 
-- argv[argc] required to be a NULL pointer
+  - `argv[argc]` required to be a `NULL` pointer
+
+![argv](media/argv.svg){height=300px}
 
 ## Pointers to Functions
 
-- Pointers can point to functions; although functions are very different from variables, they do have an address where they begin
+- Pointers can point to functions
+
+- Functions are very different from variables, but have an address where they start
 
 - Declare a pointer to a function
 
@@ -283,11 +290,13 @@ main (int argc, char * argv[])
 
 ## malloc
 
+- Allocates `n` bytes of storage and returns a void pointer to it
+
   ```c
   void* malloc(size_t n)
   ```
 
-- Allocates n bytes of storage and returns a void pointer to it
+- Example
 
   ```c
   int* ip = (int*)malloc(10 * sizeof(int));
@@ -298,18 +307,20 @@ main (int argc, char * argv[])
 
 ## calloc
 
-```c
-void* calloc(size_t n, size_t size)
-```
+- Allocates memory for `n` objects of size `size` and returns a void pointer to it
 
-- Allocates memory for n objects of size size and returns a void pointer to it
+  ```c
+  void* calloc(size_t n, size_t size)
+  ```
 
 - The memory assigned is initialized to zeros
 
-```c
-int* ip = (int*)calloc(10, sizeof(int));
-free(ip);
-```
+- Example
+
+  ```c
+  int* ip = (int*)calloc(10, sizeof(int));
+  free(ip);
+  ```
 
 ## Memory allocation problems
 

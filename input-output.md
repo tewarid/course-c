@@ -179,11 +179,12 @@
 
 `int getc (FILE* fp)`
 
-- returns next character from stream `fp` or `EOF`
+- returns next character from stream `fp`, or `EOF`
 
 `int putc(int c, FILE* fp)`
 
-- write character `c` to stream `fp`; returns character written or `EOF` on error
+- write character `c` to stream `fp`
+- returns character written, or `EOF` on error
 
 `getchar()`
 
@@ -197,11 +198,13 @@
 
 `char* fgets(char* line, int maxline, FILE* fp)`
 
-- reads at most `maxline - 1` characters from file stream `fp` and returns line, `NULL` on error, or end of file
+- reads at most `(maxline - 1)` characters from file stream `fp`
+- returns line, `NULL` on error, or `EOF`
 
 `int fputs(char* line, FILE* fp)`
 
-- writes the string in `line` to the file stream `fp`; returns zero or `EOF` if an error occurs
+- writes the string in `line` to the file stream `fp`
+- returns zero or `EOF` if an error occurs
 
 ## File positioning
 
@@ -241,20 +244,20 @@
 
 - File information function stat from `<sys/stat.h>`
 
-```c
-DIR* dir;
-struct dirent* item;
-struct stat statbuf;
-dir = opendir(".");
-item = readdir(dir);
-while(item != NULL) {
-  stat(item->d_name, &statbuf);
-  if(S_ISDIR(statbuf.st_mode)) {
-    //...
-  }
+  ```c
+  DIR* dir;
+  struct dirent* item;
+  struct stat statbuf;
+  dir = opendir(".");
   item = readdir(dir);
-}
-```
+  while(item != NULL) {
+    stat(item->d_name, &statbuf);
+    if(S_ISDIR(statbuf.st_mode)) {
+      //...
+    }
+    item = readdir(dir);
+  }
+  ```
 
 ## Exercise
 
