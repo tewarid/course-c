@@ -1,4 +1,4 @@
-# A Course in C Programming
+# Instructions
 
 I suggest using the slides in the following order
 
@@ -14,4 +14,8 @@ Presentation views rendered using pandoc are available in [reveal.js](slides.htm
 
 ## Known Issues
 
-Inline math is not rendered properly by GitHub Pages/Jekyll because Kramdown fails to recognize single dollar sign delimiter `$...$` supported by pandoc.
+Due to differences in markdown syntax supported by pandoc and kramdown, static HTML rendered by GitHub Pages/Jekyll has some issues
+
+- Inline math is not rendered properly because kramdown fails to recognize single dollar sign delimiter `$...$` supported by pandoc
+
+- Image attributes such as height and width are not applied, and (unfortunately) appear after the image
