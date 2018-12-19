@@ -1,4 +1,4 @@
-# Instructions
+# A Course in C Programming
 
 I suggest using the slides in the following order
 
