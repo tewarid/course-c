@@ -104,9 +104,11 @@
 - Arrays can be initialized at time of declaration using literal values and variables
 
   ```c
-  struct address a[] = {"street1", "recife", 4123456, "street2", "salvador", 654321};
+  struct address a[] = {"street1", "recife", 4123456,
+    "street2", "salvador", 654321};
   // or
-  struct address a[] = {{"street1", "recife"}, {"street2", "salvador", 654321}};
+  struct address a[] = { {"street1", "recife"},
+    {"street2", "salvador", 654321} };
     ```
 
 ## Typedef

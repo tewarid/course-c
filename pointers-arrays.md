@@ -172,8 +172,8 @@
 - Initialization
 
   ```c
-  int a[][2] = {{1,2}, {3}};
-  int (b[])[2] = {{1,2}, {3}};
+  int a[][2] = { {1,2}, {3} };
+  int (b[])[2] = { {1,2}, {3} };
   ```
 
   - The number of columns (length of each row) needs to be known beforehand; try printing `a[1][1]`, what do you get?
@@ -203,7 +203,7 @@
 - Multi-dimensional arrays can be assigned to pointers
 
   ```c
-  int a[2][2] = {{1,2},{3,4}};
+  int a[2][2] = { {1,2}, {3,4} };
   int *b[2], **c, *d;
   b[0] = a[0]; b[1] = a[1];
   c = b; d = (int *)a;
