@@ -14,7 +14,7 @@
   p = &i;
   ```
 
-  ![A pointer to int](media/pointer.svg)
+  ![](media/pointer.svg)
 
 ## Pointer declaration
 
@@ -74,7 +74,7 @@
 
 - The array index starts at zero
 
-  ![An array of int](media/array.svg)
+  ![](media/array.svg)
 
 ## Array initialization
 
@@ -115,7 +115,7 @@
 
   - `a` always points to the start of the array and cannot be changed
 
-  ![Pointers vs Arrays](media/pointers-vs-array.svg)
+  ![](media/pointers-vs-array.svg)
 
 ## Pointer operations
 
@@ -131,7 +131,7 @@
 
 - `p+=i` points to `i` elements beyond the current position
 
-- mi points to `i` elements before the current position
+- `p-=i` points to `i` elements before the current position
 
 - `p = 0` or `p = NULL` makes p a null pointer; a valid pointer that does not point to anything in particular
 
@@ -187,7 +187,7 @@
   printf("%s %s\n", a[0], a[1]);
   ```
 
-  ![Multi-dimensional Array](media/marray.svg){height=200px}
+  ![](media/marray.svg)
 
 - The multi-dimensional array above may be substituted by an array of pointers to char
 
@@ -196,7 +196,7 @@
   printf("%s %s\n", a[0], a[1]);
   ```
 
-  ![Array of Pointers](media/arrayp.svg){height=200px}
+  ![](media/arrayp.svg)
 
 ## Pointers vs Multi-dimensional Arrays
 
@@ -217,7 +217,7 @@
   printf("%d\n", *(d + 3));
   ```
 
-![Pointers vs Multi-dimensional Arrays](media/marray-vs-pointers.svg){height=400px}
+  ![](media/marray-vs-pointers.svg)
 
 ## Command line arguments
 
@@ -234,7 +234,7 @@
 
   - `argv[argc]` required to be a `NULL` pointer
 
-![argv](media/argv.svg){height=300px}
+  ![](media/argv.svg)
 
 ## Pointers to Functions
 

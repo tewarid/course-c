@@ -14,8 +14,10 @@ Presentation views rendered using pandoc are available in [reveal.js](slides.htm
 
 ## Known Issues
 
-Due to differences in markdown syntax supported by pandoc and kramdown, static HTML rendered by GitHub Pages/Jekyll has some issues
+- The course mentions Windows Subsystem for Unix (SFU) which is now defunct
 
-- Inline math is not rendered properly because kramdown fails to recognize single dollar sign delimiter `$...$` supported by pandoc
+- Due to differences in markdown syntax supported by pandoc and kramdown, static HTML rendered by GitHub Pages/Jekyll has some issues
 
-- Image attributes such as height and width are not applied, and (unfortunately) appear after the image
+  - Inline math is not rendered properly because kramdown fails to recognize single dollar sign delimiter `$...$` supported by pandoc
+
+  - Image attributes such as height and width are not applied, and (unfortunately) appear after the image

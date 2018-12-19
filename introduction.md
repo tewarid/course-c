@@ -220,7 +220,7 @@ extern void print_hello();
 
 ## Debug Using DDD
 
-![DDD](media/ddd.png)
+![](media/ddd.png)
 
 - DDD is a graphical debugger for X Windows and it uses gdb, the command line debugger
 

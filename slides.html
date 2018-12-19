@@ -102,6 +102,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="date">December 05, 2005</p>
 </section>
 
+<section><section id="objectives" class="title-slide slide level1"><h1>Objectives</h1></section><section id="course-objectives" class="slide level2">
+<h2>Course Objectives</h2>
+<ul>
+<li><p>Learn the core elements of ANSI C</p></li>
+<li><p>Get to know tools for building C programs on GNU/Linux</p></li>
+<li><p>Learn to read and debug C programs</p></li>
+<li><p>Build useful utilities for reusing in your own programs</p></li>
+</ul>
+</section></section>
 <section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="history" class="slide level2">
 <h2>History</h2>
 <ul>
@@ -252,9 +261,7 @@ collect2: ld returned 1 exit status</code></pre></li>
 </ul>
 </section><section id="debug-using-ddd" class="slide level2">
 <h2>Debug Using DDD</h2>
-<figure>
-<img data-src="media/ddd.png" alt="DDD" /><figcaption>DDD</figcaption>
-</figure>
+<p><img data-src="media/ddd.png" /></p>
 <ul>
 <li><p>DDD is a graphical debugger for X Windows and it uses gdb, the command line debugger</p></li>
 <li><p>Re-compile source code with extra debug information for gdb</p>
@@ -1189,9 +1196,7 @@ collect2: ld returned 1 exit status</code></pre></li>
 <div class="sourceCode" id="cb79"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb79-1" title="1"><span class="dt">int</span>* p;</a>
 <a class="sourceLine" id="cb79-2" title="2"><span class="dt">int</span> i = <span class="dv">10</span>;</a>
 <a class="sourceLine" id="cb79-3" title="3">p = &amp;i;</a></code></pre></div>
-<figure>
-<img data-src="media/pointer.svg" alt="A pointer to int" /><figcaption>A pointer to int</figcaption>
-</figure></li>
+<p><img data-src="media/pointer.svg" /></p></li>
 </ul>
 </section><section id="pointer-declaration" class="slide level2">
 <h2>Pointer declaration</h2>
@@ -1232,9 +1237,7 @@ collect2: ld returned 1 exit status</code></pre></li>
 <div class="sourceCode" id="cb84"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb84-1" title="1"><span class="dt">int</span> a[<span class="dv">10</span>]; <span class="co">// declares an array of 10 integers</span></a></code></pre></div></li>
 <li><p>Elements of arrays declared as <code>extern</code>, <code>static</code> and <code>auto</code> are initialized to zero</p></li>
 <li><p>The array index starts at zero</p>
-<figure>
-<img data-src="media/array.svg" alt="An array of int" /><figcaption>An array of int</figcaption>
-</figure></li>
+<p><img data-src="media/array.svg" /></p></li>
 </ul>
 </section><section id="array-initialization" class="slide level2">
 <h2>Array initialization</h2>
@@ -1263,9 +1266,7 @@ collect2: ld returned 1 exit status</code></pre></li>
 <ul>
 <li><code>a</code> always points to the start of the array and cannot be changed</li>
 </ul>
-<figure>
-<img data-src="media/pointers-vs-array.svg" alt="Pointers vs Arrays" /><figcaption>Pointers vs Arrays</figcaption>
-</figure></li>
+<p><img data-src="media/pointers-vs-array.svg" /></p></li>
 </ul>
 </section><section id="pointer-operations" class="slide level2">
 <h2>Pointer operations</h2>
@@ -1280,7 +1281,7 @@ collect2: ld returned 1 exit status</code></pre></li>
 <li>what does <code>*--p = 10</code> do? (hint – see operator precedence table)</li>
 </ul></li>
 <li><p><code>p+=i</code> points to <code>i</code> elements beyond the current position</p></li>
-<li><p>mi points to <code>i</code> elements before the current position</p></li>
+<li><p><code>p-=i</code> points to <code>i</code> elements before the current position</p></li>
 <li><p><code>p = 0</code> or <code>p = NULL</code> makes p a null pointer; a valid pointer that does not point to anything in particular</p></li>
 </ul>
 </section><section id="strings" class="slide level2">
@@ -1304,8 +1305,8 @@ collect2: ld returned 1 exit status</code></pre></li>
 <li>10 rows and 20 columns, <em>contiguous</em> storage for 200 integers</li>
 </ul></li>
 <li><p>Initialization</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb94-1" title="1"><span class="dt">int</span> a[][<span class="dv">2</span>] = {{<span class="dv">1</span>,<span class="dv">2</span>}, {<span class="dv">3</span>}};</a>
-<a class="sourceLine" id="cb94-2" title="2"><span class="dt">int</span> (b[])[<span class="dv">2</span>] = {{<span class="dv">1</span>,<span class="dv">2</span>}, {<span class="dv">3</span>}};</a></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb94-1" title="1"><span class="dt">int</span> a[][<span class="dv">2</span>] = { {<span class="dv">1</span>,<span class="dv">2</span>}, {<span class="dv">3</span>} };</a>
+<a class="sourceLine" id="cb94-2" title="2"><span class="dt">int</span> (b[])[<span class="dv">2</span>] = { {<span class="dv">1</span>,<span class="dv">2</span>}, {<span class="dv">3</span>} };</a></code></pre></div>
 <ul>
 <li>The number of columns (length of each row) needs to be known beforehand; try printing <code>a[1][1]</code>, what do you get?</li>
 </ul></li>
@@ -1316,21 +1317,17 @@ collect2: ld returned 1 exit status</code></pre></li>
 <li><p>This is how you would construct an array of string constants</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb95-1" title="1"><span class="dt">char</span> a[][<span class="dv">7</span>] = {<span class="st">&quot;hello&quot;</span>, <span class="st">&quot;world!&quot;</span>};</a>
 <a class="sourceLine" id="cb95-2" title="2">printf(<span class="st">&quot;%s %s</span><span class="sc">\n</span><span class="st">&quot;</span>, a[<span class="dv">0</span>], a[<span class="dv">1</span>]);</a></code></pre></div>
-<figure>
-<img data-src="media/marray.svg" alt="Multi-dimensional Array" height="200" /><figcaption>Multi-dimensional Array</figcaption>
-</figure></li>
+<p><img data-src="media/marray.svg" /></p></li>
 <li><p>The multi-dimensional array above may be substituted by an array of pointers to char</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb96-1" title="1"><span class="dt">char</span>* a[] = {<span class="st">&quot;hello&quot;</span>, <span class="st">&quot;world!&quot;</span>};</a>
 <a class="sourceLine" id="cb96-2" title="2">printf(<span class="st">&quot;%s %s</span><span class="sc">\n</span><span class="st">&quot;</span>, a[<span class="dv">0</span>], a[<span class="dv">1</span>]);</a></code></pre></div>
-<figure>
-<img data-src="media/arrayp.svg" alt="Array of Pointers" height="200" /><figcaption>Array of Pointers</figcaption>
-</figure></li>
+<p><img data-src="media/arrayp.svg" /></p></li>
 </ul>
 </section><section id="pointers-vs-multi-dimensional-arrays" class="slide level2">
 <h2>Pointers vs Multi-dimensional Arrays</h2>
 <ul>
 <li><p>Multi-dimensional arrays can be assigned to pointers</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb97-1" title="1"><span class="dt">int</span> a[<span class="dv">2</span>][<span class="dv">2</span>] = {{<span class="dv">1</span>,<span class="dv">2</span>},{<span class="dv">3</span>,<span class="dv">4</span>}};</a>
+<div class="sourceCode" id="cb97"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb97-1" title="1"><span class="dt">int</span> a[<span class="dv">2</span>][<span class="dv">2</span>] = { {<span class="dv">1</span>,<span class="dv">2</span>}, {<span class="dv">3</span>,<span class="dv">4</span>} };</a>
 <a class="sourceLine" id="cb97-2" title="2"><span class="dt">int</span> *b[<span class="dv">2</span>], **c, *d;</a>
 <a class="sourceLine" id="cb97-3" title="3">b[<span class="dv">0</span>] = a[<span class="dv">0</span>]; b[<span class="dv">1</span>] = a[<span class="dv">1</span>];</a>
 <a class="sourceLine" id="cb97-4" title="4">c = b; d = (<span class="dt">int</span> *)a;</a>
@@ -1341,11 +1338,9 @@ collect2: ld returned 1 exit status</code></pre></li>
 <a class="sourceLine" id="cb97-9" title="9">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, c[<span class="dv">1</span>][<span class="dv">1</span>]);</a>
 <a class="sourceLine" id="cb97-10" title="10">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, *(*(c + <span class="dv">1</span>) + <span class="dv">1</span>));</a>
 <a class="sourceLine" id="cb97-11" title="11">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, d[<span class="dv">3</span>]);</a>
-<a class="sourceLine" id="cb97-12" title="12">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, *(d + <span class="dv">3</span>));</a></code></pre></div></li>
+<a class="sourceLine" id="cb97-12" title="12">printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, *(d + <span class="dv">3</span>));</a></code></pre></div>
+<p><img data-src="media/marray-vs-pointers.svg" /></p></li>
 </ul>
-<figure>
-<img data-src="media/marray-vs-pointers.svg" alt="Pointers vs Multi-dimensional Arrays" height="400" /><figcaption>Pointers vs Multi-dimensional Arrays</figcaption>
-</figure>
 </section><section id="command-line-arguments" class="slide level2">
 <h2>Command line arguments</h2>
 <ul>
@@ -1358,11 +1353,9 @@ collect2: ld returned 1 exit status</code></pre></li>
 </ul></li>
 <li><p><code>argv</code> is an array of pointers to <code>char</code>, each element points to a string</p></li>
 <li><p><code>argv[argc]</code> required to be a <code>NULL</code> pointer</p></li>
-</ul></li>
 </ul>
-<figure>
-<img data-src="media/argv.svg" alt="argv" height="300" /><figcaption>argv</figcaption>
-</figure>
+<p><img data-src="media/argv.svg" /></p></li>
+</ul>
 </section><section id="pointers-to-functions" class="slide level2">
 <h2>Pointers to Functions</h2>
 <ul>
@@ -1512,9 +1505,11 @@ collect2: ld returned 1 exit status</code></pre></li>
 <li><p>Arrays can store structure types</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb116-1" title="1"><span class="kw">struct</span> address a[<span class="dv">10</span>];</a></code></pre></div></li>
 <li><p>Arrays can be initialized at time of declaration using literal values and variables</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">struct</span> address a[] = {<span class="st">&quot;street1&quot;</span>, <span class="st">&quot;recife&quot;</span>, <span class="dv">4123456</span>, <span class="st">&quot;street2&quot;</span>, <span class="st">&quot;salvador&quot;</span>, <span class="dv">654321</span>};</a>
-<a class="sourceLine" id="cb117-2" title="2"><span class="co">// or</span></a>
-<a class="sourceLine" id="cb117-3" title="3"><span class="kw">struct</span> address a[] = {{<span class="st">&quot;street1&quot;</span>, <span class="st">&quot;recife&quot;</span>}, {<span class="st">&quot;street2&quot;</span>, <span class="st">&quot;salvador&quot;</span>, <span class="dv">654321</span>}};</a></code></pre></div></li>
+<div class="sourceCode" id="cb117"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">struct</span> address a[] = {<span class="st">&quot;street1&quot;</span>, <span class="st">&quot;recife&quot;</span>, <span class="dv">4123456</span>,</a>
+<a class="sourceLine" id="cb117-2" title="2">  <span class="st">&quot;street2&quot;</span>, <span class="st">&quot;salvador&quot;</span>, <span class="dv">654321</span>};</a>
+<a class="sourceLine" id="cb117-3" title="3"><span class="co">// or</span></a>
+<a class="sourceLine" id="cb117-4" title="4"><span class="kw">struct</span> address a[] = { {<span class="st">&quot;street1&quot;</span>, <span class="st">&quot;recife&quot;</span>},</a>
+<a class="sourceLine" id="cb117-5" title="5">  {<span class="st">&quot;street2&quot;</span>, <span class="st">&quot;salvador&quot;</span>, <span class="dv">654321</span>} };</a></code></pre></div></li>
 </ul>
 </section><section id="typedef" class="slide level2">
 <h2>Typedef</h2>
@@ -1792,9 +1787,9 @@ collect2: ld returned 1 exit status</code></pre></li>
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: "100%",
-        height: "100%",
+        height: "150%",
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 0.05,
         // Bounds for smallest/largest possible scale to apply to content
         minScale: 0.2,
         maxScale: 1.5,
