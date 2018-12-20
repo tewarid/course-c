@@ -1,4 +1,4 @@
-theme: jekyll-theme-tactile
+remote_theme: tewarid/slate
 title: A Course in C Programming
 description: A basic course in C Programming using C99 (mostly) with GCC on Linux
 google_analytics: UA-114405074-1
