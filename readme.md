@@ -1,7 +1,3 @@
----
-layout: default
-title: A Course in C Programming
----
 # A Course in C Programming
 
 I suggest using the slides in the following order
