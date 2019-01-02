@@ -11,4 +11,4 @@ I suggest using the slides in the following order
 7. [Structures](structures.md)
 8. [Input and Output](input-output.md)
 
-Presentation views rendered using pandoc are available in [reveal.js](slides.html) and [PowerPoint](slides.pptx) formats.
+Presentation views rendered using pandoc are available in [reveal.js](slides.html) and [PowerPoint](slides.pptx) formats. [Diagrams](diagrams.xml) are also available in [draw.io](https://www.draw.io) format.
