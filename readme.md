@@ -2,7 +2,7 @@
 
 I suggest using the slides in the following order
 
-1. [Objective](objective.md)
+1. [Objectives](objective.md)
 2. [Introduction](introduction.md)
 3. [Types, Operators and Expressions](types-operators-expressions.md)
 4. [Control Flow](control-flow.md)

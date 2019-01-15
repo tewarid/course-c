@@ -8,4 +8,4 @@
 
 - Learn to read and debug C programs
 
-- Build useful utilities for reusing in your own programs
+- Build useful utilities to reuse in your own programs
