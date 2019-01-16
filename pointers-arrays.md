@@ -159,7 +159,7 @@
 
 - Exercise: write a function to replace `strcpy`
 
-## Multi-dimensional Arrays
+## Multi-dimensional arrays
 
 - Declaration
 
@@ -178,7 +178,7 @@
 
   - The number of columns (length of each row) needs to be known beforehand; try printing `a[1][1]`, what do you get?
 
-## Array of Pointers
+## Wasted space with multi-dimensional array
 
 - This is how you would construct an array of string constants
 
@@ -189,7 +189,9 @@
 
   ![](media/marray.svg)
 
-- The multi-dimensional array above may be substituted by an array of pointers to char
+## Array of pointers instead of multi-dimensional array
+
+- The multi-dimensional array shown earlier may be substituted by an array of pointers to `char`
 
   ```c
   char* a[] = {"hello", "world!"};
@@ -198,7 +200,7 @@
 
   ![](media/arrayp.svg)
 
-## Pointers vs Multi-dimensional Arrays
+## Pointers to multi-dimensional array
 
 - Multi-dimensional arrays can be assigned to pointers
 
@@ -217,9 +219,11 @@
   printf("%d\n", *(d + 3));
   ```
 
+## Visualizing pointers to multi-dimensional array
+
   ![](media/marray-vs-pointers.svg)
 
-## Command line arguments
+## Main function
 
 - `main` function syntax
 
@@ -227,14 +231,16 @@
   main (int argc, char * argv[])
   ```
 
-  - `argc` is the number of arguments in the command-line that invoked the program
-    - always at least `1` because the program name is itself an argument
-
-  - `argv` is an array of pointers to `char`, each element points to a string
-
-  - `argv[argc]` required to be a `NULL` pointer
-
   ![](media/argv.svg)
+
+## Command line arguments
+
+- `argc` is the number of arguments in the command-line that invoked the program
+  - always at least `1` because the program name is itself an argument
+
+- `argv` is an array of pointers to `char`, each element points to a string
+
+- `argv[argc]` required to be a `NULL` pointer
 
 ## Pointers to Functions
 
