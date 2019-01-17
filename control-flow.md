@@ -21,8 +21,8 @@
 - By default, the `else` is associated with the inner `if`
 
   ```c
-  if (i \>= 0)
-    if (i \< 5)
+  if (i >= 0)
+    if (i < 5)
       a = b;
     else
       a = c;
@@ -31,8 +31,8 @@
 - Use braces to remove ambiguity
 
   ```c
-  if (i \>= 0) {
-    if (i \< 5)
+  if (i >= 0) {
+    if (i < 5)
       a = b;
   } else
     a = c;
