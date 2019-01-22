@@ -202,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb9-3" data-line-number="3"><span class="dt">int</span></a>
 <a class="sourceLine" id="cb9-4" data-line-number="4">main()</a>
 <a class="sourceLine" id="cb9-5" data-line-number="5">{</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6">  print_hello(<span class="st">&quot;hello world!</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">  print_hello();</a>
 <a class="sourceLine" id="cb9-7" data-line-number="7">}</a></code></pre></div>
 </section><section id="multiple-source-files-print.c" class="slide level2">
 <h2>Multiple source files – print.c</h2>
@@ -210,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="pp">#include </span><span class="im">&quot;print.h&quot;</span></a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"><span class="dt">void</span> print_hello()</a>
 <a class="sourceLine" id="cb10-4" data-line-number="4">{</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">  printf(<span class="st">&quot;printing: hello world!&quot;</span>);</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  printf(<span class="st">&quot;printing: hello world!</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
 <a class="sourceLine" id="cb10-6" data-line-number="6">}</a></code></pre></div>
 </section><section id="multiple-source-files-print.h" class="slide level2">
 <h2>Multiple source files – print.h</h2>
@@ -259,17 +259,23 @@ collect2: ld returned 1 exit status</code></pre></li>
 <li>Note path to <code>libgcc.a</code> in my Windows SFU installation</li>
 </ul></li>
 </ul>
-</section><section id="debug-using-ddd" class="slide level2">
-<h2>Debug Using DDD</h2>
-<p><img data-src="media/ddd.png" /></p>
+</section><section id="using-a-graphical-debugger" class="slide level2">
+<h2>Using a Graphical Debugger</h2>
 <ul>
 <li><p>DDD is a graphical debugger for X Windows and it uses gdb, the command line debugger</p></li>
 <li><p>Re-compile source code with extra debug information for gdb</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="fu">gcc</span> hello.c print.c -o hello –g</a></code></pre></div></li>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="fu">gcc</span> -g hello.c print.c -o hello</a></code></pre></div></li>
 <li><p>Execute ddd</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="ex">ddd</span> hello</a></code></pre></div></li>
 <li><p>Try stepping through code and adding watch expressions</p></li>
+<li><p>Repeat with VS Code</p></li>
 </ul>
+</section><section id="debug-using-ddd" class="slide level2">
+<h2>Debug Using DDD</h2>
+<p><img data-src="media/ddd.png" /></p>
+</section><section id="debug-using-vs-code" class="slide level2">
+<h2>Debug Using VS Code</h2>
+<p><img data-src="media/vscode.png" /></p>
 </section><section id="other-topics" class="slide level2">
 <h2>Other Topics</h2>
 <ul>
@@ -277,7 +283,7 @@ collect2: ld returned 1 exit status</code></pre></li>
 <li><p>Dynamic linking</p></li>
 <li><p>GCC compile, link and optimize options</p></li>
 <li><p>Building applications with make</p></li>
-<li><p>Using Eclipse and <a href="http://www.eclipse.org/cdt/">CDT</a> for C/C++ development</p></li>
+<li><p>Using an IDE for C/C++ development</p></li>
 </ul>
 </section></section>
 <section><section id="types-operators-and-expressions" class="title-slide slide level1"><h1>Types, Operators and Expressions</h1></section><section id="introduction-1" class="slide level2">
@@ -813,14 +819,14 @@ collect2: ld returned 1 exit status</code></pre></li>
 <h2>if-else ambiguities</h2>
 <ul>
 <li><p>By default, the <code>else</code> is associated with the inner <code>if</code></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="cf">if</span> (i \&gt;= <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb49-2" data-line-number="2">  <span class="cf">if</span> (i \&lt; <span class="dv">5</span>)</a>
+<div class="sourceCode" id="cb49"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="cf">if</span> (i &gt;= <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb49-2" data-line-number="2">  <span class="cf">if</span> (i &lt; <span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb49-3" data-line-number="3">    a = b;</a>
 <a class="sourceLine" id="cb49-4" data-line-number="4">  <span class="cf">else</span></a>
 <a class="sourceLine" id="cb49-5" data-line-number="5">    a = c;</a></code></pre></div></li>
 <li><p>Use braces to remove ambiguity</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="cf">if</span> (i \&gt;= <span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb50-2" data-line-number="2">  <span class="cf">if</span> (i \&lt; <span class="dv">5</span>)</a>
+<div class="sourceCode" id="cb50"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="cf">if</span> (i &gt;= <span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2">  <span class="cf">if</span> (i &lt; <span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb50-3" data-line-number="3">    a = b;</a>
 <a class="sourceLine" id="cb50-4" data-line-number="4">} <span class="cf">else</span></a>
 <a class="sourceLine" id="cb50-5" data-line-number="5">  a = c;</a></code></pre></div></li>

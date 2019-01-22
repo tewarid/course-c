@@ -126,7 +126,7 @@ main()
 int
 main()
 {
-  print_hello("hello world!\n");
+  print_hello();
 }
 ```
 
@@ -137,7 +137,7 @@ main()
 #include "print.h"
 void print_hello()
 {
-  printf("printing: hello world!");
+  printf("printing: hello world!\n");
 }
 ```
 
@@ -218,16 +218,14 @@ extern void print_hello();
   - Calling gcc with `-v` switch shows how
   - Note path to `libgcc.a` in my Windows SFU installation
 
-## Debug Using DDD
-
-![](media/ddd.png)
+## Using a Graphical Debugger
 
 - DDD is a graphical debugger for X Windows and it uses gdb, the command line debugger
 
 - Re-compile source code with extra debug information for gdb
 
   ```bash
-  gcc hello.c print.c -o hello –g
+  gcc -g hello.c print.c -o hello
   ```
 
 - Execute ddd
@@ -237,6 +235,16 @@ extern void print_hello();
   ```
 
 - Try stepping through code and adding watch expressions
+
+- Repeat with VS Code
+
+## Debug Using DDD
+
+![](media/ddd.png)
+
+## Debug Using VS Code
+
+![](media/vscode.png)
 
 ## Other Topics
 
@@ -248,4 +256,4 @@ extern void print_hello();
 
 - Building applications with make
 
-- Using Eclipse and [CDT](http://www.eclipse.org/cdt/) for C/C++ development
+- Using an IDE for C/C++ development
