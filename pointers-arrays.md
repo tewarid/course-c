@@ -340,7 +340,7 @@
 
 ## Using memwatch
 
-- [memwatch](http://www.linkdata.se/sourcecode/memwatch/) is distributed as a single source file `memwatch.c` and its accompanying header file `memwatch.h`
+- [memwatch](https://github.com/linkdata/memwatch) is distributed as a single source file `memwatch.c` and its accompanying header file `memwatch.h`
 
 - Source files you want to watch for memory problems must include `memwatch.h` and be recompiled using the following compiler options
 
