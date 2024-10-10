@@ -1,5 +1,6 @@
-# Types, Operators and Expressions
-
+---
+title: Types, Operators and Expressions
+---
 ## Introduction
 
 - The basic C data objects are
@@ -45,13 +46,7 @@
 
 - Integer
 
-  - int
-
-  - short int
-
-  - long int
-
-  - char
+  - char, short int, int, long int
 
   - signed and unsigned types
 
@@ -59,9 +54,7 @@
 
   - float
 
-  - double
-
-  - long double
+  - double, long double
 
 - Size is implementation dependent
 
@@ -77,12 +70,12 @@
 
   - insufficient for [Unicode and other codes](https://www.gnu.org/software/libc/manual/html_node/Character-Handling.html)
 
-|       | bits |        unsigned         |             signed             |
-| ----- | ---- | ----------------------- | ------------------------------ |
-| long  | 32   | $$0$$ to $$2^{32} - 1$$ | $$-2^{31}$$ to $$2^{31} - 1$$  |
-| int   | 32   | $$0$$ to $$2^{32} - 1$$ | $$- 2^{31}$$ to $$2^{31} - 1$$ |
-| short | 16   | $$0$$ to $$2^{16} - 1$$ | $$- 2^{15}$$ to $$2^{15} - 1$$ |
-| char  | 8    | $$0$$ to $$2^8 - 1$$    | $$- 2^7$$ to $$2^7 - 1$$       |
+|       | bits |     unsigned      |         signed         |
+| ----- | ---- | ----------------- | ---------------------- |
+| long  | 32   | `0` to `2^32 - 1` | `-2^31` to `2^31 - 1`  |
+| int   | 32   | `0` to `2^32 - 1` | `-2^31` to `2^31 - 1`  |
+| short | 16   | `0` to `2^16 - 1` | `-2^15` to `2^15 - 1`  |
+| char  | 8    | `0` to `2^8 - 1`  | `-2^7` to `2^7 - 1`   |
 
 ## Floating point types
 
@@ -361,23 +354,40 @@
 
 ## Operator Precedence
 
-|                                     |               |
-| ----------------------------------- | ------------- |
-| `() [] -> .`                        | left to right |
-| `! ~ ++ -- + - * & (type) sizeof`   | right to left |
-| `* / %`                             | left to right |
-| `+ -`                               | left to right |
-| `<< >>`                             | left to right |
-| `< <= > >=`                         | left to right |
-| `== !=`                             | left to right |
-| `&`                                 | left to right |
-| `^`                                 | left to right |
-| `|`                                 | left to right |
-| `&&`                                | left to right |
-| `||`                                | left to right |
-| `?:`                                | right to left |
-| `= += -= *= /= %= &= ^= |= <<= >>=` | right to left |
-| `,`                                 | left to right |
+:::: {.columns}
+
+::: {.column width="40%"}
+
+|                     |               |
+| ------------------- | ------------- |
+| `() [] -> .`        | left to right |
+| `! ~ ++ -- + - * &` | right to left |
+| `(type) sizeof`     |               |
+| `* / %`             | left to right |
+| `+ -`               | left to right |
+| `<< >>`             | left to right |
+| `< <= > >=`         | left to right |
+| `== !=`             | left to right |
+| `&`                 | left to right |
+
+:::
+
+::: {.column width="60%"}
+
+|                     |               |
+| ------------------- | ------------- |
+| `^`                 | left to right |
+| `|`                 | left to right |
+| `&&`                | left to right |
+| `||`                | left to right |
+| `?:`                | right to left |
+| `= += -= *= /= %=`  | right to left |
+| ` &= ^= |= <<= >>=` |               |
+| `,`                 | left to right |
+
+:::
+
+::::
 
 ## Conditional expressions
 
@@ -406,10 +416,14 @@
   `1UL`  
   `00000000000000000000000000000001`  
 
-  `1L` as two's complement of `1L` (calculated as `~1+1` or $$2^{32} - 1$$)  
+  `1L` as two's complement of `1L` (calculated as `~1+1` or `2^32 - 1`)  
   `11111111111111111111111111111111`
 
 ## Automatic type conversion rules
+
+:::: {.columns}
+
+::: {.column width="50%"}
 
 For an operator that takes two operands
 
@@ -421,6 +435,10 @@ For an operator that takes two operands
 
 - Else, if one is `unsigned long int`, convert other to `unsigned long int`
 
+:::
+
+::: {.column width="50%"}
+
 - Else, if one is `long int` and other is `unsigned int`
   - If a `long int` can represent all values of an `unsigned int`, convert both to `long int`
   - Else convert both to `unsigned long int`
@@ -430,6 +448,10 @@ For an operator that takes two operands
 - Else, if one is `unsigned int`, convert other to `unsigned int`
 
 - Else, convert both to `int`
+
+:::
+
+::::
 
 ## Type casting
 

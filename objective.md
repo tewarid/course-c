@@ -1,5 +1,6 @@
-# Objectives
-
+---
+title: Objectives
+---
 ## Course Objectives
 
 - Learn the core elements of ANSI C

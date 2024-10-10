@@ -1,0 +1,15 @@
+project:
+  title: "Programming in C"
+author:
+- Devendra Tewari
+date: October 09, 2024
+format:
+  beamer:
+    code-overflow: wrap
+    highlight-style: github
+    aspectratio: 169
+  pptx:
+    code-overflow: wrap
+  # revealjs:
+  #   code-overflow: wrap
+  #   highlight-style: github

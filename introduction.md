@@ -1,5 +1,6 @@
-# Introduction
-
+---
+title: Introduction
+---
 ## History
 
 - [Originally designed and implemented by Dennis Ritchie on a DEC PDP-11](http://cm.bell-labs.co/who/dmr/chist.html)
@@ -47,7 +48,7 @@ main()
 
 - Use [GCC](http://gcc.gnu.org/)
 
-  ```bash
+  ```shell
   gcc hello.c -o hello -Wall
   ```
 
@@ -55,7 +56,7 @@ main()
 
 - Execute
 
-  ```bash
+  ```shell
   ./hello
   ```
 
@@ -102,7 +103,7 @@ main()
 
 - Creating an object file using GCC
 
-  ```bash
+  ```shell
   gcc hello.c -c
   ```
 
@@ -114,7 +115,7 @@ main()
 
 - Linking combines all the object files and required library code to produce a single executable
 
-  ```bash
+  ```shell
   gcc hello.o -o hello
   ```
 
@@ -158,13 +159,13 @@ extern void print_hello();
 
 - Compile and link using gcc
 
-  ```bash
+  ```shell
   gcc hello.c print.c -o hello
   ```
 
 - Execute
 
-  ```bash
+  ```shell
   ./hello
   ```
 
@@ -178,19 +179,19 @@ extern void print_hello();
 
 - Compile `hello.c` using gcc; produces `hello.c`
 
-  ```bash
+  ```shell
   gcc hello.c -c
   ```
 
 - Compile `print.c`; produces `print.o`
 
-  ```bash
+  ```shell
   gcc print.c -c
   ```
 
 - Link using gcc
 
-  ```bash
+  ```shell
   gcc hello.o -o hello
   ```
 
@@ -203,13 +204,13 @@ extern void print_hello();
 
 - Link using gcc
 
-  ```bash
+  ```shell
   gcc hello.o print.o -o hello
   ```
 
 - Using [ld](https://www.gnu.org/software/binutils/)
 
-  ```bash
+  ```shell
   ld -o hello \
   /lib/crt0.o -L/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3 \
   hello.o print.o -lgcc -lc -lpsxdll -v
@@ -224,13 +225,13 @@ extern void print_hello();
 
 - Re-compile source code with extra debug information for gdb
 
-  ```bash
+  ```shell
   gcc -g hello.c print.c -o hello
   ```
 
 - Execute ddd
 
-  ```bash
+  ```shell
   ddd hello
   ```
 
@@ -240,11 +241,11 @@ extern void print_hello();
 
 ## Debug Using DDD
 
-![](media/ddd.png)
+![Debug using DDD on Linux](media/ddd.png){height=50%}
 
 ## Debug Using VS Code
 
-![](media/vscode.png)
+![Debug using VS Code](media/vscode.png){width=50%}
 
 ## Other Topics
 

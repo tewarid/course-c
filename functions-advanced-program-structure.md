@@ -1,5 +1,6 @@
-# Functions and Advanced Program Structure
-
+---
+title: Functions and Advanced Program Structure
+---
 ## Introduction to Functions
 
 - Useful for program structuring
@@ -90,7 +91,15 @@ int print() {
 
 ## `extern` keyword
 
+:::: {.columns}
+
+::: {.column width="40%"}
+
 - The `extern` keyword is used to declare variables defined outside the current function or source file
+
+:::
+
+::: {.column width="60%"}
 
   ```c
   int a;
@@ -106,9 +115,21 @@ int print() {
   }
   ```
 
+:::
+
+::::
+
 ## `auto` keyword
 
+:::: {.columns}
+
+::: {.column width="40%"}
+
 - Variables within functions or code blocks that are not declared as extern are `auto` (for automatic)
+
+:::
+
+::: {.column width="60%"}
 
   ```c
   int a;
@@ -124,9 +145,23 @@ int print() {
   }
   ```
 
+:::
+
+::::
+
 ## static variables
 
+:::: {.columns}
+
+::: {.column width="40%"}
+
 - A variable declared with the keyword `static` within a function or code block retains its value till the program ends
+
+- A static variable anywhere else in the source file is considered local to that file
+
+:::
+
+::: {.column width="60%"}
 
   ```c
   int main() {
@@ -140,7 +175,9 @@ int print() {
   }
   ```
 
-- A static variable anywhere else in the source file is considered local to that file
+:::
+
+::::
 
 ## register variables
 
@@ -219,7 +256,7 @@ int print(int i) {
 
 - A macro can also be defined or redefined by using the `-D` compiler option
 
-  ```bash
+  ```shell
   gcc –Dname=value
   ```
 
@@ -233,7 +270,7 @@ int print(int i) {
 
 - A macro defined in a program can also be undefined by using the `-U` compiler option
 
-  ```bash
+  ```shell
   gcc -Uname
   ```
 
@@ -260,12 +297,9 @@ int print(int i) {
 ```c
 #define debug_print(expression) printf(\
   #expression " = %g\n", expression)
-
 debug_print(x); //printf("x" " = %g\n", x);
 
-
 #define concat(prefix, suffix) prefix ## suffix
-
 concat(name, 1); //name1;
 ```
 
@@ -283,8 +317,16 @@ concat(name, 1); //name1;
 
 ## Enable and disable tracing
 
+:::: {.columns}
+
+::: {.column width="40%"}
+
 - Only integer constants and the following operators can be used in the expression following `#if`
   - `&&`, `||`, `<`, `>`, `<=`, `>=`, `!`, and `==`
+
+:::
+
+::: {.column width="60%"}
 
   ```c
   #define TRACE_NONE 0
@@ -294,36 +336,49 @@ concat(name, 1); //name1;
   #define TRACE_LEVEL TRACE_DEBUG
 
   int main() {
-  #if TRACE_LEVEL == TRACE_ALL || TRACE_LEVEL == \
-      TRACE_DEBUG
+  #if TRACE_LEVEL == TRACE_ALL || \
+      TRACE_LEVEL == TRACE_DEBUG
     printf("within main\n");
   #endif
     return 0;
   }
   ```
 
+:::
+
+::::
+
 ## OS specific codes
+
+:::: {.columns}
+
+::: {.column width="60%"}
 
 ```c
 #if !defined(OSNAME)
   #error OSNAME not specified
 #endif
 
-int main() {
 #if OSNAME == LINUX
   printf("Linux\n");
 #else
   printf("Windows\n");
 #endif
-  return 0;
-}
 ```
+
+:::
+
+::: {.column width="40%"}
 
 - Compile program
 
-  ```bash
+  ```shell
   gcc -DOSNAME -DLINUX macro.c
   ```
+
+:::
+
+::::
 
 ## Include header file just once
 

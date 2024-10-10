@@ -1,5 +1,6 @@
-# Control Flow
-
+---
+title: Control Flow
+---
 ## if-else
 
 - `if`-`else` expresses decisions
@@ -18,6 +19,10 @@
 
 ## if-else ambiguities
 
+:::: {.columns}
+
+::: {.column}
+
 - By default, the `else` is associated with the inner `if`
 
   ```c
@@ -28,6 +33,10 @@
       a = c;
   ```
 
+:::
+
+::: {.column}
+
 - Use braces to remove ambiguity
 
   ```c
@@ -37,6 +46,10 @@
   } else
     a = c;
   ```
+
+:::
+
+::::
 
 ## else-if
 
@@ -55,9 +68,9 @@
 
 ## switch
 
-- Used to express multi-way decision
+:::: {.columns}
 
-- Matches the result of an expression to one of several integer constants
+::: {.column width="40%"}
 
   ```c
   switch (expression) {
@@ -70,8 +83,20 @@
   }
   ```
 
+:::
+
+::: {.column width="60%"}
+
+- Used to express multi-way decision
+
+- Matches the result of an expression to one of several integer constants
+
 - a `break` statement causes exit from the `switch`
 - without a `break` all statements after the matching `case` are executed till the end of the `switch` block
+
+:::
+
+::::
 
 ## while
 

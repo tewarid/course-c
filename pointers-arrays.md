@@ -1,6 +1,11 @@
-# Pointers and Arrays
-
+---
+title: Pointers and Arrays
+---
 ## Introduction
+
+:::: {.columns}
+
+::: {.column width="40%"}
 
 - Pointers are variables that store memory addresses
 
@@ -14,7 +19,15 @@
   p = &i;
   ```
 
-  ![](media/pointer.svg)
+:::
+
+::: {.column width="60%"}
+
+![A pointer is a variable that stores an address](media/pointer.drawio.png)
+
+:::
+
+::::
 
 ## Pointer declaration
 
@@ -64,17 +77,29 @@
 
 ## Arrays
 
+:::: {.columns}
+
+::: {.column width="40%"}
+
 - Arrays provide contiguous storage to multiple elements of the same type
 
   ```c
-  int a[10]; // declares an array of 10 integers
+  int a[10];
   ```
 
 - Elements of arrays declared as `extern`, `static` and `auto` are initialized to zero
 
 - The array index starts at zero
 
-  ![](media/array.svg)
+:::
+
+::: {.column width="60%"}
+
+![An array](media/array.drawio.png)
+
+:::
+
+::::
 
 ## Array initialization
 
@@ -105,6 +130,10 @@
 
 ## Pointers vs Arrays
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
 - Arrays and pointers are related
 
   ```c
@@ -115,7 +144,15 @@
 
   - `a` always points to the start of the array and cannot be changed
 
-  ![](media/pointers-vs-array.svg)
+:::
+
+::: {.column width="40%"}
+
+![Pointers vs Arrays](media/pointers-vs-array.drawio.png)
+
+:::
+
+::::
 
 ## Pointer operations
 
@@ -180,6 +217,10 @@
 
 ## Wasted space with multi-dimensional array
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
 - This is how you would construct an array of string constants
 
   ```c
@@ -187,9 +228,21 @@
   printf("%s %s\n", a[0], a[1]);
   ```
 
-  ![](media/marray.svg)
+:::
+
+::: {.column width="40%"}
+
+![Space wasted due to array dimensions of fixed lengths](media/marray.drawio.png)
+
+:::
+
+::::
 
 ## Array of pointers instead of multi-dimensional array
+
+:::: {.columns}
+
+::: {.column width="60%"}
 
 - The multi-dimensional array shown earlier may be substituted by an array of pointers to `char`
 
@@ -198,32 +251,47 @@
   printf("%s %s\n", a[0], a[1]);
   ```
 
-  ![](media/arrayp.svg)
+:::
+
+::: {.column width="40%"}
+
+![Array of pointers to char](media/arrayp.drawio.png)
+
+:::
+
+::::
 
 ## Pointers to multi-dimensional array
 
-- Multi-dimensional arrays can be assigned to pointers
+:::: {.columns}
+
+::: {.column width="40%"}
 
   ```c
-  int a[2][2] = { {1,2}, {3,4} };
+  int a[2][2] =
+    { {1,2}, {3,4} };
   int *b[2], **c, *d;
-  b[0] = a[0]; b[1] = a[1];
-  c = b; d = (int *)a;
-  printf("%d\n", a[1][1]);
-  printf("%d\n", *(*(a + 1) + 1));
-  printf("%d\n", b[1][1]);
-  printf("%d\n", *(*(b + 1) + 1));
-  printf("%d\n", c[1][1]);
-  printf("%d\n", *(*(c + 1) + 1));
-  printf("%d\n", d[3]);
-  printf("%d\n", *(d + 3));
+  b[0] = a[0];
+  b[1] = a[1];
+  c = b;
+  d = (int *)a;
   ```
 
-## Visualizing pointers to multi-dimensional array
+:::
 
-  ![](media/marray-vs-pointers.svg)
+::: {.column width="60%"}
+
+![Visualizing pointers to arrays](media/marray-vs-pointers.drawio.png){width=50%}
+
+:::
+
+::::
 
 ## Main function
+
+:::: {.columns}
+
+::: {.column width="60%"}
 
 - `main` function syntax
 
@@ -231,7 +299,13 @@
   main (int argc, char * argv[])
   ```
 
-  ![](media/argv.svg)
+:::
+
+::: {.column width="40%"}
+![Visualizing argv](media/argv.drawio.png)
+:::
+
+::::
 
 ## Command line arguments
 

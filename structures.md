@@ -1,5 +1,6 @@
-# Structures
-
+---
+title: Structures
+---
 ## Introduction
 
 - A C structure is a collection of one or more variables of the same or different types
@@ -46,6 +47,10 @@
 
 ## Copying and assigning to structures
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
 - Example of an `address` structure being assigned to another
 
   ```c
@@ -55,16 +60,24 @@
   a.city = "recife";
   b = a;
   b.zip = 654321;
-  printf("%d, %s, %s\n", a.zip, a.street, a.city);
+  printf("%d, %s, %s\n",
+    a.zip, a.street, a.city);
   ```
 
-- Output
+:::
+
+::: {.column width="40%"}
+
+- Outputs
 
   ```text
   123456, street, recife
   ```
 
-  - Note that changing the copy has not affected the original structure
+- Note that changing the copy has not affected the original structure
+:::
+
+::::
 
 ## Structures and functions
 
@@ -76,22 +89,36 @@
 
 ## Pointers to structures
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
 - Example of structure manipulation using its pointer
 
   ```c
-  struct address* b;
-  b = (struct address*) malloc(sizeof(struct address));
+  struct address *b;
+  b = (struct address *)
+    malloc(sizeof(struct address));
   b->street = "street";
   b->city = "recife";
   (*b).zip = 654321;
-  printf("%d, %s, %s\n", (*b).zip, b->street, b->city);
+  printf("%d, %s, %s\n",
+    (*b).zip, b->street, b->city);
   ```
+
+:::
+
+::: {.column width="40%"}
 
 - The `.` operator has higher precedence than the `*` operator
 
 - C provides the `->` operator to facilitate accessing members of structures through their pointers
 
 - A structure can point to itself e.g. in a tree structure
+
+:::
+
+::::
 
 ## Arrays of structures
 
@@ -113,26 +140,36 @@
 
 ## Typedef
 
-- New data types can be created using the `typedef` keyword
+:::: {.columns}
 
-  ```c
-  typedef unsigned short UCHAR;
-  ```
+::: {.column width="40%"}
+
+- New scalar types can be created using the `typedef` keyword
 
 - New complex types can be created using structures
 
+:::
+
+::: {.column width="60%"}
+
   ```c
+  typedef unsigned short UCHAR;
   typedef struct address {
     char * street;
     char * city;
     int zip;
   } Address;
 
-  b = (Address*)malloc(sizeof(Address));
+  b = (Address*)
+    malloc(sizeof(Address));
   b->street = "street";
   b->city = "recife";
   b->zip = 654321;
   ```
+
+:::
+
+::::
 
 ## Unions
 

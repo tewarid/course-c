@@ -1,5 +1,6 @@
-# Input and Output
-
+---
+title: Input and Output
+---
 ## Introduction
 
 - Input and Output in C is provided by several standard library functions and not by the core language itself
@@ -28,13 +29,13 @@
 
 - It can also be redirected at the command line
 
-  ```bash
+  ```shell
   executable < filename
   ```
 
   - content of filename available in `stdin` of program
 
-  ```bash
+  ```shell
   executable1 | executable2
   ```
 
@@ -48,13 +49,13 @@
 
 - It can also be redirected at the command line
 
-  ```bash
+  ```shell
   executable > filename
   ```
 
   - redirects `stdout` of program to file `filename`
 
-  ```bash
+  ```shell
   executable1 | executable2
   ```
 
@@ -70,7 +71,7 @@
 
 - It can also be redirected at the command line
 
-  ```bash
+  ```shell
   executable 2> filename
   ```
 
@@ -135,7 +136,7 @@
   int fscanf(FILE *fp; char *format, ...)
   ```
 
-- `format` is the format string; this contains the text to be matched against the input, interspersed with conversion specifications that are used to convert and read values into the following arguments
+- `format` is the format string containing text to be matched against the input
 
 - Blanks and tabs in the format string are ignored
 
@@ -240,9 +241,7 @@
 
 ## Listing directories
 
-- For BSD / Linux compatible library functions in `<dirent.h>`
-
-- File information function stat from `<sys/stat.h>`
+- Requires `<sys/stat.h>` and, on BSD/Linux, `<dirent.h>`
 
   ```c
   DIR* dir;

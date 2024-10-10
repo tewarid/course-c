@@ -11,4 +11,12 @@ I suggest using the slides in the following order
 7. [Structures](structures.md)
 8. [Input and Output](input-output.md)
 
-Presentation views rendered using pandoc are available in [reveal.js](slides.html) and [PDF](slides.pdf) formats. [Diagrams](diagrams.xml) are also available in [draw.io](https://www.draw.io) format.
+Presentation views rendered using [quarto](https://quarto.org) are available in PDF, reveal.js, and PowerPoint formats.
+
+To rerender
+
+```shell
+quarto render
+```
+
+Diagrams can be edited in [draw.io](https://www.draw.io).
